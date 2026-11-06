@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+        <link rel="stylesheet" href="./assets/css/swiper/swiper-bundle.min.css" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      h1 {
+        text-align: center;
+      }
+      .grid {
+        background: #ddd;
+        max-width: 1200px;
+        margin: 100px auto;
+      }
+      .grid-item {
+        width: 100px;
+        height: 100px;
+        background: #0d8;
+        border: 2px solid #333;
+        border-color: hsla(0, 0%, 0%, 0.7);
+      }
+      .grid-item--width2 {
+        width: 200px;
+      }
+      .grid-item--height2 {
+        height: 200px;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <h1
+      style="
+        font-size: 40px;
+        font-weight: bold;
+        background: linear-gradient(90deg, red, blue);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      "
+    >
+      Gradient Test
+    </h1>
+
+    <div class="grid">
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2 grid-item--height2"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+    </div>
+
+    <div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">Item 1</div>
+    <div class="swiper-slide">Item 2</div>
+    <div class="swiper-slide">Item 3</div>
+    <div class="swiper-slide">Item 4</div>
+    <div class="swiper-slide">Item 5</div>
+  </div>
+</div>
+
+    <!-- css for this -->
+    <style>
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 0 15px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      .burger {
+        display: none;
+        cursor: pointer;
+      }
+
+      .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px;
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          background-color: #333;
+        }
+
+        .nav-links li {
+          margin: 15px 0;
+          text-align: center;
+        }
+
+        .burger {
+          display: block;
+        }
+      }
+    </style>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="./assets/js/swiper/swiper-bundle.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".grid").isotope({
+          itemSelector: ".grid-item",
+          masonry: {
+            columnWidth: 100,
+            // gutter: 10
+          },
+        });
+
+        var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 5,   // ek screen pe 5 items
+  spaceBetween: 20,
+  loop: true,         // loop on
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false
+  },
+  speed: 800
+});
+      });
+    </script>
+  </body>
+</html>
