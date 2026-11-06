@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Blog &amp; Insights | 4Care NDIS Disability Services</title>
+  <meta name="description"
+    content="Read the latest NDIS guides, vision impairment accessibility tips, participant success stories, and disability support insights from 4Care Melbourne.">
+  <link rel="canonical" href="https://4care.com.au/blog.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://4care.com.au/blog.html">
+  <meta property="og:title" content="Blog &amp; Insights | 4Care NDIS Services">
+  <meta property="og:description" content="Explore expert NDIS guides, accessibility advice, and inspiring participant stories curated by 4Care.">
+  <meta property="og:image" content="assets/images/blog-featured.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Lexend:wght@300;400;500;600;700;800&family=Source+Sans+3:ital,wght@0,300..900;1,300..900&family=Source+Sans+Pro:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Vendor CSS -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="blog-page">
+
+  <!-- Top Accessibility & Information Bar -->
+  <div class="top-bar" role="complementary" aria-label="Accessibility controls">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <!-- Left: Email -->
+        <div class="d-flex align-items-center gap-2 mail-sc">
+          <a href="mailto:info@4care.com.au" aria-label="Email info@4care.com.au">
+            <img src="assets/images/mail.svg" alt="mail"> info@4care.com.au
+          </a>
+        </div>
+        <!-- Right: 3 icon-only accessibility buttons -->
+        <div class="d-flex align-items-center gap-1">
+          <button id="contrast-toggle" class="top-bar-icon-btn" aria-label="Toggle High Contrast Mode"
+            aria-pressed="false">
+            <img src="assets/images/contrast.svg" alt="" width="20" height="20" aria-hidden="true">
+          </button>
+          <button id="text-increase" class="top-bar-icon-btn" aria-label="Increase text size">
+            <img src="assets/images/plus.svg" alt="" width="20" height="20" aria-hidden="true">
+          </button>
+          <button id="text-decrease" class="top-bar-icon-btn" aria-label="Decrease text size">
+            <img src="assets/images/minus.svg" alt="" width="20" height="20" aria-hidden="true">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="header-nav" role="banner">
+    <div class="container">
+      <nav class="navbar navbar-expand-xl p-0" role="navigation" aria-label="Main navigation">
+        <!-- 4Care Logo SVG -->
+        <a class="navbar-brand d-flex align-items-end gap-2" href="index.html" aria-label="4Care Homepage">
+          <img src="assets/images/logo1.svg" alt="4Care" width="55" height="55">
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation Menu">
+          <span class="bi bi-list fs-1 text-white"></span>
+        </button>
+
+        <!-- Desktop Nav items -->
+        <div class="collapse navbar-collapse justify-content-between align-items-center ms-xl-5">
+          <ul class="navbar-nav gap-2">
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="team.html">Meet Our Team</a>
+            </li>
+            <!-- Media Submenu (Active) -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="mediaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Media
+              </a>
+              <ul class="dropdown-menu shadow-lg" aria-labelledby="mediaDropdown">
+                <li><a class="dropdown-item active" href="blog.html"><i class="bi bi-newspaper me-2 text-custom-accent"></i>Blog</a></li>
+                <li><a class="dropdown-item" href="resources.html"><i class="bi bi-file-earmark-pdf me-2 text-custom-accent"></i>Resources</a></li>
+              </ul>
+            </li>
+            <!-- Contact Submenu -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="contact.html" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Contact
+              </a>
+              <ul class="dropdown-menu shadow-lg" aria-labelledby="contactDropdown">
+                <li><a class="dropdown-item" href="contact.html"><i class="bi bi-envelope-fill me-2 text-custom-accent"></i>Contact Us</a></li>
+                <li><a class="dropdown-item" href="online-form.html"><i class="bi bi-calendar-check-fill me-2 text-custom-accent"></i>Online Form</a></li>
+                <li><a class="dropdown-item" href="intake-form.html"><i class="bi bi-clipboard2-check-fill me-2 text-custom-accent"></i>Intake Form</a></li>
+                <li><a class="dropdown-item" href="feedback-complaints.html"><i class="bi bi-chat-left-quote-fill me-2 text-custom-accent"></i>Feedback &amp; Complaints</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="d-flex align-items-center gap-4">
+            <a href="tel:1300252963" class="contact-phone-nav" aria-label="Call 1300 252 963">
+              <i class="bi bi-telephone-fill me-2" aria-hidden="true"></i>Call: 1300 252 963
+            </a>
+            <a href="intake-form.html" class="btn btn-header-cta">Start Intake Form</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Sidebar Navigation -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title id-label" id="offcanvasNavbarLabel">Navigation Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close menu"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav gap-3 fs-5">
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="about.html" data-bs-dismiss="offcanvas">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="services.html" data-bs-dismiss="offcanvas">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="team.html" data-bs-dismiss="offcanvas">Meet Our Team</a>
+        </li>
+        <!-- Media Mobile Submenu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link text-dark dropdown-toggle active" href="#" id="offcanvasMediaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Media
+          </a>
+          <ul class="dropdown-menu border-0 shadow-sm ps-3" aria-labelledby="offcanvasMediaDropdown">
+            <li><a class="dropdown-item text-dark active" href="blog.html" data-bs-dismiss="offcanvas"><i class="bi bi-newspaper me-2 text-custom-secondary"></i>Blog</a></li>
+            <li><a class="dropdown-item text-dark" href="resources.html" data-bs-dismiss="offcanvas"><i class="bi bi-file-earmark-pdf me-2 text-custom-secondary"></i>Resources</a></li>
+          </ul>
+        </li>
+        <!-- Contact Mobile Submenu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link text-dark dropdown-toggle" href="contact.html" id="offcanvasContactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Contact
+          </a>
+          <ul class="dropdown-menu border-0 shadow-sm ps-3" aria-labelledby="offcanvasContactDropdown">
+            <li><a class="dropdown-item text-dark" href="contact.html" data-bs-dismiss="offcanvas"><i class="bi bi-envelope-fill me-2 text-custom-secondary"></i>Contact Us</a></li>
+            <li><a class="dropdown-item text-dark" href="online-form.html" data-bs-dismiss="offcanvas"><i class="bi bi-calendar-check-fill me-2 text-custom-secondary"></i>Online Form</a></li>
+            <li><a class="dropdown-item text-dark" href="intake-form.html" data-bs-dismiss="offcanvas"><i class="bi bi-clipboard2-check-fill me-2 text-custom-secondary"></i>Intake Form</a></li>
+            <li><a class="dropdown-item text-dark" href="feedback-complaints.html" data-bs-dismiss="offcanvas"><i class="bi bi-chat-left-quote-fill me-2 text-custom-secondary"></i>Feedback &amp; Complaints</a></li>
+          </ul>
+        </li>
+      </ul>
+      <hr>
+      <div class="d-grid gap-3 pt-3">
+        <a href="tel:1300252963" class="contact-phone-nav text-center text-dark" aria-label="Call 1300 252 963">
+          <i class="bi bi-telephone-fill me-2" aria-hidden="true"></i>Call: 1300 252 963
+        </a>
+        <a href="intake-form.html" class="btn btn-header-cta text-center" data-bs-dismiss="offcanvas">Start Intake Form</a>
+      </div>
+    </div>
+  </div>
+
+  <main role="main" id="main-content">
+
+    <!-- 1st SECTION: Banner (Based on team.html banner with inline bg-image, subheading, heading and text only) -->
+    <section class="services-hero-section contact-hero-banner-v2 position-relative" style="background-image: url('assets/images/about-hero-placeholder.webp'); background-size: cover; background-position: center;">
+      <div class="services-hero-overlay"></div>
+      <div class="container services-hero-container position-relative" style="z-index: 2;">
+        <div class="row align-items-center">
+          <div class="col-lg-6 text-center text-lg-start text-custom-white">
+            <span class="section-badge badge-green-light mb-3">
+              <i class="bi bi-journal-richtext me-1"></i> OUR LATEST INSIGHTS
+            </span>
+            <h1 class="hero-title text-custom-white mb-3 services-hero-title">
+              Insights &amp; Guides for <span class="text-custom-accent">Empowered Living</span>
+            </h1>
+            <p class="text-custom-white opacity-75 mb-0 services-hero-desc-large">
+              Explore expert NDIS planning advice, vision impairment accessibility tips, participant success stories, and community news from the 4Care team.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2nd SECTION: Main Blog Area with Featured Article, Cards Grid & Recent Posts Sidebar -->
+    <section class="blog-page-section py-responsive-80 bg-light-subtle">
+      <div class="container">
+
+        <!-- Compact Luxury Featured / Hero Article Spotlight -->
+        <div class="blog-featured-wrapper mb-responsive-40">
+          <div class="blog-featured-card bg-white rounded-4 overflow-hidden border-0 shadow-lg p-md-3 p-2">
+            <div class="row g-md-4 g-3 align-items-center">
+              <div class="col-lg-5">
+                <div class="blog-featured-img-box rounded-4 overflow-hidden">
+                  <img src="assets/images/blog-featured.png" alt="NDIS Support Coordinator discussing care plan with participant" class="img-fluid w-100 blog-featured-img">
+                  <span class="blog-badge-spotlight">
+                    <i class="bi bi-star-fill me-1"></i> FEATURED ARTICLE
+                  </span>
+                </div>
+              </div>
+              <div class="col-lg-7 p-md-4 p-3 d-flex flex-column justify-content-center">
+                <h2 class="blog-featured-title mb-3">
+                  <a href="single-blog.html">
+                    Unlocking the Full Potential of Your NDIS Plan: A Practical Guide
+                  </a>
+                </h2>
+                <p class="blog-featured-excerpt mb-4">
+                  Navigating NDIS Support Coordination can feel complex. Discover actionable strategies to optimize your plan funding and achieve your personal goals with confidence.
+                </p>
+                <div>
+                  <a href="single-blog.html" class="btn btn-luxury-link d-inline-flex align-items-center gap-1">
+                    Read Story <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Blog Layout (Grid Cards + Recent Posts Sidebar) -->
+        <div class="row g-md-4 g-3">
+
+          <!-- Left Column: Blog Cards Grid (col-lg-8) -->
+          <div class="col-lg-8">
+            <div class="row g-md-4 g-3" id="blogGridContainer">
+
+              <!-- Blog Card 1 -->
+              <div class="col-md-6 blog-item-col">
+                <article class="blog-card bg-white rounded-4 overflow-hidden shadow-sm h-100 d-flex flex-column">
+                  <div class="blog-card-img-box position-relative overflow-hidden">
+                    <img src="assets/images/blog-thumb1.png" alt="Assistive technology for vision impairment" class="img-fluid w-100 blog-card-img">
+                  </div>
+                  <div class="blog-card-body p-md-4 p-3 d-flex flex-column flex-grow-1">
+                    <h3 class="blog-card-title mb-2">
+                      <a href="single-blog.html">
+                        Top Assistive Technologies Transforming Vision Impairment Support
+                      </a>
+                    </h3>
+                    <p class="blog-card-text mb-4 flex-grow-1">
+                      From tactile braille displays to smart screen readers, explore modern tools empowering Australians with vision loss.
+                    </p>
+                    <div class="blog-card-footer mt-auto">
+                      <a href="single-blog.html" class="blog-read-link d-inline-flex align-items-center gap-1">
+                        Read Article <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Blog Card 2 -->
+              <div class="col-md-6 blog-item-col">
+                <article class="blog-card bg-white rounded-4 overflow-hidden shadow-sm h-100 d-flex flex-column">
+                  <div class="blog-card-img-box position-relative overflow-hidden">
+                    <img src="assets/images/blog-thumb2.png" alt="Participant walking with guide dog in Melbourne park" class="img-fluid w-100 blog-card-img">
+                  </div>
+                  <div class="blog-card-body p-md-4 p-3 d-flex flex-column flex-grow-1">
+                    <h3 class="blog-card-title mb-2">
+                      <a href="single-blog.html">
+                        Building Confidence Beyond Limits: Marcus’s Journey with 4Care
+                      </a>
+                    </h3>
+                    <p class="blog-card-text mb-4 flex-grow-1">
+                      Read how dedicated Specialist Support Coordination helped Marcus secure assistive technology and regain confidence.
+                    </p>
+                    <div class="blog-card-footer mt-auto">
+                      <a href="single-blog.html" class="blog-read-link d-inline-flex align-items-center gap-1">
+                        Read Article <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Blog Card 3 -->
+              <div class="col-md-6 blog-item-col">
+                <article class="blog-card bg-white rounded-4 overflow-hidden shadow-sm h-100 d-flex flex-column">
+                  <div class="blog-card-img-box position-relative overflow-hidden">
+                    <img src="assets/images/about-story.webp" alt="NDIS Support Planning Discussion" class="img-fluid w-100 blog-card-img">
+                  </div>
+                  <div class="blog-card-body p-md-4 p-3 d-flex flex-column flex-grow-1">
+                    <h3 class="blog-card-title mb-2">
+                      <a href="single-blog.html">
+                        How to Prepare for Your NDIS Plan Review Meeting
+                      </a>
+                    </h3>
+                    <p class="blog-card-text mb-4 flex-grow-1">
+                      Essential steps, documentation tips, and checklist items to ensure your plan review accurately reflects your needs.
+                    </p>
+                    <div class="blog-card-footer mt-auto">
+                      <a href="single-blog.html" class="blog-read-link d-inline-flex align-items-center gap-1">
+                        Read Article <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Blog Card 4 -->
+              <div class="col-md-6 blog-item-col">
+                <article class="blog-card bg-white rounded-4 overflow-hidden shadow-sm h-100 d-flex flex-column">
+                  <div class="blog-card-img-box position-relative overflow-hidden">
+                    <img src="assets/images/about-rect-3.webp" alt="Psychosocial recovery coaching interaction" class="img-fluid w-100 blog-card-img">
+                  </div>
+                  <div class="blog-card-body p-md-4 p-3 d-flex flex-column flex-grow-1">
+                    <h3 class="blog-card-title mb-2">
+                      <a href="single-blog.html">
+                        Understanding Psychosocial Recovery Coaching in the NDIS
+                      </a>
+                    </h3>
+                    <p class="blog-card-text mb-4 flex-grow-1">
+                      Discover how recovery coaches collaborate with individuals to foster mental health resilience and independence.
+                    </p>
+                    <div class="blog-card-footer mt-auto">
+                      <a href="single-blog.html" class="blog-read-link d-inline-flex align-items-center gap-1">
+                        Read Article <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Blog Card 5 -->
+              <div class="col-md-6 blog-item-col">
+                <article class="blog-card bg-white rounded-4 overflow-hidden shadow-sm h-100 d-flex flex-column">
+                  <div class="blog-card-img-box position-relative overflow-hidden">
+                    <img src="assets/images/support-coordination-detail.webp" alt="Orientation and mobility training session" class="img-fluid w-100 blog-card-img">
+                  </div>
+                  <div class="blog-card-body p-md-4 p-3 d-flex flex-column flex-grow-1">
+                    <h3 class="blog-card-title mb-2">
+                      <a href="single-blog.html">
+                        Orientation &amp; Mobility Supports: Navigating Your Surroundings
+                      </a>
+                    </h3>
+                    <p class="blog-card-text mb-4 flex-grow-1">
+                      Learn how specialized orientation training helps participants gain independence in public spaces and home.
+                    </p>
+                    <div class="blog-card-footer mt-auto">
+                      <a href="single-blog.html" class="blog-read-link d-inline-flex align-items-center gap-1">
+                        Read Article <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Blog Card 6 -->
+              <div class="col-md-6 blog-item-col">
+                <article class="blog-card bg-white rounded-4 overflow-hidden shadow-sm h-100 d-flex flex-column">
+                  <div class="blog-card-img-box position-relative overflow-hidden">
+                    <img src="assets/images/banner2.webp" alt="Community gathering and support coordination" class="img-fluid w-100 blog-card-img">
+                  </div>
+                  <div class="blog-card-body p-md-4 p-3 d-flex flex-column flex-grow-1">
+                    <h3 class="blog-card-title mb-2">
+                      <a href="single-blog.html">
+                        Support Coordination vs Specialist Coordination Explained
+                      </a>
+                    </h3>
+                    <p class="blog-card-text mb-4 flex-grow-1">
+                      A clear breakdown of Level 2 and Level 3 NDIS coordination to help determine which level best aligns with your needs.
+                    </p>
+                    <div class="blog-card-footer mt-auto">
+                      <a href="single-blog.html" class="blog-read-link d-inline-flex align-items-center gap-1">
+                        Read Article <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+            </div>
+
+            <!-- Static Pagination Controls Wrapper (Kept static just like team.html) -->
+            <div class="team-pagination-wrapper mt-md-5 mt-4 d-flex justify-content-center">
+              <nav aria-label="Blog Pagination">
+                <ul class="pagination mb-0 gap-md-2 gap-1" id="blogPagination">
+                  <li class="page-item disabled" id="prevBlogPageItem">
+                    <button class="page-link" id="prevBlogPageBtn" type="button" aria-label="Previous Page">
+                      <i class="bi bi-chevron-left me-1"></i> Prev
+                    </button>
+                  </li>
+                  <li class="page-item active"><button class="page-link page-num-btn" data-page="1" type="button">1</button></li>
+                  <li class="page-item"><button class="page-link page-num-btn" data-page="2" type="button">2</button></li>
+                  <li class="page-item"><button class="page-link page-num-btn" data-page="3" type="button">3</button></li>
+                  <li class="page-item" id="nextBlogPageItem">
+                    <button class="page-link" id="nextBlogPageBtn" type="button" aria-label="Next Page">
+                      Next <i class="bi bi-chevron-right ms-1"></i>
+                    </button>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Luxury Recent Posts Sidebar (col-lg-4) -->
+          <div class="col-lg-4">
+            <aside class="blog-sidebar position-sticky" style="top: 160px;">
+              
+              <!-- RECENT POSTS DESIGN (Ready for dynamic population) -->
+              <div class="recent-posts-widget bg-white rounded-4 p-md-4 p-3 shadow-sm mb-md-4 mb-3 border border-light-subtle">
+                <h4 class="widget-title mb-md-4 mb-3 pb-2 pb-md-3 border-bottom d-flex align-items-center justify-content-between">
+                  <span><i class="bi bi-clock-history me-2"></i> Recent Posts</span>
+                  <span class="badge bg-light rounded-pill px-3 py-1">Latest</span>
+                </h4>
+                
+                <div class="recent-posts-list d-flex flex-column gap-md-3 gap-2">
+                  
+                  <!-- Recent Post 1 -->
+                  <article class="recent-post-card d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-light transition-all">
+                    <div class="recent-post-img-box rounded-3 overflow-hidden flex-shrink-0 position-relative" style="width: 85px; height: 75px; background-color: #f1f5f9;">
+                      <img src="assets/images/blog-thumb1.png" alt="Assistive technology" class="w-100 h-100 object-fit-cover recent-post-img">
+                    </div>
+                    <div class="recent-post-content flex-grow-1 overflow-hidden">
+                      <h6 class="recent-post-title mb-0 fw-bold text-truncate-2">
+                        <a href="#">
+                          Top Assistive Technologies for Vision Loss
+                        </a>
+                      </h6>
+                    </div>
+                  </article>
+
+                  <!-- Recent Post 2 -->
+                  <article class="recent-post-card d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-light transition-all">
+                    <div class="recent-post-img-box rounded-3 overflow-hidden flex-shrink-0 position-relative" style="width: 85px; height: 75px; background-color: #f1f5f9;">
+                      <img src="assets/images/blog-thumb2.png" alt="Guide dog mobility" class="w-100 h-100 object-fit-cover recent-post-img">
+                    </div>
+                    <div class="recent-post-content flex-grow-1 overflow-hidden">
+                      <h6 class="recent-post-title mb-0 fw-bold text-truncate-2">
+                        <a href="#">
+                          Building Confidence Beyond Limits with Marcus
+                        </a>
+                      </h6>
+                    </div>
+                  </article>
+
+                  <!-- Recent Post 3 -->
+                  <article class="recent-post-card d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-light transition-all">
+                    <div class="recent-post-img-box rounded-3 overflow-hidden flex-shrink-0 position-relative" style="width: 85px; height: 75px; background-color: #f1f5f9;">
+                      <img src="assets/images/about-story.webp" alt="NDIS plan review" class="w-100 h-100 object-fit-cover recent-post-img">
+                    </div>
+                    <div class="recent-post-content flex-grow-1 overflow-hidden">
+                      <h6 class="recent-post-title mb-0 fw-bold text-truncate-2">
+                        <a href="#">
+                          Preparing for Your NDIS Plan Review Meeting
+                        </a>
+                      </h6>
+                    </div>
+                  </article>
+
+                  <!-- Recent Post 4 -->
+                  <article class="recent-post-card d-flex align-items-center gap-3 p-2 rounded-3 hover-bg-light transition-all">
+                    <div class="recent-post-img-box rounded-3 overflow-hidden flex-shrink-0 position-relative" style="width: 85px; height: 75px; background-color: #f1f5f9;">
+                      <img src="assets/images/about-rect-3.webp" alt="Recovery Coaching" class="w-100 h-100 object-fit-cover recent-post-img">
+                    </div>
+                    <div class="recent-post-content flex-grow-1 overflow-hidden">
+                      <h6 class="recent-post-title mb-0 fw-bold text-truncate-2">
+                        <a href="#">
+                          Psychosocial Recovery Coaching Explained
+                        </a>
+                      </h6>
+                    </div>
+                  </article>
+
+                </div>
+              </div>
+
+            </aside>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="row g-md-5 g-3">
+        <!-- Brand / Identity -->
+        <div class="col-lg-3 col-md-6">
+          <div class="inner-wrapper">
+            <div class="d-flex align-items-end gap-2 mb-3">
+              <img src="assets/images/logo1.svg" alt="4Care Logo" width="55" height="55">
+            </div>
+            <p class="mt-3 footer-brand-description">
+              Putting people at the centre of disability services — increasing support and raising expectations across Australia.
+            </p>
+            <p class="fw-bold mt-4 footer-ndis-reg">
+              NDIS Registration No. 4-JNMEUJ2
+            </p>
+          </div>
+        </div>
+
+        <!-- Services Navigation Links -->
+        <div class="col-lg-3 col-md-6">
+          <div class="inner-wrapper">
+            <h3 class="fw-bold mb-4 footer-widget-title">Our Services</h3>
+            <ul class="list-unstyled footer-links m-0">
+              <li class="mb-2"><a href="services.html" class="text-decoration-none footer-link-item">NDIS Support Coordination</a></li>
+              <li class="mb-2"><a href="services.html" class="text-decoration-none footer-link-item">Specialist Support Coordination</a></li>
+              <li class="mb-2"><a href="services.html" class="text-decoration-none footer-link-item">Psychosocial Recovery Coaching</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-3 col-md-6">
+          <div class="inner-wrapper">
+            <h3 class="fw-bold mb-4 footer-widget-title">Quick Links</h3>
+            <ul class="list-unstyled footer-links m-0">
+              <li class="mb-2"><a href="about.html" class="text-decoration-none footer-link-item">About Us</a></li>
+              <li class="mb-2"><a href="services.html" class="text-decoration-none footer-link-item">Our Services</a></li>
+              <li class="mb-2"><a href="team.html" class="text-decoration-none footer-link-item">Meet Our Team</a></li>
+              <li class="mb-2"><a href="blog.html" class="text-decoration-none footer-link-item">Blog &amp; Insights</a></li>
+              <li class="mb-2"><a href="resources.html" class="text-decoration-none footer-link-item">Resources</a></li>
+              <li class="mb-2"><a href="feedback-complaints.html" class="text-decoration-none footer-link-item">Feedback &amp; Complaints</a></li>
+              <li class="mb-2"><a href="contact.html" class="text-decoration-none footer-link-item">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="col-lg-3 col-md-6">
+          <div class="inner-wrapper">
+            <h3 class="fw-bold mb-4 footer-widget-title">Contact Us</h3>
+            <ul class="list-unstyled footer-links m-0">
+              <li class="mb-3 d-flex align-items-center gap-2 footer-contact-item">
+                <img src="assets/images/call-icon.png" alt="Phone" class="footer-contact-icon">
+                <a href="tel:1300252963" class="text-decoration-none footer-phone-link">1300 252 963</a>
+              </li>
+              <li class="mb-3 d-flex align-items-center gap-2 footer-contact-item">
+                <img src="assets/images/mail-icon.png" alt="Mail" class="footer-contact-icon">
+                <a href="mailto:info@4care.com.au" class="text-decoration-none footer-email-link">info@4care.com.au</a>
+              </li>
+              <li class="d-flex align-items-start gap-2 footer-contact-item">
+                <i class="footer-contact-address-icon" aria-hidden="true">📍</i>
+                <span class="footer-address-text">Melbourne, Victoria, Australia</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="d-flex flex-wrap justify-content-between align-items-center">
+          <p class="m-0">&copy; 2026 4Care. All Rights Reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/vendor/owl-carousel/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

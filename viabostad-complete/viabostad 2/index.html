@@ -1,0 +1,2060 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/owl/owl.carousel.min.css" />
+    <link rel="stylesheet" href="./assets/css/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./assets/css/main-style.css" />
+  </head>
+  <body>
+    <header class="site_header">
+      <div class="container">
+        <div class="header_wrapper">
+          <div class="logo_wrapper">
+            <a href="./index.html">
+              <img
+                src="./assets/images/site-logo.svg"
+                alt="site-logo"
+                width="250"
+                height="50"
+              />
+            </a>
+          </div>
+          <nav>
+            <ul class="primary_menu">
+              <li class="nav_item active">
+                <a href="" class="nav_link">Start</a>
+              </li>
+              <li class="nav_item">
+                <a href="./housing.html" class="nav_link">Housing</a>
+              </li>
+              <li class="nav_item">
+                <a href="./saved.html" class="nav_link">Saved</a>
+              </li>
+              <li class="nav_item">
+                <a href="./broker-list.html" class="nav_link">Broker</a>
+              </li>
+            </ul>
+            <a href="#" class="login_btn d-none d-xl-block">Log In</a>
+          </nav>
+          <div class="btns_wrapper d-xl-none">
+            <a href="#" class="login_btn">Log In</a>
+            <div class="hemburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="banner_section">
+        <div class="inner_wrapper">
+          <img
+            src="./assets/images/banner-img.webp"
+            alt="banner-img"
+            width="1920"
+            height="770"
+            class="d-sm-block d-none"
+          />
+          <img
+            src="./assets/images/mob_banner.webp"
+            alt="mob_banner"
+            width="430"
+            height="520"
+            class="d-sm-none d-block"
+          />
+          <div class="text_wrapper">
+            <h1 class="main_heading">
+              <span>Finding your</span>
+              <span>new home is simple</span>
+            </h1>
+            <p>
+              est simplement du faux texte employé dans la composition et la
+              mise en page avant impression.
+            </p>
+          </div>
+        </div>
+        <div class="find_property_wrapper">
+          <ul class="nav nav-pills" id="homeFilter" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="for-sale-tab" data-bs-toggle="tab" data-bs-target="#for-sale" type="button" role="tab" aria-controls="for-sale" aria-selected="true">For sale</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="final-price-tab" data-bs-toggle="tab" data-bs-target="#final-price" type="button" role="tab" aria-controls="final-price" aria-selected="false">Final prices</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="broker-tab" data-bs-toggle="tab" data-bs-target="#broker" type="button" role="tab" aria-controls="broker" aria-selected="false">Search for a broker</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="homeFilterContent">
+            <div class="tab-pane fade show active" id="for-sale" role="tabpanel" aria-labelledby="home-tab">
+              <div class="form_wrap">
+                <form>
+                <div class="field search">
+                  <label>
+                    Area
+                    <input type="text" placeholder="Enter area or address">
+                  </label>
+                </div>
+                <div class="field select">
+                  <label>
+                    Expand area with
+                    <select class="form-select">
+                      <option>+0 km</option>
+                      <option>+1 km</option>
+                      <option>+2 km</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="field checkboxes_wrapper">
+                  <label>
+                    <input type="checkbox" name="house_type">
+                    <div class="field_text">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" fill="none" viewBox="0 0 24 16"><rect width="6" height="6.857" fill="#007E47" rx="1"></rect><rect width="6" height="6.857" y="9.143" fill="#045D6C" rx="1"></rect><rect width="6" height="6.857" x="9" fill="#66B291" rx="1"></rect><rect width="6" height="6.857" x="9" y="9.143" fill="#898B83" rx="1"></rect><rect width="6" height="6.857" x="18" fill="#67458C" rx="1"></rect><rect width="6" height="6.857" x="18" y="9.143" fill="#BA9F78" rx="1"></rect></svg>
+                    All types
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="house_type">
+                    <div class="field_text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" fill="none" viewBox="0 0 25 20"><title>Villa</title><path fill="#007E47" fill-rule="evenodd" d="M1.123 19.968v-9.863H.2l1.555-5.198h4.518L12.15 0l5.322 4.479V1.455h2.909v3.452h2.215l1.603 5.198h-.923v9.863zm9.668-11.142v-3.53h3.53v3.53zm3.53 3.53h-3.53v7.061h3.53v-7.06Zm1.766 3.53v-3.53h3.53v3.53zm-10.591-3.53v3.53h3.53v-3.53z" clip-rule="evenodd"></path></svg>
+                    Villas
+                    </div>
+                  </label>
+                  <label>
+                      <input type="checkbox" name="house_type">
+                      <div class="field_text">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17" fill="none" viewBox="0 0 24 17"><title>Radhus</title><path fill="#66B291" d="M11.7 0v17l-2.875-.001v-4.856H7.388v4.856L.2 17V3.643zM4.513 12.143H3.075v3.643h1.438zM8.825 6.07H7.388V8.5h1.437zm-4.312 0H3.075V8.5h1.438zM23.2 0v17l-2.875-.001v-4.856h-1.438v4.856L11.7 17V3.643zm-7.188 12.143h-1.437v3.643h1.438v-3.643Zm4.313-6.072h-1.438V8.5h1.438zm-4.313 0h-1.437V8.5h1.438V6.071Z"></path></svg>
+                    Pair/Chain/Townhouse
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="house_type">
+                    <div class="field_text">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" fill="none" viewBox="0 0 20 24"><title>Lägenhet</title><path fill="#67458C" d="M19.2 0v24h-8v-4.8H8V24H0V0zM6.4 17.6H3.2v3.2h3.2zm9.6 0h-3.2v3.2H16zm0-4.8h-3.2V16H16zm-4.8 0H8V16h3.2zm-4.8 0H3.2V16h3.2zM16 8h-3.2v3.2H16zm-4.8 0H8v3.2h3.2zM6.4 8H3.2v3.2h3.2zM16 3.2h-3.2v3.2H16zm-4.8 0H8v3.2h3.2zm-4.8 0H3.2v3.2h3.2z"></path></svg>
+                    Apartments
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="house_type">
+                    <div class="field_text">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" fill="currentColor" viewBox="0 0 25 24"><title>Fritidshus</title><path fill="#045D6C" d="m16.7 9 7.5 4.5V24h-3v-7.5h-1.5V24H.2v-1.5h9v-9zm0 7.5h-3V21h3zM3.2 9v4.5H1.7V9zm4.19-2.871 3.18 3.181-1.06 1.06-3.181-3.18 1.06-1.06ZM7.438 0A9.77 9.77 0 0 1 .2 7.239V0h7.239ZM13.7 1.5V3H9.2V1.5z"></path></svg>
+                    Holiday home
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="house_type">
+                    <div class="field_text">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="18" fill="none" viewBox="0 0 25 18"><title>Tomt</title><path fill="#BB4E4E" d="M.2 18V0h12v9h12v9z"></path><path fill="#fff" d="m13.292 4.5 1.06 1.06-19.091 19.092-1.061-1.06zm4.5 0 1.06 1.06L-.239 24.653l-1.061-1.06zm4.5 0 1.06 1.06L4.261 24.653 3.2 23.592zm4.5 0 1.06 1.06L8.761 24.653 7.7 23.592zm4.5 0 1.06 1.06-19.091 19.092-1.061-1.06zm-18-4.5 1.06 1.06-19.091 19.093-1.061-1.061zm0-4.5 1.06 1.06-19.091 19.093-1.061-1.061zm0-4.5 1.06 1.06-19.091 19.092-1.061-1.06z"></path></svg>
+                    Plots
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="house_type">
+                    <div class="field_text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 22 22"><title>Gård/Skog</title><path fill="#4BA3B2" d="m7.743 18.168 2.841-2.598h-1.09c-.32 0-.603-.143-.738-.375-.135-.23-.091-.495.116-.69l2.78-2.609h-1.028c-.324 0-.615-.153-.742-.39-.125-.234-.066-.505.15-.692l3.923-3.372c.215-.185.615-.185.83 0l3.923 3.372c.217.187.276.458.15.691-.126.238-.418.391-.742.391H17.09l2.78 2.61c.206.194.25.459.116.69-.136.23-.419.374-.74.374h-1.09l2.843 2.598c.213.194.262.461.126.696-.133.231-.426.38-.747.38H15.51v.702l1.077 1.39c.19.305-.086.664-.509.664h-3.414c-.423 0-.698-.36-.509-.665l1.078-1.389v-.702h-4.87c-.32 0-.614-.149-.747-.38-.135-.235-.087-.502.127-.696"></path><path fill="#4BA3B2" d="M16.752 17.595h-5.639v-.281l3.228-2.95 2.411 2.204zm0-3.674h-4.855l2.444-2.294 2.411 2.264zm-9.532-.003H5.656v3.925H.2V7.494l2.546-4.996L8.386 0l5.638 2.498 2.185 4-.344-.295h-.001a2.34 2.34 0 0 0-1.524-.549c-.46 0-1.04.133-1.523.549l3.935 3.183-3.935-3.183-.002.001-2.611 2.245V6.423H6.566v3.57h1.949c-.452.637-.572 1.495-.15 2.28q.071.134.156.252l-.841.79a2.3 2.3 0 0 0-.46.603"></path><path fill="#4BA3B2" d="M13.214 10.247h2.253l-1.127-.968z"></path></svg>
+                      Farms/Forests
+                    </div>
+                    </label>
+                  <label>
+                    <input type="checkbox" name="house_type">
+                    <div class="field_text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="14" fill="none" viewBox="0 0 25 14"><title>Övrigt</title><path fill="#BA9F78" d="m21 0 3.2 2.38v10.71H21V8.33h-3.2v4.76h-1.6V8.33H13v4.76H.2V2.38L3.4 0zM6.6 8.33H3.4v2.38h3.2zm4.8 0H8.2v2.38h3.2zM6.6 3.57H3.4v1.19h3.2zm4.8 0H8.2v1.19h3.2zm4.8 0H13v1.19h3.2zm4.8 0h-3.2v1.19H21z"></path></svg>
+                      Other
+                    </div>
+                  </label>
+                </div>
+                <div class="filter_options text-center">
+                  <button type="button" class="show_filter_option">Show search filters <i class="fas fa-chevron-right"></i></button>
+                  <div class="filter_options_wrapper">
+                    <div class="row_group">
+                      <div class="field select">
+                        <label>
+                          Minimum number of rooms
+                          <select class="form-select w-100">
+                            <option>All</option>
+                            <option>1 room</option>
+                            <option>2 room</option>
+                          </select>
+                        </label>
+                      </div>
+                      <div class="field select">
+                        <label>
+                          Minimum living area
+                          <select class="form-select w-100">
+                            <option>All</option>
+                            <option>20 m<sup>2</sup></option>
+                            <option>25 m<sup>2</sup></option>
+                          </select>
+                        </label>
+                      </div>
+                      <div class="field select">
+                        <label>
+                          Highest price
+                          <select class="form-select w-100">
+                            <option>Nothing</option>
+                            <option>100,000 SEK</option>
+                            <option>200,000 SEK</option>
+                          </select>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="row_group">
+                      <div class="field select">
+                        <label>
+                          New production
+                          <select class="form-select w-100">
+                            <option>+0 km</option>
+                            <option>+1 km</option>
+                            <option>+2 km</option>
+                          </select>
+                        </label>
+                      </div>
+                      <div class="field flex-grow-1">
+                        <label>
+                          Keyword
+                          <input type="text" placeholder="Pool, tiled stoved, etc ">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="submit_wrapper">
+                  <input type="submit" value="Find homes for sale">
+                </div>
+                </form>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="final-price" role="tabpanel" aria-labelledby="profile-tab">
+              <div class="form_wrap">
+                <form>
+                <div class="field search">
+                  <label>
+                    Area
+                    <input type="text" placeholder="Enter area or address">
+                  </label>
+                </div>
+                <div class="field select">
+                  <label>
+                    Expand area with
+                    <select class="form-select">
+                      <option>+0 km</option>
+                      <option>+1 km</option>
+                      <option>+2 km</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="field checkboxes_wrapper">
+                  <label>
+                    <input type="checkbox" name="house_type">
+                    <div class="field_text">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" fill="none" viewBox="0 0 24 16"><rect width="6" height="6.857" fill="#007E47" rx="1"></rect><rect width="6" height="6.857" y="9.143" fill="#045D6C" rx="1"></rect><rect width="6" height="6.857" x="9" fill="#66B291" rx="1"></rect><rect width="6" height="6.857" x="9" y="9.143" fill="#898B83" rx="1"></rect><rect width="6" height="6.857" x="18" fill="#67458C" rx="1"></rect><rect width="6" height="6.857" x="18" y="9.143" fill="#BA9F78" rx="1"></rect></svg>
+                    All types
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="house_type">
+                    <div class="field_text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" fill="none" viewBox="0 0 25 20"><title>Villa</title><path fill="#007E47" fill-rule="evenodd" d="M1.123 19.968v-9.863H.2l1.555-5.198h4.518L12.15 0l5.322 4.479V1.455h2.909v3.452h2.215l1.603 5.198h-.923v9.863zm9.668-11.142v-3.53h3.53v3.53zm3.53 3.53h-3.53v7.061h3.53v-7.06Zm1.766 3.53v-3.53h3.53v3.53zm-10.591-3.53v3.53h3.53v-3.53z" clip-rule="evenodd"></path></svg>
+                    Villas
+                    </div>
+                  </label>
+                  <label>
+                      <input type="checkbox" name="house_type">
+                      <div class="field_text">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17" fill="none" viewBox="0 0 24 17"><title>Radhus</title><path fill="#66B291" d="M11.7 0v17l-2.875-.001v-4.856H7.388v4.856L.2 17V3.643zM4.513 12.143H3.075v3.643h1.438zM8.825 6.07H7.388V8.5h1.437zm-4.312 0H3.075V8.5h1.438zM23.2 0v17l-2.875-.001v-4.856h-1.438v4.856L11.7 17V3.643zm-7.188 12.143h-1.437v3.643h1.438v-3.643Zm4.313-6.072h-1.438V8.5h1.438zm-4.313 0h-1.437V8.5h1.438V6.071Z"></path></svg>
+                    Pair/Chain/Townhouse
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="house_type">
+                    <div class="field_text">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" fill="none" viewBox="0 0 20 24"><title>Lägenhet</title><path fill="#67458C" d="M19.2 0v24h-8v-4.8H8V24H0V0zM6.4 17.6H3.2v3.2h3.2zm9.6 0h-3.2v3.2H16zm0-4.8h-3.2V16H16zm-4.8 0H8V16h3.2zm-4.8 0H3.2V16h3.2zM16 8h-3.2v3.2H16zm-4.8 0H8v3.2h3.2zM6.4 8H3.2v3.2h3.2zM16 3.2h-3.2v3.2H16zm-4.8 0H8v3.2h3.2zm-4.8 0H3.2v3.2h3.2z"></path></svg>
+                    Apartments
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="house_type">
+                    <div class="field_text">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" fill="currentColor" viewBox="0 0 25 24"><title>Fritidshus</title><path fill="#045D6C" d="m16.7 9 7.5 4.5V24h-3v-7.5h-1.5V24H.2v-1.5h9v-9zm0 7.5h-3V21h3zM3.2 9v4.5H1.7V9zm4.19-2.871 3.18 3.181-1.06 1.06-3.181-3.18 1.06-1.06ZM7.438 0A9.77 9.77 0 0 1 .2 7.239V0h7.239ZM13.7 1.5V3H9.2V1.5z"></path></svg>
+                    Holiday home
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="house_type">
+                    <div class="field_text">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="18" fill="none" viewBox="0 0 25 18"><title>Tomt</title><path fill="#BB4E4E" d="M.2 18V0h12v9h12v9z"></path><path fill="#fff" d="m13.292 4.5 1.06 1.06-19.091 19.092-1.061-1.06zm4.5 0 1.06 1.06L-.239 24.653l-1.061-1.06zm4.5 0 1.06 1.06L4.261 24.653 3.2 23.592zm4.5 0 1.06 1.06L8.761 24.653 7.7 23.592zm4.5 0 1.06 1.06-19.091 19.092-1.061-1.06zm-18-4.5 1.06 1.06-19.091 19.093-1.061-1.061zm0-4.5 1.06 1.06-19.091 19.093-1.061-1.061zm0-4.5 1.06 1.06-19.091 19.092-1.061-1.06z"></path></svg>
+                    Plots
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="house_type">
+                    <div class="field_text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 22 22"><title>Gård/Skog</title><path fill="#4BA3B2" d="m7.743 18.168 2.841-2.598h-1.09c-.32 0-.603-.143-.738-.375-.135-.23-.091-.495.116-.69l2.78-2.609h-1.028c-.324 0-.615-.153-.742-.39-.125-.234-.066-.505.15-.692l3.923-3.372c.215-.185.615-.185.83 0l3.923 3.372c.217.187.276.458.15.691-.126.238-.418.391-.742.391H17.09l2.78 2.61c.206.194.25.459.116.69-.136.23-.419.374-.74.374h-1.09l2.843 2.598c.213.194.262.461.126.696-.133.231-.426.38-.747.38H15.51v.702l1.077 1.39c.19.305-.086.664-.509.664h-3.414c-.423 0-.698-.36-.509-.665l1.078-1.389v-.702h-4.87c-.32 0-.614-.149-.747-.38-.135-.235-.087-.502.127-.696"></path><path fill="#4BA3B2" d="M16.752 17.595h-5.639v-.281l3.228-2.95 2.411 2.204zm0-3.674h-4.855l2.444-2.294 2.411 2.264zm-9.532-.003H5.656v3.925H.2V7.494l2.546-4.996L8.386 0l5.638 2.498 2.185 4-.344-.295h-.001a2.34 2.34 0 0 0-1.524-.549c-.46 0-1.04.133-1.523.549l3.935 3.183-3.935-3.183-.002.001-2.611 2.245V6.423H6.566v3.57h1.949c-.452.637-.572 1.495-.15 2.28q.071.134.156.252l-.841.79a2.3 2.3 0 0 0-.46.603"></path><path fill="#4BA3B2" d="M13.214 10.247h2.253l-1.127-.968z"></path></svg>
+                      Farms/Forests
+                    </div>
+                    </label>
+                  <label>
+                    <input type="checkbox" name="house_type">
+                    <div class="field_text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="14" fill="none" viewBox="0 0 25 14"><title>Övrigt</title><path fill="#BA9F78" d="m21 0 3.2 2.38v10.71H21V8.33h-3.2v4.76h-1.6V8.33H13v4.76H.2V2.38L3.4 0zM6.6 8.33H3.4v2.38h3.2zm4.8 0H8.2v2.38h3.2zM6.6 3.57H3.4v1.19h3.2zm4.8 0H8.2v1.19h3.2zm4.8 0H13v1.19h3.2zm4.8 0h-3.2v1.19H21z"></path></svg>
+                      Other
+                    </div>
+                  </label>
+                </div>
+                <div class="field checkboxes_wrapper without_icon">
+                  <p>Sold within the last few</p>
+                  <label>
+                    <input type="checkbox" name="sold_few_months">
+                    <div class="field_text">
+                      <div class="circle"></div>
+                    3 months
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="sold_few_months">
+                    <div class="field_text">
+                      <div class="circle"></div>
+                    6 months
+                    </div>
+                  </label>
+                  <label>
+                      <input type="checkbox" name="sold_few_months">
+                      <div class="field_text">
+                      <div class="circle"></div>
+                    12 months
+                    </div>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="sold_few_months">
+                    <div class="field_text">
+                      <div class="circle"></div>
+                    Show all
+                    </div>
+                  </label>
+                </div>
+                <div class="filter_options text-center">
+                  <button type="button" class="show_filter_option">Show search filters <i class="fas fa-chevron-right"></i></button>
+                  <div class="filter_options_wrapper">
+                    <div class="row_group">
+                      <div class="field select">
+                        <label>
+                          Minimum number of rooms
+                          <select class="form-select w-100">
+                            <option>All</option>
+                            <option>1 room</option>
+                            <option>2 room</option>
+                          </select>
+                        </label>
+                      </div>
+                      <div class="field select">
+                        <label>
+                          Minimum living area
+                          <select class="form-select w-100">
+                            <option>All</option>
+                            <option>20 m<sup>2</sup></option>
+                            <option>25 m<sup>2</sup></option>
+                          </select>
+                        </label>
+                      </div>
+                      <div class="field select">
+                        <label>
+                          Highest price
+                          <select class="form-select w-100">
+                            <option>Nothing</option>
+                            <option>100,000 SEK</option>
+                            <option>200,000 SEK</option>
+                          </select>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="submit_wrapper">
+                  <input type="submit" value="Find homes for sale">
+                </div>
+                </form>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="broker" role="tabpanel" aria-labelledby="contact-tab">
+              <div class="form_wrap">
+                <form>
+                <div class="field search">
+                  <label>
+                    Area
+                    <input type="text" placeholder="Enter area or address">
+                  </label>
+                </div>
+                <div class="submit_wrapper">
+                  <input type="submit" value="Find homes for sale">
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="explore_tab_section">
+        <div class="container">
+          <h2 class="sec_hdng text-center pb-3">
+            Explore your <span>dream property</span>
+          </h2>
+          <div class="tabs_wrapper">
+            <div class="nav_wrapper">
+              <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="pills-all-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-all"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-all"
+                    aria-selected="true"
+                  >
+                    All
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="pills-villas-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-villas"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-villas"
+                    aria-selected="false"
+                  >
+                    Villas
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="pills-flats-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-flats"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-flats"
+                    aria-selected="false"
+                  >
+                    Apartment/Flats
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="pills-houses-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-houses"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-houses"
+                    aria-selected="false"
+                  >
+                    Houses
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="pills-bunglow-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-bunglow"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-bunglow"
+                    aria-selected="false"
+                  >
+                    Bungalows
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-content" id="pills-tabContent">
+              <div
+                class="tab-pane fade show active"
+                id="pills-all"
+                role="tabpanel"
+                aria-labelledby="pills-all-tab"
+              >
+                <div class="row gy-md-4 gy-3 property-slider">
+                  <div class="col-lg-4 col-md-6">
+                    <div class="inner_card product_card">
+                      <div class="top">
+                        <img
+                          src="./assets/images/vecteezy_eco-friendly.webp"
+                          alt="vecteezy_eco-friendly"
+                          width="520"
+                          height="300"
+                        />
+                        <div class="heart_icon">
+                          <i class="far fa-heart initial"></i>
+                          <i class="fas fa-heart active"></i>
+                        </div>
+                      </div>
+                      <div class="middle">
+                        <div class="title_wrap">
+                          <h3 class="title"><a href="#">Lorem Ipsum</a></h3>
+                          <span
+                            ><img
+                              src="./assets/images/location.svg"
+                              alt="location"
+                              width="14"
+                              height="20"
+                            />Lorem Ipsum</span
+                          >
+                        </div>
+                        <div class="room_info_wrap">
+                          <p>
+                            <img
+                              src="./assets/images/bedroom.svg"
+                              alt="bedroom"
+                              width="24"
+                              height="18"
+                            />2 Bedrooms
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/bath.svg"
+                              alt="bath"
+                              width="24"
+                              height="18"
+                            />1 Bath
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/sqm.svg"
+                              alt="sqm"
+                              width="24"
+                              height="18"
+                            />144 sqm
+                          </p>
+                        </div>
+                      </div>
+                      <div class="bottom">
+                        <p>
+                          est le faux texte standard de l'imprimerie depuis les
+                          années 1500.
+                        </p>
+                        <div class="price_wrapper">
+                          <h4 class="price">$ 22,500,000</h4>
+                          <button>
+                            <img
+                              src="./assets/images/arrow-btn-lgblue.svg"
+                              alt="arrow-btn"
+                              width="50"
+                              height="50"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="inner_card product_card">
+                      <div class="top">
+                        <img
+                          src="./assets/images/vecteezy_eco-friendly.webp"
+                          alt="vecteezy_eco-friendly"
+                          width="520"
+                          height="300"
+                        />
+                        <div class="heart_icon">
+                          <i class="far fa-heart initial"></i>
+                          <i class="fas fa-heart active"></i>
+                        </div>
+                      </div>
+                      <div class="middle">
+                        <div class="title_wrap">
+                          <h3 class="title"><a href="#">Lorem Ipsum</a></h3>
+                          <span
+                            ><img
+                              src="./assets/images/location.svg"
+                              alt="location"
+                              width="14"
+                              height="20"
+                            />Lorem Ipsum</span
+                          >
+                        </div>
+                        <div class="room_info_wrap">
+                          <p>
+                            <img
+                              src="./assets/images/bedroom.svg"
+                              alt="bedroom"
+                              width="24"
+                              height="18"
+                            />2 Bedrooms
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/bath.svg"
+                              alt="bath"
+                              width="24"
+                              height="18"
+                            />1 Bath
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/sqm.svg"
+                              alt="sqm"
+                              width="24"
+                              height="18"
+                            />144 sqm
+                          </p>
+                        </div>
+                      </div>
+                      <div class="bottom">
+                        <p>
+                          est le faux texte standard de l'imprimerie depuis les
+                          années 1500.
+                        </p>
+                        <div class="price_wrapper">
+                          <h4 class="price">$ 22,500,000</h4>
+                          <button>
+                            <img
+                              src="./assets/images/arrow-btn-lgblue.svg"
+                              alt="arrow-btn"
+                              width="50"
+                              height="50"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="inner_card product_card">
+                      <div class="top">
+                        <img
+                          src="./assets/images/vecteezy_eco-friendly.webp"
+                          alt="vecteezy_eco-friendly"
+                          width="520"
+                          height="300"
+                        />
+                        <div class="heart_icon">
+                          <i class="far fa-heart initial"></i>
+                          <i class="fas fa-heart active"></i>
+                        </div>
+                      </div>
+                      <div class="middle">
+                        <div class="title_wrap">
+                          <h3 class="title"><a href="#">Lorem Ipsum</a></h3>
+                          <span
+                            ><img
+                              src="./assets/images/location.svg"
+                              alt="location"
+                              width="14"
+                              height="20"
+                            />Lorem Ipsum</span
+                          >
+                        </div>
+                        <div class="room_info_wrap">
+                          <p>
+                            <img
+                              src="./assets/images/bedroom.svg"
+                              alt="bedroom"
+                              width="24"
+                              height="18"
+                            />2 Bedrooms
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/bath.svg"
+                              alt="bath"
+                              width="24"
+                              height="18"
+                            />1 Bath
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/sqm.svg"
+                              alt="sqm"
+                              width="24"
+                              height="18"
+                            />144 sqm
+                          </p>
+                        </div>
+                      </div>
+                      <div class="bottom">
+                        <p>
+                          est le faux texte standard de l'imprimerie depuis les
+                          années 1500.
+                        </p>
+                        <div class="price_wrapper">
+                          <h4 class="price">$ 22,500,000</h4>
+                          <button>
+                            <img
+                              src="./assets/images/arrow-btn-lgblue.svg"
+                              alt="arrow-btn"
+                              width="50"
+                              height="50"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="inner_card product_card">
+                      <div class="top">
+                        <img
+                          src="./assets/images/vecteezy_eco-friendly.webp"
+                          alt="vecteezy_eco-friendly"
+                          width="520"
+                          height="300"
+                        />
+                        <div class="heart_icon">
+                          <i class="far fa-heart initial"></i>
+                          <i class="fas fa-heart active"></i>
+                        </div>
+                      </div>
+                      <div class="middle">
+                        <div class="title_wrap">
+                          <h3 class="title"><a href="#">Lorem Ipsum</a></h3>
+                          <span
+                            ><img
+                              src="./assets/images/location.svg"
+                              alt="location"
+                              width="14"
+                              height="20"
+                            />Lorem Ipsum</span
+                          >
+                        </div>
+                        <div class="room_info_wrap">
+                          <p>
+                            <img
+                              src="./assets/images/bedroom.svg"
+                              alt="bedroom"
+                              width="24"
+                              height="18"
+                            />2 Bedrooms
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/bath.svg"
+                              alt="bath"
+                              width="24"
+                              height="18"
+                            />1 Bath
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/sqm.svg"
+                              alt="sqm"
+                              width="24"
+                              height="18"
+                            />144 sqm
+                          </p>
+                        </div>
+                      </div>
+                      <div class="bottom">
+                        <p>
+                          est le faux texte standard de l'imprimerie depuis les
+                          années 1500.
+                        </p>
+                        <div class="price_wrapper">
+                          <h4 class="price">$ 22,500,000</h4>
+                          <button>
+                            <img
+                              src="./assets/images/arrow-btn-lgblue.svg"
+                              alt="arrow-btn"
+                              width="50"
+                              height="50"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="inner_card product_card">
+                      <div class="top">
+                        <img
+                          src="./assets/images/vecteezy_eco-friendly.webp"
+                          alt="vecteezy_eco-friendly"
+                          width="520"
+                          height="300"
+                        />
+                        <div class="heart_icon">
+                          <i class="far fa-heart initial"></i>
+                          <i class="fas fa-heart active"></i>
+                        </div>
+                      </div>
+                      <div class="middle">
+                        <div class="title_wrap">
+                          <h3 class="title"><a href="#">Lorem Ipsum</a></h3>
+                          <span
+                            ><img
+                              src="./assets/images/location.svg"
+                              alt="location"
+                              width="14"
+                              height="20"
+                            />Lorem Ipsum</span
+                          >
+                        </div>
+                        <div class="room_info_wrap">
+                          <p>
+                            <img
+                              src="./assets/images/bedroom.svg"
+                              alt="bedroom"
+                              width="24"
+                              height="18"
+                            />2 Bedrooms
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/bath.svg"
+                              alt="bath"
+                              width="24"
+                              height="18"
+                            />1 Bath
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/sqm.svg"
+                              alt="sqm"
+                              width="24"
+                              height="18"
+                            />144 sqm
+                          </p>
+                        </div>
+                      </div>
+                      <div class="bottom">
+                        <p>
+                          est le faux texte standard de l'imprimerie depuis les
+                          années 1500.
+                        </p>
+                        <div class="price_wrapper">
+                          <h4 class="price">$ 22,500,000</h4>
+                          <button>
+                            <img
+                              src="./assets/images/arrow-btn-lgblue.svg"
+                              alt="arrow-btn"
+                              width="50"
+                              height="50"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="inner_card product_card">
+                      <div class="top">
+                        <img
+                          src="./assets/images/vecteezy_eco-friendly.webp"
+                          alt="vecteezy_eco-friendly"
+                          width="520"
+                          height="300"
+                        />
+                        <div class="heart_icon">
+                          <i class="far fa-heart initial"></i>
+                          <i class="fas fa-heart active"></i>
+                        </div>
+                      </div>
+                      <div class="middle">
+                        <div class="title_wrap">
+                          <h3 class="title"><a href="#">Lorem Ipsum</a></h3>
+                          <span
+                            ><img
+                              src="./assets/images/location.svg"
+                              alt="location"
+                              width="14"
+                              height="20"
+                            />Lorem Ipsum</span
+                          >
+                        </div>
+                        <div class="room_info_wrap">
+                          <p>
+                            <img
+                              src="./assets/images/bedroom.svg"
+                              alt="bedroom"
+                              width="24"
+                              height="18"
+                            />2 Bedrooms
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/bath.svg"
+                              alt="bath"
+                              width="24"
+                              height="18"
+                            />1 Bath
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/sqm.svg"
+                              alt="sqm"
+                              width="24"
+                              height="18"
+                            />144 sqm
+                          </p>
+                        </div>
+                      </div>
+                      <div class="bottom">
+                        <p>
+                          est le faux texte standard de l'imprimerie depuis les
+                          années 1500.
+                        </p>
+                        <div class="price_wrapper">
+                          <h4 class="price">$ 22,500,000</h4>
+                          <button>
+                            <img
+                              src="./assets/images/arrow-btn-lgblue.svg"
+                              alt="arrow-btn"
+                              width="50"
+                              height="50"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pills-villas"
+                role="tabpanel"
+                aria-labelledby="pills-villas-tab"
+              >
+                <div class="row gy-md-4 gy-3 property-slider">
+                  <div class="col-lg-4 col-md-6">
+                    <div class="inner_card product_card">
+                      <div class="top">
+                        <img
+                          src="./assets/images/vecteezy_eco-friendly.webp"
+                          alt="vecteezy_eco-friendly"
+                          width="520"
+                          height="300"
+                        />
+                        <div class="heart_icon">
+                          <i class="far fa-heart initial"></i>
+                          <i class="fas fa-heart active"></i>
+                        </div>
+                      </div>
+                      <div class="middle">
+                        <div class="title_wrap">
+                          <h3 class="title"><a href="#">Lorem Ipsum</a></h3>
+                          <span
+                            ><img
+                              src="./assets/images/location.svg"
+                              alt="location"
+                              width="14"
+                              height="20"
+                            />Lorem Ipsum</span
+                          >
+                        </div>
+                        <div class="room_info_wrap">
+                          <p>
+                            <img
+                              src="./assets/images/bedroom.svg"
+                              alt="bedroom"
+                              width="24"
+                              height="18"
+                            />2 Bedrooms
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/bath.svg"
+                              alt="bath"
+                              width="24"
+                              height="18"
+                            />1 Bath
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/sqm.svg"
+                              alt="sqm"
+                              width="24"
+                              height="18"
+                            />144 sqm
+                          </p>
+                        </div>
+                      </div>
+                      <div class="bottom">
+                        <p>
+                          est le faux texte standard de l'imprimerie depuis les
+                          années 1500.
+                        </p>
+                        <div class="price_wrapper">
+                          <h4 class="price">$ 22,500,000</h4>
+                          <button>
+                            <img
+                              src="./assets/images/arrow-btn-lgblue.svg"
+                              alt="arrow-btn"
+                              width="50"
+                              height="50"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="inner_card product_card">
+                      <div class="top">
+                        <img
+                          src="./assets/images/vecteezy_eco-friendly.webp"
+                          alt="vecteezy_eco-friendly"
+                          width="520"
+                          height="300"
+                        />
+                        <div class="heart_icon">
+                          <i class="far fa-heart initial"></i>
+                          <i class="fas fa-heart active"></i>
+                        </div>
+                      </div>
+                      <div class="middle">
+                        <div class="title_wrap">
+                          <h3 class="title"><a href="#">Lorem Ipsum</a></h3>
+                          <span
+                            ><img
+                              src="./assets/images/location.svg"
+                              alt="location"
+                              width="14"
+                              height="20"
+                            />Lorem Ipsum</span
+                          >
+                        </div>
+                        <div class="room_info_wrap">
+                          <p>
+                            <img
+                              src="./assets/images/bedroom.svg"
+                              alt="bedroom"
+                              width="24"
+                              height="18"
+                            />2 Bedrooms
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/bath.svg"
+                              alt="bath"
+                              width="24"
+                              height="18"
+                            />1 Bath
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/sqm.svg"
+                              alt="sqm"
+                              width="24"
+                              height="18"
+                            />144 sqm
+                          </p>
+                        </div>
+                      </div>
+                      <div class="bottom">
+                        <p>
+                          est le faux texte standard de l'imprimerie depuis les
+                          années 1500.
+                        </p>
+                        <div class="price_wrapper">
+                          <h4 class="price">$ 22,500,000</h4>
+                          <button>
+                            <img
+                              src="./assets/images/arrow-btn-lgblue.svg"
+                              alt="arrow-btn"
+                              width="50"
+                              height="50"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pills-flats"
+                role="tabpanel"
+                aria-labelledby="pills-flats-tab"
+              >
+                <div class="row gy-md-4 gy-3 property-slider">
+                  <div class="col-lg-4 col-md-6">
+                    <div class="inner_card product_card">
+                      <div class="top">
+                        <img
+                          src="./assets/images/vecteezy_eco-friendly.webp"
+                          alt="vecteezy_eco-friendly"
+                          width="520"
+                          height="300"
+                        />
+                        <div class="heart_icon">
+                          <i class="far fa-heart initial"></i>
+                          <i class="fas fa-heart active"></i>
+                        </div>
+                      </div>
+                      <div class="middle">
+                        <div class="title_wrap">
+                          <h3 class="title"><a href="#">Lorem Ipsum</a></h3>
+                          <span
+                            ><img
+                              src="./assets/images/location.svg"
+                              alt="location"
+                              width="14"
+                              height="20"
+                            />Lorem Ipsum</span
+                          >
+                        </div>
+                        <div class="room_info_wrap">
+                          <p>
+                            <img
+                              src="./assets/images/bedroom.svg"
+                              alt="bedroom"
+                              width="24"
+                              height="18"
+                            />2 Bedrooms
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/bath.svg"
+                              alt="bath"
+                              width="24"
+                              height="18"
+                            />1 Bath
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/sqm.svg"
+                              alt="sqm"
+                              width="24"
+                              height="18"
+                            />144 sqm
+                          </p>
+                        </div>
+                      </div>
+                      <div class="bottom">
+                        <p>
+                          est le faux texte standard de l'imprimerie depuis les
+                          années 1500.
+                        </p>
+                        <div class="price_wrapper">
+                          <h4 class="price">$ 22,500,000</h4>
+                          <button>
+                            <img
+                              src="./assets/images/arrow-btn-lgblue.svg"
+                              alt="arrow-btn"
+                              width="50"
+                              height="50"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="inner_card product_card">
+                      <div class="top">
+                        <img
+                          src="./assets/images/vecteezy_eco-friendly.webp"
+                          alt="vecteezy_eco-friendly"
+                          width="520"
+                          height="300"
+                        />
+                        <div class="heart_icon">
+                          <i class="far fa-heart initial"></i>
+                          <i class="fas fa-heart active"></i>
+                        </div>
+                      </div>
+                      <div class="middle">
+                        <div class="title_wrap">
+                          <h3 class="title"><a href="#">Lorem Ipsum</a></h3>
+                          <span
+                            ><img
+                              src="./assets/images/location.svg"
+                              alt="location"
+                              width="14"
+                              height="20"
+                            />Lorem Ipsum</span
+                          >
+                        </div>
+                        <div class="room_info_wrap">
+                          <p>
+                            <img
+                              src="./assets/images/bedroom.svg"
+                              alt="bedroom"
+                              width="24"
+                              height="18"
+                            />2 Bedrooms
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/bath.svg"
+                              alt="bath"
+                              width="24"
+                              height="18"
+                            />1 Bath
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/sqm.svg"
+                              alt="sqm"
+                              width="24"
+                              height="18"
+                            />144 sqm
+                          </p>
+                        </div>
+                      </div>
+                      <div class="bottom">
+                        <p>
+                          est le faux texte standard de l'imprimerie depuis les
+                          années 1500.
+                        </p>
+                        <div class="price_wrapper">
+                          <h4 class="price">$ 22,500,000</h4>
+                          <button>
+                            <img
+                              src="./assets/images/arrow-btn-lgblue.svg"
+                              alt="arrow-btn"
+                              width="50"
+                              height="50"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pills-houses"
+                role="tabpanel"
+                aria-labelledby="pills-houses-tab"
+              >
+                <div class="row gy-md-4 gy-3 property-slider">
+                  <div class="col-lg-4 col-md-6">
+                    <div class="inner_card product_card">
+                      <div class="top">
+                        <img
+                          src="./assets/images/vecteezy_eco-friendly.webp"
+                          alt="vecteezy_eco-friendly"
+                          width="520"
+                          height="300"
+                        />
+                        <div class="heart_icon">
+                          <i class="far fa-heart initial"></i>
+                          <i class="fas fa-heart active"></i>
+                        </div>
+                      </div>
+                      <div class="middle">
+                        <div class="title_wrap">
+                          <h3 class="title"><a href="#">Lorem Ipsum</a></h3>
+                          <span
+                            ><img
+                              src="./assets/images/location.svg"
+                              alt="location"
+                              width="14"
+                              height="20"
+                            />Lorem Ipsum</span
+                          >
+                        </div>
+                        <div class="room_info_wrap">
+                          <p>
+                            <img
+                              src="./assets/images/bedroom.svg"
+                              alt="bedroom"
+                              width="24"
+                              height="18"
+                            />2 Bedrooms
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/bath.svg"
+                              alt="bath"
+                              width="24"
+                              height="18"
+                            />1 Bath
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/sqm.svg"
+                              alt="sqm"
+                              width="24"
+                              height="18"
+                            />144 sqm
+                          </p>
+                        </div>
+                      </div>
+                      <div class="bottom">
+                        <p>
+                          est le faux texte standard de l'imprimerie depuis les
+                          années 1500.
+                        </p>
+                        <div class="price_wrapper">
+                          <h4 class="price">$ 22,500,000</h4>
+                          <button>
+                            <img
+                              src="./assets/images/arrow-btn-lgblue.svg"
+                              alt="arrow-btn"
+                              width="50"
+                              height="50"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="inner_card product_card">
+                      <div class="top">
+                        <img
+                          src="./assets/images/vecteezy_eco-friendly.webp"
+                          alt="vecteezy_eco-friendly"
+                          width="520"
+                          height="300"
+                        />
+                        <div class="heart_icon">
+                          <i class="far fa-heart initial"></i>
+                          <i class="fas fa-heart active"></i>
+                        </div>
+                      </div>
+                      <div class="middle">
+                        <div class="title_wrap">
+                          <h3 class="title"><a href="#">Lorem Ipsum</a></h3>
+                          <span
+                            ><img
+                              src="./assets/images/location.svg"
+                              alt="location"
+                              width="14"
+                              height="20"
+                            />Lorem Ipsum</span
+                          >
+                        </div>
+                        <div class="room_info_wrap">
+                          <p>
+                            <img
+                              src="./assets/images/bedroom.svg"
+                              alt="bedroom"
+                              width="24"
+                              height="18"
+                            />2 Bedrooms
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/bath.svg"
+                              alt="bath"
+                              width="24"
+                              height="18"
+                            />1 Bath
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/sqm.svg"
+                              alt="sqm"
+                              width="24"
+                              height="18"
+                            />144 sqm
+                          </p>
+                        </div>
+                      </div>
+                      <div class="bottom">
+                        <p>
+                          est le faux texte standard de l'imprimerie depuis les
+                          années 1500.
+                        </p>
+                        <div class="price_wrapper">
+                          <h4 class="price">$ 22,500,000</h4>
+                          <button>
+                            <img
+                              src="./assets/images/arrow-btn-lgblue.svg"
+                              alt="arrow-btn"
+                              width="50"
+                              height="50"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pills-bunglow"
+                role="tabpanel"
+                aria-labelledby="pills-bunglow-tab"
+              >
+                <div class="row gy-md-4 gy-3 property-slider">
+                  <div class="col-lg-4 col-md-6">
+                    <div class="inner_card product_card">
+                      <div class="top">
+                        <img
+                          src="./assets/images/vecteezy_eco-friendly.webp"
+                          alt="vecteezy_eco-friendly"
+                          width="520"
+                          height="300"
+                        />
+                        <div class="heart_icon">
+                          <i class="far fa-heart initial"></i>
+                          <i class="fas fa-heart active"></i>
+                        </div>
+                      </div>
+                      <div class="middle">
+                        <div class="title_wrap">
+                          <h3 class="title"><a href="#">Lorem Ipsum</a></h3>
+                          <span
+                            ><img
+                              src="./assets/images/location.svg"
+                              alt="location"
+                              width="14"
+                              height="20"
+                            />Lorem Ipsum</span
+                          >
+                        </div>
+                        <div class="room_info_wrap">
+                          <p>
+                            <img
+                              src="./assets/images/bedroom.svg"
+                              alt="bedroom"
+                              width="24"
+                              height="18"
+                            />2 Bedrooms
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/bath.svg"
+                              alt="bath"
+                              width="24"
+                              height="18"
+                            />1 Bath
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/sqm.svg"
+                              alt="sqm"
+                              width="24"
+                              height="18"
+                            />144 sqm
+                          </p>
+                        </div>
+                      </div>
+                      <div class="bottom">
+                        <p>
+                          est le faux texte standard de l'imprimerie depuis les
+                          années 1500.
+                        </p>
+                        <div class="price_wrapper">
+                          <h4 class="price">$ 22,500,000</h4>
+                          <button>
+                            <img
+                              src="./assets/images/arrow-btn-lgblue.svg"
+                              alt="arrow-btn"
+                              width="50"
+                              height="50"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                    <div class="inner_card product_card">
+                      <div class="top">
+                        <img
+                          src="./assets/images/vecteezy_eco-friendly.webp"
+                          alt="vecteezy_eco-friendly"
+                          width="520"
+                          height="300"
+                        />
+                        <div class="heart_icon">
+                          <i class="far fa-heart initial"></i>
+                          <i class="fas fa-heart active"></i>
+                        </div>
+                      </div>
+                      <div class="middle">
+                        <div class="title_wrap">
+                          <h3 class="title"><a href="#">Lorem Ipsum</a></h3>
+                          <span
+                            ><img
+                              src="./assets/images/location.svg"
+                              alt="location"
+                              width="14"
+                              height="20"
+                            />Lorem Ipsum</span
+                          >
+                        </div>
+                        <div class="room_info_wrap">
+                          <p>
+                            <img
+                              src="./assets/images/bedroom.svg"
+                              alt="bedroom"
+                              width="24"
+                              height="18"
+                            />2 Bedrooms
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/bath.svg"
+                              alt="bath"
+                              width="24"
+                              height="18"
+                            />1 Bath
+                          </p>
+                          <p>
+                            <img
+                              src="./assets/images/sqm.svg"
+                              alt="sqm"
+                              width="24"
+                              height="18"
+                            />144 sqm
+                          </p>
+                        </div>
+                      </div>
+                      <div class="bottom">
+                        <p>
+                          est le faux texte standard de l'imprimerie depuis les
+                          années 1500.
+                        </p>
+                        <div class="price_wrapper">
+                          <h4 class="price">$ 22,500,000</h4>
+                          <button>
+                            <img
+                              src="./assets/images/arrow-btn-lgblue.svg"
+                              alt="arrow-btn"
+                              width="50"
+                              height="50"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="explore_dream_property">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-6">
+              <div class="img_wrapper">
+                <img
+                  src="./assets/images/villa-with-swimming.webp"
+                  alt="villa-with-swimming"
+                  width="700"
+                  height="465"
+                />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="text_wrapper">
+                <h2 class="sec_hdng">
+                  Explore your <span>dream property</span>
+                </h2>
+                <p>
+                  le faux texte standard de l'imprimerie depuis les années 1500,
+                  quand un imprimeur anonyme assembla ensemble des morceaux de
+                  texte pour réaliser un livre spécimen de polices de texte. Il
+                  n'a pas fait que survivre cinq siècles, mais s'est aussi
+                  adapté à la bureautique informatique, sans que son contenu
+                  n'en soit modifié.
+                </p>
+                <p>
+                  Contrairement à une opinion répandue, le Lorem Ipsum n'est pas
+                  simplement du texte aléatoire. Il trouve ses racines dans une
+                  oeuvre de la littérature latine classique datant de 45 av.
+                  J.-C., le rendant vieux de 2000 ans. Un professeur du
+                  Hampden-Sydney College, en Virginie, s'est intéressé à un des
+                  mots latins les plus obscurs, consectetur, extrait d'un
+                  passage du Lorem Ipsum, et en étudiant tous les usages de ce
+                  mot dans la littérature classique, découvrit la source
+                  incontestable du Lorem Ipsum. Il provient en fait des sections
+                  1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="explore_tranding_room">
+        <div class="container">
+          <div class="sec_head">
+            <h2 class="sec_hdng mb-0">
+              Explore Top Trending <span>Rooms Worldwide</span>
+            </h2>
+            <a href="#" class="primary_btn icon arrow">View All Properties</a>
+          </div>
+          <div class="row gy-md-4 gy-3 property-slider">
+            <div class="col-lg-4 col-md-6">
+              <div class="inner_card product_card">
+                <div class="top">
+                  <img
+                    src="./assets/images/vecteezy_eco-friendly.webp"
+                    alt="vecteezy_eco-friendly"
+                    width="520"
+                    height="300"
+                  />
+                  <div class="heart_icon">
+                    <i class="far fa-heart initial"></i>
+                    <i class="fas fa-heart active"></i>
+                  </div>
+                </div>
+                <div class="middle">
+                  <div class="title_wrap">
+                    <h3 class="title"><a href="#">Lorem Ipsum</a></h3>
+                    <span
+                      ><img
+                        src="./assets/images/location.svg"
+                        alt="location"
+                        width="14"
+                        height="20"
+                      />Lorem Ipsum</span
+                    >
+                  </div>
+                  <div class="room_info_wrap">
+                    <p>
+                      <img
+                        src="./assets/images/bedroom.svg"
+                        alt="bedroom"
+                        width="24"
+                        height="18"
+                      />2 Bedrooms
+                    </p>
+                    <p>
+                      <img
+                        src="./assets/images/bath.svg"
+                        alt="bath"
+                        width="24"
+                        height="18"
+                      />1 Bath
+                    </p>
+                    <p>
+                      <img
+                        src="./assets/images/sqm.svg"
+                        alt="sqm"
+                        width="24"
+                        height="18"
+                      />144 sqm
+                    </p>
+                  </div>
+                </div>
+                <div class="bottom">
+                  <p>
+                    est le faux texte standard de l'imprimerie depuis les années
+                    1500.
+                  </p>
+                  <div class="price_wrapper">
+                    <h4 class="price">$ 22,500,000</h4>
+                    <button>
+                      <img
+                        src="./assets/images/arrow-btn-lgblue.svg"
+                        alt="arrow-btn"
+                        width="50"
+                        height="50"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="inner_card product_card">
+                <div class="top">
+                  <img
+                    src="./assets/images/vecteezy_eco-friendly.webp"
+                    alt="vecteezy_eco-friendly"
+                    width="520"
+                    height="300"
+                  />
+                  <div class="heart_icon">
+                    <i class="far fa-heart initial"></i>
+                    <i class="fas fa-heart active"></i>
+                  </div>
+                </div>
+                <div class="middle">
+                  <div class="title_wrap">
+                    <h3 class="title"><a href="#">Lorem Ipsum</a></h3>
+                    <span
+                      ><img
+                        src="./assets/images/location.svg"
+                        alt="location"
+                        width="14"
+                        height="20"
+                      />Lorem Ipsum</span
+                    >
+                  </div>
+                  <div class="room_info_wrap">
+                    <p>
+                      <img
+                        src="./assets/images/bedroom.svg"
+                        alt="bedroom"
+                        width="24"
+                        height="18"
+                      />2 Bedrooms
+                    </p>
+                    <p>
+                      <img
+                        src="./assets/images/bath.svg"
+                        alt="bath"
+                        width="24"
+                        height="18"
+                      />1 Bath
+                    </p>
+                    <p>
+                      <img
+                        src="./assets/images/sqm.svg"
+                        alt="sqm"
+                        width="24"
+                        height="18"
+                      />144 sqm
+                    </p>
+                  </div>
+                </div>
+                <div class="bottom">
+                  <p>
+                    est le faux texte standard de l'imprimerie depuis les années
+                    1500.
+                  </p>
+                  <div class="price_wrapper">
+                    <h4 class="price">$ 22,500,000</h4>
+                    <button>
+                      <img
+                        src="./assets/images/arrow-btn-lgblue.svg"
+                        alt="arrow-btn"
+                        width="50"
+                        height="50"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="why_choose">
+        <div class="container">
+          <h2 class="sec_hdng text-center pb-2">
+            Why Choose <span>Viabostad?</span>
+          </h2>
+          <div class="row align-items-center gy-5">
+            <div class="col-lg-6">
+              <div class="img_wrapper">
+                <img
+                  src="./assets/images/bunglow.webp"
+                  alt="bunglow"
+                  width="715"
+                  height="545"
+                />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="text_wrapper">
+                <ul>
+                  <li>
+                    le faux texte standard de l'imprimerie depuis les années
+                    1500, quand un imprimeur anonyme.
+                  </li>
+                  <li>
+                    assembla ensemble des morceaux de texte pour réaliser un
+                    livre spécimen de polices de texte.
+                  </li>
+                  <li>
+                    Il n'a pas fait que survivre cinq siècles, mais s'est aussi
+                    adapté à la bureautique informatique, sans.
+                  </li>
+                  <li>
+                    le faux texte standard de l'imprimerie depuis les années
+                    1500, quand un imprimeur anonyme.
+                  </li>
+                  <li>
+                    assembla ensemble des morceaux de texte pour réaliser un
+                    livre spécimen de polices de texte.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="our_pricing">
+        <div class="container">
+          <h2 class="sec_hdng text-center pb-md-3 pb-2">
+            Our <span>Pricing</span>
+          </h2>
+          <div class="row gy-4 align-items-center">
+            <div class="col-lg-4">
+              <div class="inner_wrapper">
+                <div class="title_wrap">
+                  <h3 class="title">Basic</h3>
+                  <h4 class="price">$80</h4>
+                </div>
+                <p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable content.
+                </p>
+                <ul>
+                  <li>Lorem Ipsum has been the industry's</li>
+                  <li>It was popularised in the 1960s</li>
+                  <li>As opposed to using 'Content here</li>
+                  <li>Various versions have evolved</li>
+                  <li>There are many variations of passages</li>
+                  <li>there isn't anything embarrassing hidden</li>
+                </ul>
+                <a href="#" class="primary_btn icon arrow">Explore Now</a>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="inner_wrapper">
+                <span class="top_tag"> Most Popular </span>
+                <div class="title_wrap">
+                  <h3 class="title">Standard</h3>
+                  <h4 class="price">$100</h4>
+                </div>
+                <p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable content.
+                </p>
+                <ul>
+                  <li>Lorem Ipsum has been the industry's</li>
+                  <li>It was popularised in the 1960s</li>
+                  <li>As opposed to using 'Content here</li>
+                  <li>Various versions have evolved</li>
+                  <li>There are many variations of passages</li>
+                  <li>there isn't anything embarrassing hidden</li>
+                </ul>
+                <a href="#" class="primary_btn icon arrow">Explore Now</a>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="inner_wrapper">
+                <div class="title_wrap">
+                  <h3 class="title">Advanced</h3>
+                  <h4 class="price">$200</h4>
+                </div>
+                <p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable content.
+                </p>
+                <ul>
+                  <li>Lorem Ipsum has been the industry's</li>
+                  <li>It was popularised in the 1960s</li>
+                  <li>As opposed to using 'Content here</li>
+                  <li>Various versions have evolved</li>
+                  <li>There are many variations of passages</li>
+                  <li>there isn't anything embarrassing hidden</li>
+                </ul>
+                <a href="#" class="primary_btn icon arrow">Explore Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="read_latest_news">
+        <div class="container">
+          <h2 class="sec_hdng text-center pb-md-4 pb-2">
+            Read Our <span>Latest News</span>
+          </h2>
+          <div class="row gy-4">
+            <div class="col-lg-6 d-md-block d-none">
+              <div class="main_card_wrapper">
+                <img
+                  src="./assets/images/house-isolated.webp"
+                  alt="house-isolated"
+                  width="705"
+                  height="790"
+                />
+                <div class="cont">
+                  <h6>
+                    <a href="#"
+                      >Plusieurs variations de Lorem Ipsum peuvent être trouvées
+                      ici ou là, mais la majeure partie d'entre elles
+                    </a>
+                  </h6>
+                  <p>
+                    le faux texte standard de l'imprimerie depuis les années
+                    1500, quand un imprimeur anonyme assembla ensemble des
+                    morceaux de texte pour réaliser un livre spécimen de polices
+                    de texte.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 mt-0">
+              <div class="row gy-4 property-slider mt-0">
+                <div class="col-md-6">
+                  <div class="small_card_wrapper">
+                    <img
+                      src="./assets/images/modern-home-exterior.webp"
+                      alt="modern-home-exterior"
+                      height="233"
+                      width="338"
+                    />
+                    <div class="cont">
+                      <h3>Plusieurs variations de Lorem Ipsum peuvent</h3>
+                      <p>
+                        le faux texte standard de l'imprimerie depuis les années
+                        1500
+                      </p>
+                    </div>
+                    <a href="#" class="absolute_link"></a>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="small_card_wrapper">
+                    <img
+                      src="./assets/images/modern-home-exterior.webp"
+                      alt="modern-home-exterior"
+                      height="233"
+                      width="338"
+                    />
+                    <div class="cont">
+                      <h3>Plusieurs variations de Lorem Ipsum peuvent</h3>
+                      <p>
+                        le faux texte standard de l'imprimerie depuis les années
+                        1500
+                      </p>
+                    </div>
+                    <a href="#" class="absolute_link"></a>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="small_card_wrapper">
+                    <img
+                      src="./assets/images/modern-home-exterior.webp"
+                      alt="modern-home-exterior"
+                      height="233"
+                      width="338"
+                    />
+                    <div class="cont">
+                      <h3>Plusieurs variations de Lorem Ipsum peuvent</h3>
+                      <p>
+                        le faux texte standard de l'imprimerie depuis les années
+                        1500
+                      </p>
+                    </div>
+                    <a href="#" class="absolute_link"></a>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="small_card_wrapper">
+                    <img
+                      src="./assets/images/modern-home-exterior.webp"
+                      alt="modern-home-exterior"
+                      height="233"
+                      width="338"
+                    />
+                    <div class="cont">
+                      <h3>Plusieurs variations de Lorem Ipsum peuvent</h3>
+                      <p>
+                        le faux texte standard de l'imprimerie depuis les années
+                        1500
+                      </p>
+                    </div>
+                    <a href="#" class="absolute_link"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site_footer">
+      <div class="container">
+        <div class="top_footer">
+          <div class="row gy-5 justify-content-between">
+            <div class="col-lg-4">
+              <div class="inner_wrapper">
+                <img
+                  src="./assets/images/footer_logo.svg"
+                  alt="footer_logo"
+                  width="238"
+                  height="40"
+                />
+                <p>
+                  le faux texte standard de l'imprimerie depuis les années 1500,
+                  quand un imprimeur anonyme assembla ensemble des morceaux de
+                  texte pour réaliser un livre spécimen de polices de texte.
+                </p>
+                <div class="social_icons">
+                  <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="inner_wrapper">
+                <div class="row gy-5">
+                  <div class="col-md-6">
+                    <div class="menu_wrapper">
+                      <h3 class="title">Quick Links</h3>
+                      <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms Of Use</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="contact_wrapper">
+                      <h3 class="title">Contact Us</h3>
+                      <ul>
+                        <li>
+                          <i class="fas fa-phone-alt"></i
+                          ><a href="tel:viabostad@gmail.com">2593 124151 115</a>
+                        </li>
+                        <li>
+                          <i class="fas fa-envelope"></i
+                          ><a href="mailto:viabostad@gmail.com"
+                            >viabostad@gmail.com</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom_footer">
+          <p>
+            Designed & Developed by
+            <a href="#"
+              ><img
+                src="./assets/images/elvira logo.svg"
+                alt="elvira-logo"
+                width="27"
+                height="20"
+            /></a>
+          </p>
+          <p>© 2026 All rights reserved</p>
+          <p><a href="#">Terms & Conditions</a></p>
+        </div>
+      </div>
+    </footer>
+    <script src="./assets/js/jquery/jquery.min.js"></script>
+    <script src="./assets/js/owl/owl.carousel.min.js"></script>
+    <script src="./assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/function.js"></script>
+  </body>
+</html>

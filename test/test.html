@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* =========================
+   Falling Makhana Animation
+========================= */
+
+        .hero_section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .falling_makhana_layer {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero_content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .falling_makhana {
+            position: absolute;
+            top: -70px;
+            width: var(--makhana-size);
+            height: var(--makhana-size);
+            object-fit: contain;
+            pointer-events: none;
+            user-select: none;
+
+            animation:
+                makhana_fall var(--fall-duration) linear forwards,
+                makhana_rotate var(--fall-duration) linear forwards;
+
+            will-change: transform, top, opacity;
+        }
+
+        @keyframes makhana_fall {
+            0% {
+                top: -70px;
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            85% {
+                opacity: 1;
+            }
+
+            100% {
+                top: calc(100% + 70px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes makhana_rotate {
+            from {
+                transform: rotate(var(--start-rotation));
+            }
+
+            to {
+                transform: rotate(var(--end-rotation));
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 767.98px) {
+            .falling_makhana {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- =========================
+     Falling Makhana Animation
+========================= -->
+    <section class="hero_section">
+        <div class="falling_makhana_layer" aria-hidden="true"></div>
+
+        <div class="container">
+            <div class="hero_content">
+                <h1>Premium Indian Foxnuts</h1>
+                <p>Pure, naturally processed makhana</p>
+                <a href="#" class="btn btn-primary">Explore Makhana</a>
+            </div>
+        </div>
+    </section>
+    <script>
+        /* =========================
+   Falling Makhana Animation
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const fallingLayer = document.querySelector(".falling_makhana_layer");
+
+    if (!fallingLayer) return;
+
+    const makhanaImage = "assets/images/makhana.webp";
+
+    function createMakhana() {
+        const makhana = document.createElement("img");
+
+        makhana.src = makhanaImage;
+        makhana.alt = "";
+        makhana.className = "falling_makhana";
+
+        const layerWidth = fallingLayer.offsetWidth;
+
+        const size = Math.floor(Math.random() * 20) + 25;
+        const horizontalPosition =
+            Math.floor(Math.random() * (layerWidth - size));
+
+        const fallDuration = (Math.random() * 3 + 5).toFixed(2);
+
+        const startRotation = Math.floor(Math.random() * 60) - 30;
+        const endRotation = startRotation + Math.floor(Math.random() * 360) + 180;
+
+        makhana.style.left = `${horizontalPosition}px`;
+        makhana.style.setProperty("--makhana-size", `${size}px`);
+        makhana.style.setProperty("--fall-duration", `${fallDuration}s`);
+        makhana.style.setProperty("--start-rotation", `${startRotation}deg`);
+        makhana.style.setProperty("--end-rotation", `${endRotation}deg`);
+
+        fallingLayer.appendChild(makhana);
+
+        makhana.addEventListener("animationend", () => {
+            makhana.remove();
+        });
+    }
+
+    function startAnimation() {
+        createMakhana();
+
+        const nextDelay = Math.floor(Math.random() * 2500) + 2500;
+
+        setTimeout(startAnimation, nextDelay);
+    }
+
+    startAnimation();
+});
+    </script>
+</body>
+
+</html>

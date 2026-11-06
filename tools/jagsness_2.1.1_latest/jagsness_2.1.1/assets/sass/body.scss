@@ -1,0 +1,22 @@
+.element {
+    @include jn-standalone((
+        padding-top: (40px, 60px, null, 80px, 100px, 120px),
+        font-size: (40px, 60px, null, 80px, 100px, 120px),
+        font-weight: (400, 600, null, 800, 100, 100),
+    ), min);
+    @include jn-standalone((
+        padding-top: (40px, 60px, null, 80px, 100px, 120px),
+        font-size: (40px, 60px, null, 80px, 100px, 120px),
+        font-weight: (400, 600, null, 800, 100, 100),
+    ), min);
+}
+
+.xyz {
+    @include flexbox(
+      ('flex-direction', row),
+      ('justify-content', center),
+      ('align-items', center),
+      ('order',4)
+    );
+  }
+  

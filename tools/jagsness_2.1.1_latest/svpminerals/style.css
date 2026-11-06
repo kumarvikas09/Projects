@@ -1,0 +1,295 @@
+/*
+Theme Name: Jagsness
+Author: Aditya Chauhan
+Author URI: http://techmind.co.in/
+Version: 2.0
+Text Domain: Jagsness
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+/*** for default theme's css ***/
+
+
+/* Contact Form 7 Error Default CSS */
+
+span.wpcf7-not-valid-tip {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    position: relative;
+    padding: 3px 10px;
+    margin-bottom: 0;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    font-size: 13px;
+}
+
+.wpcf7-response-output {
+    position: relative!important;
+    padding: 12px 15px!important;
+    margin-bottom: 0;
+    border: 1px solid transparent!important;
+    border-radius: 0.25rem!important;
+    font-size: 18px!important;
+}
+
+.invalid .wpcf7-response-output {
+    color: #856404!important;
+    background-color: #fff3cd!important;
+    border-color: #ffeeba!important;
+}
+
+.sent .wpcf7-response-output {
+    color: #155724!important;
+    background-color: #d4edda!important;
+    border-color: #c3e6cb!important;
+}
+
+.failed .wpcf7-response-output {
+    color: #721c24!important;
+    background-color: #f8d7da!important;
+    border-color: #f5c6cb!important;
+}
+
+
+/* error page design  */
+
+.error_template {
+    width: 900px!important;
+    max-width: 100%!important;
+    padding: 100px 15px;
+    box-shadow: 0px 0px 33px rgb(0 0 0 / 6%);
+    margin: 60px auto;
+}
+
+.error_template h1 {
+    font-size: 100px;
+    margin: 0;
+}
+
+.error_template h3 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.error_template p {
+    margin-top: 10px;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.error_template p a {
+    font-size: 14px;
+    background: #000;
+    color: #fff;
+    padding: 10px 25px;
+    display: inline-block;
+    margin-top: 40px;
+    text-decoration: none!important;
+}
+
+
+/* when page is empty  */
+
+.singular_page:empty {
+    position: relative;
+    padding: 50px 50px;
+    background: #0000001f;
+    width: 900px;
+    max-width: 95%;
+    margin: 250px auto 90px;
+    color: #3a5766;
+    font-size: 50px;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 35px rgb(0 0 0 / 19%);
+}
+
+.singular_page:empty::before {
+    position: absolute;
+    content: "Page is not Created Yet";
+    content: attr(data-pageName) " page is not created yet";
+    width: 540px;
+    max-width: 100%;
+    text-align: center;
+    line-height: 1;
+}        
+@media screen and (max-width:992px) {
+    .singular_page:empty {
+        font-size: 42px;
+        margin: 220px auto 80px;
+    }
+    .singular_page:empty::before {
+        width: 480px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .singular_page:empty {
+        font-size: 36px;
+        margin: 150px auto 70px;
+    }
+    .singular_page:empty::before {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .singular_page:empty {
+        font-size: 32px;
+        margin: 120px auto 60px;
+    }
+    .singular_page:empty::before {
+        width: 320px;
+    }
+}
+
+/* Blog Posts Default Design */
+
+:root {
+    --main-color: #7f54b3;
+    --main-color-opacaity: #7f54b354;
+    --dim-gray: #6d6d6d;
+    --white-color: #fff;
+    --black-color: #000;
+    --gold-color: #ffa534;
+}
+
+img {
+    max-width: 100%;
+}
+
+#single-post .jn-featured-image img {
+    width: 100%;
+}
+
+#single-post #post-1 {
+    padding: 40px;
+    background-color: var(--white-color);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+#single-post .jn-post-info ul {
+    padding: 0px;
+    display: flex;
+    background-color: var(--main-color);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 15px 0px;
+    margin-bottom: 45px;
+}
+
+
+#single-post .jn-post-info ul li {
+    list-style: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-right: 1px solid var(--white-color);
+    border-right-style: dotted;
+    padding: 0px 17px;
+    color: var(--white-color);
+}
+
+#single-post .jn-post-info ul li:last-child {
+    border: none;
+}
+
+#single-post .jn-post-heading {
+    font-size: 35px;
+    line-height: 1.2;
+    color: var(--black-color);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+#single-post .jn-desc_wrap p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--black-color);
+    font-weight: 400;
+}
+
+#single-post .jn-desc_wrap h4 {
+    font-size: 30px;
+    color: var(--black-color);
+    line-height: 1.2;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    margin-top: 50px;
+}
+
+#single-post .jn-desc_wrap h4::after {
+    content: "";
+    position: absolute;
+    width: 110px;
+    border-bottom: 2px solid var(--main-color);
+    border-bottom-style: dotted;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    left: 0px;
+    max-width: 100%;
+}
+
+
+#single-post .jn-desc_wrap ol li,
+#single-post .jn-desc_wrap ul li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: var(--main-color);
+}
+
+#single-post .jn-desc_wrap ol li p {
+    color: var(--main-color);
+}
+
+#single-post hr {
+    margin: 50px 0px;
+}
+
+
+#single-post h3 {
+    font-size: 22px;
+    color: var(--black-color);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+#single-post .alignnone {
+    margin: 25px 0px;
+    box-shadow: #959da533 0px 8px 24px;
+}
+
+#single-post blockquote {
+    padding: 50px;
+    background-color: var(--main-color-opacaity);
+    margin: 0px;
+    box-shadow: #63636333 0px 2px 8px 0px;
+    border-radius: 12px;
+}
+
+
+@media (max-width: 767.98px) {
+    #single-post .jn-post-heading {
+        font-size: 25px;
+    }
+
+    #single-post .jn-desc_wrap h4 {
+        font-size: 22px;
+        margin-top: 30px;
+    }
+
+    #single-post blockquote {
+        padding: 35px;
+    }
+    #single-post .jn-post-info ul li{
+        font-size: 16px;
+    }
+    #single-post h3{
+        font-size: 18px;
+    }
+}

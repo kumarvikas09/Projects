@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="switch_tab">
+            <h1 class="text-center">Switch tabs</h1>
+            <div class="toggle-container">
+              <div class="toggle-switch">
+                <button class="toggle-btn active" data-tab="read-dead">Red Dead</button>
+                <button class="toggle-btn" data-tab="witcher">Witcher</button>
+                <button class="toggle-btn" data-tab="resident">Resident Evil</button>
+                <button class="toggle-btn" data-tab="lost">Lost Legacy</button>
+                <button class="toggle-btn" data-tab="god">God of War</button>
+                <div class="toggle-slider"></div>
+              </div>
+            </div>
+            
+            <div class="tab-content active" id="read-dead">
+              <h2>Red Dead Redemption</h2>
+              <p>Red Dead Redemption is an action-adventure game developed by Rockstar Games.</p>
+            </div>
+            
+            <div class="tab-content" id="witcher">
+              <h2>
+                Witcher 3: Wild Hunt  
+              </h2>
+              <p>Witcher 3: Wild Hunt is an action-adventure game developed by CD Projekt RED.</p>
+            </div>
+            
+            <div class="tab-content" id="resident">
+              <h2>Resident Evil</h2>
+              <p>Resident Evil is a survival horror game series developed by Capcom.</p>
+            </div>
+            
+            <div class="tab-content" id="lost">
+              <h2>Lost Legacy</h2>
+              <p>Lost Legacy is an action-adventure game developed by Ubisoft.</p>
+            </div>
+            
+            <div class="tab-content" id="god">
+              <h2>God of War</h2>
+              <p>God of War is an action-adventure game developed by Santa Monica Studio.</p>
+            </div>
+        </div>
+      </div>
+      
+    </main>
+    
+    <script>
+      const toggleBtns = document.querySelectorAll('.toggle-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+      const toggleSwitch = document.querySelector('.toggle-switch');
+      const toggleSlider = document.querySelector('.toggle-slider');
+      
+      function updateSlider(activeBtn) {
+        // Get the width of the active button
+        const activeBtnWidth = activeBtn.offsetWidth;
+        
+        // Calculate the left position by summing widths of all buttons before the active one
+        let leftPosition = 4; 
+        const index = Array.from(toggleBtns).indexOf(activeBtn);
+        
+        for (let i = 0; i < index; i++) {
+          leftPosition += toggleBtns[i].offsetWidth;
+        }
+        
+        toggleSlider.style.setProperty('--slider-width', `${activeBtnWidth}px`);
+        toggleSlider.style.setProperty('--slider-left', `${leftPosition}px`);
+      }
+      
+      toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          toggleBtns.forEach(b => b.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+          
+          btn.classList.add('active');
+          updateSlider(btn);
+          
+          const tabId = btn.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+      
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          updateSlider(toggleBtns[0]);
+        }, 100);
+      });
+      
+      // Update slider on window resize to adjust for responsive changes
+      window.addEventListener('resize', () => {
+        const activeBtn = document.querySelector('.toggle-btn.active');
+        if (activeBtn) {
+          updateSlider(activeBtn);
+        }
+      });
+    </script>
+  </body>
+</html>

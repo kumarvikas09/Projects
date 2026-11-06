@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Hire & Podcast Production</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5deb3 0%, #fff8f0 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            background: linear-gradient(90deg, #A16C44 0%, #f5deb3 50%, #A16C44 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 60px;
+            font-size: 3.5em;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-top: 60px;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #A16C44 0%, #f5deb3 50%, #A16C44 100%);
+            border-radius: 2px;
+        }
+        
+        .pricing-section {
+            margin-bottom: 70px;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255,255,255,0.8);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #A16C44 0%, #f5deb3 50%, #A16C44 100%);
+            transition: left 0.4s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(161, 108, 68, 0.15);
+        }
+        
+        .pricing-card:hover::before {
+            left: 0;
+        }
+        
+        .pricing-card h3 {
+            color: #2c3e50;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .price {
+            font-size: 2.8em;
+            font-weight: 700;
+            background: linear-gradient(90deg, #A16C44 0%, #f5deb3 50%, #A16C44 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 20px 0;
+        }
+        
+        .price-suffix {
+            font-size: 0.5em;
+            color: #95a5a6;
+            font-weight: 500;
+        }
+        
+        .pricing-card p {
+            color: #7f8c8d;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        
+        .equipment-section {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+        
+        .equipment-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .equipment-item {
+            background: white;
+            padding: 0;
+            border-radius: 12px;
+            font-weight: 500;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(161, 108, 68, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .equipment-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .equipment-item-name {
+            padding: 20px;
+            border-left: 4px solid #A16C44;
+            background: linear-gradient(135deg, #f5deb3 0%, #ffe4c4 100%);
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+        }
+        
+        .equipment-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(161, 108, 68, 0.2);
+        }
+        
+        .equipment-item:hover .equipment-item-name {
+            background: linear-gradient(90deg, #A16C44 0%, #f5deb3 50%, #A16C44 100%);
+            color: white;
+        }
+        
+        .equipment-item::before {
+            content: "⚡ ";
+            margin-right: 10px;
+            font-size: 1.1em;
+        }
+        
+        .features-section {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+        
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .feature-item {
+            background: linear-gradient(90deg, #A16C44 0%, #f5deb3 50%, #A16C44 100%);
+            color: #2c3e50;
+            padding: 35px 25px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.05em;
+            box-shadow: 0 10px 30px rgba(161, 108, 68, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.6s ease;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(161, 108, 68, 0.3);
+        }
+        
+        .feature-item:hover::before {
+            top: -25%;
+            right: -25%;
+        }
+        
+        .feature-item::after {
+            content: '✓';
+            display: block;
+            font-size: 1.8em;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Studio Hire & Podcast Production</h1>
+        
+        <!-- Podcast Hire Section -->
+        <div class="pricing-section">
+            <h2>Podcast Hire Pricing</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Audio Only</h3>
+                    <div class="price">£40<span class="price-suffix">/hr</span></div>
+                    <p>Professional audio recording with top-tier microphones</p>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>1 Camera Setup</h3>
+                    <div class="price">£60<span class="price-suffix">/hr</span></div>
+                    <p>High-quality single camera video with professional audio</p>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>2 Camera Setup</h3>
+                    <div class="price">£100<span class="price-suffix">/hr</span></div>
+                    <p>Multi-angle recording with dual camera setup</p>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Multicam Setup</h3>
+                    <div class="price">£130<span class="price-suffix">up to 3hrs</span></div>
+                    <p>Professional 3-camera setup for premium production</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Studio Hire Section -->
+        <div class="pricing-section">
+            <h2>Studio Hire Pricing</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>1 Hour</h3>
+                    <div class="price">£35<span class="price-suffix">/hr</span></div>
+                    <p>Perfect for shorter projects and quick recordings</p>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>2 Hours</h3>
+                    <div class="price">£60<span class="price-suffix">2hrs</span></div>
+                    <p>Ideal for standard podcast episodes and sessions</p>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>4 Hours</h3>
+                    <div class="price">£120<span class="price-suffix">4hrs</span></div>
+                    <p>Full production day for extended projects</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Equipment Section -->
+        <div class="equipment-section">
+            <h2>Studio Equipment</h2>
+            <div class="equipment-list">
+                <div class="equipment-item">
+                    <img src="./BAY05103.jpg" alt="Shure Microphones">
+                    <div class="equipment-item-name">⚡ 2 Shure Microphones</div>
+                </div>
+                <div class="equipment-item">
+                    <img src="./FDUCE_Microphones.jpg" alt="FDUCE Microphones">
+                    <div class="equipment-item-name">⚡ 2 FDUCE Microphones</div>
+                </div>
+                <div class="equipment-item">
+                    <img src="./Sony_FX3_Camera.jpg" alt="Sony FX3 Camera">
+                    <div class="equipment-item-name">⚡ Sony FX3 Camera</div>
+                </div>
+                <div class="equipment-item">
+                    <img src="./Sony_A7RV_Camera.jpg" alt="Sony A7RV Camera">
+                    <div class="equipment-item-name">⚡ Sony A7RV Camera</div>
+                </div>
+                <div class="equipment-item">
+                    <img src="./Sony_FX30_Camera.jpg" alt="Sony FX30 Camera">
+                    <div class="equipment-item-name">⚡ Sony FX30 Camera</div>
+                </div>
+                <div class="equipment-item">
+                    <img src="./RODECaster_Pro_II.jpg" alt="RODECaster Pro II">
+                    <div class="equipment-item-name">⚡ RODECaster Pro II</div>
+                </div>
+                <div class="equipment-item">
+                    <img src="./ATEM_Mini_Pro.jpg" alt="ATEM Mini Pro">
+                    <div class="equipment-item-name">⚡ ATEM Mini Pro</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features Section -->
+        <div class="features-section">
+            <h2>Why Choose Our Studio?</h2>
+            <div class="features-list">
+                <div class="feature-item">All cameras and audio recorded as separate channels</div>
+                <div class="feature-item">Recording to USB-C Flash Drive</div>
+                <div class="feature-item">Professional multi-camera setup</div>
+                <div class="feature-item">Easy-to-use recording environment</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

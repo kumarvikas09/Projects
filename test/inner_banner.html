@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filter UI</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+.filter-box {
+  width: 300px;
+  background: #fff;
+  padding: 20px;
+}
+
+.filter-box .filter-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.filter-box details {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.filter-box summary {
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-box summary::-webkit-details-marker {
+  display: none;
+}
+
+.filter-box summary::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 16 16'%3e%3cpath d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.filter-box details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.filter-box .filter-list {
+  margin-top: 15px;
+}
+
+.filter-box .filter-list label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.filter-box .filter-list input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #999;
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.filter-box .filter-list input[type="checkbox"]:checked {
+  background: #6F1445;
+  border-color: #6F1445;
+}
+
+.filter-box .filter-list input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  left: 3px;
+}
+
+.filter-box .clear-btn {
+  display: none;
+  margin-top: 10px;
+  font-size: 13px;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: end;
+}
+</style>
+
+</head>
+<body>
+
+<div class="filter-box">
+  <div class="filter-title">Filter by</div>
+
+  <!-- filter lists -->
+  <details class="filter-group" open>
+    <summary>WINE TYPE</summary>
+    <div class="filter-list">
+      <label><input type="checkbox" checked> Red (270)</label>
+      <label><input type="checkbox"> White (169)</label>
+      <label><input type="checkbox"> Sparkling (44)</label>
+      <label><input type="checkbox"> Rosé (43)</label>
+      <label><input type="checkbox"> Fortified (3)</label>
+      <label><input type="checkbox"> Dessert (5)</label>
+
+      <button class="clear-btn">Clear all</button>
+    </div>
+  </details>
+
+  <details class="filter-group">
+    <summary>WINE STYLE</summary>
+    <div class="filter-list">
+      <label><input type="checkbox"> Firm Structured Reds (99)</label>
+      <label><input type="checkbox"> Ripe Smooth Reds (90)</label>
+      <label><input type="checkbox"> Light Juicy Reds (31)</label>
+
+      <button class="clear-btn">Clear all</button>
+    </div>
+  </details>
+
+  <!-- make this details tag repeat for each filter group you have, just change the summary text and the checkbox labels as needed -->
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function () {
+
+  $(".filter-group").each(function () {
+
+    var group = $(this);
+    var checkboxes = group.find("input[type='checkbox']");
+    var clearBtn = group.find(".clear-btn");
+
+    function toggleClearBtn() {
+      var anyChecked = checkboxes.is(":checked");
+      clearBtn.toggle(anyChecked);
+    }
+
+    // Initial check
+    toggleClearBtn();
+
+    // On checkbox change
+    checkboxes.on("change", function () {
+      toggleClearBtn();
+    });
+
+    // On clear button click
+    clearBtn.on("click", function () {
+      checkboxes.prop("checked", false);
+      toggleClearBtn();
+    });
+
+  });
+
+});
+</script>
+</body>
+</html>

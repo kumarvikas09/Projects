@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tartan & Thistle - Official Website">
+    <title>Tartan &amp; Thistle</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">
+    
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/main-style.css">
+</head>
+<body>
+
+    <!-- Site Header -->
+    <header class="site_header">
+        <div class="container">
+            <div class="site_header__wrapper">
+                <!-- Brand Logo -->
+                <a href="index.html" class="site_header__logo" aria-label="Tartan & Thistle Spa & Boutique Logo">
+                    <img src="assets/images/nav-logo.webp" alt="Tartan & Thistle Spa & Boutique Logo" class="site_header__logo_img">
+                </a>
+
+                <!-- Navigation Menu -->
+                <nav class="site_header__nav" id="site_nav_menu">
+                    <button class="site_header__nav_close" id="nav_close_btn" aria-label="Close Navigation">&times;</button>
+                    <ul class="site_header__nav_list">
+                        <li class="site_header__nav_item"><a href="index.html" class="site_header__nav_link site_header__nav_link--active">Home</a></li>
+                        <li class="site_header__nav_item"><a href="#about" class="site_header__nav_link">About</a></li>
+                        <li class="site_header__nav_item"><a href="#grooming" class="site_header__nav_link">Grooming</a></li>
+                        <li class="site_header__nav_item"><a href="#shop" class="site_header__nav_link">Shop</a></li>
+                        <li class="site_header__nav_item"><a href="#gallery" class="site_header__nav_link">Gallery</a></li>
+                        <li class="site_header__nav_item"><a href="#testimonials" class="site_header__nav_link">Testimonials</a></li>
+                        <li class="site_header__nav_item"><a href="#faqs" class="site_header__nav_link">FAQs</a></li>
+                        <li class="site_header__nav_item"><a href="#contact" class="site_header__nav_link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Action Icons & Mobile Toggle -->
+                <div class="site_header__actions">
+                    <a href="#" class="site_header__action_link" aria-label="Shopping Bag"><img src="assets/Icons/Shopping Bag Icon.svg" alt="Shopping Bag" class="site_header__icon_img"></a>
+                    <a href="#" class="site_header__action_link" aria-label="Search"><img src="assets/Icons/Search Icon.svg" alt="Search" class="site_header__icon_img"></a>
+                    <button class="site_header__hamburger" id="nav_toggle_btn" aria-label="Toggle Navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Drawer Backdrop -->
+        <div class="site_header__drawer_backdrop" id="nav_backdrop"></div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <main id="main_content">
+        <section class="hero_section">
+            <div class="hero_section__overlay"></div>
+            <div class="container hero_section__container">
+                <div class="row">
+                    <div class="col-12 col-lg-11 col-xl-10">
+                        <div class="hero_section__content">
+                            <h1 class="hero_section__title">Expert care, heartfelt service,<br><strong> a higher standard of grooming.</strong></h1>
+                            <a href="#book" class="hero_section__btn">Book Your Appointment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards & Certifications Section -->
+        <section class="awards_section">
+            <div class="container">
+                <div class="awards_section__wrapper">
+                    <div class="row align-items-center justify-content-center g-4 g-lg-5">
+                        <div class="col-6 col-md-3 text-center">
+                            <div class="awards_section__item">
+                                <img src="assets/images/awards-crest.webp" alt="Pet Grooming Crest Badge" class="awards_section__img" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 text-center">
+                            <div class="awards_section__item">
+                                <img src="assets/images/awards-pet-skin-academy.webp" alt="Pet Skin Academy Certified Pet Aesthetician" class="awards_section__img" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 text-center">
+                            <div class="awards_section__item">
+                                <img src="assets/images/awards-modern-groomer.webp" alt="The Modern Pet Groomers Association New Zealand Member" class="awards_section__img" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 text-center">
+                            <div class="awards_section__item">
+                                <img src="assets/images/awards-fearfree.webp" alt="Fear Free Certified Professional" class="awards_section__img" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / Welcome Section -->
+        <section class="about_section" id="about">
+            <div class="container">
+                <div class="row align-items-stretch">
+                    <!-- Left Images Collage Column -->
+                    <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+                        <div class="about_section__images">
+                            <div class="about_section__img_card about_section__img_card--1">
+                                <img src="assets/images/0D0DFBB2-4E80-479C-AFC2-E439A046B18C.webp" alt="Rebekah - Tartan & Thistle Founder and Groomer" class="about_section__img" loading="lazy" decoding="async">
+                            </div>
+                            <div class="about_section__img_card about_section__img_card--2">
+                                <img src="assets/images/Moxie After.webp" alt="Groomed Dog on Salon Table" class="about_section__img" loading="lazy" decoding="async">
+                            </div>
+                            <div class="about_section__img_card about_section__img_card--3">
+                                <img src="assets/images/CC - White Wolf.webp" alt="Happy White Dog in Leather Armchair" class="about_section__img" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Text Content Column -->
+                    <div class="col-12 col-lg-6">
+                        <div class="about_section__content">
+                            <h2 class="about_section__title">
+                                <span class="about_section__title_sub">Welcome to</span>
+                                <span class="about_section__title_main">Tartan &amp; Thistle</span>
+                            </h2>
+
+                            <div class="about_section__text">
+                                <p>Tartan &amp; Thistle Spa &amp; Boutique was born from a long-held vision, a dream nurtured over the past nine years and brought to life through passion, dedication and experience. During this time, I successfully founded and operated a reputable Dog Daycare and Grooming Salon, gaining invaluable insight into canine care and client service.</p>
+                                
+                                <p>With that foundation, I turned my focus toward realising the unique concept of Tartan &amp; Thistle Spa &amp; Boutique, while also advancing my professional journey as both a Pet Aesthetician and continuing working towards my Master Groomer Certification. At Tartan &amp; Thistle Spa &amp; Boutique, my mission extends beyond exceptional grooming.</p>
+                                
+                                <p>I am deeply committed to positive grooming experiences for both dogs and owners; the art and science of canine skincare, offering specialised aesthetician services for dogs experiencing skin or coat challenges and for those whose owners wish to preserve and enhance their pet’s natural health and well-being.</p>
+                                
+                                <p>I look forward to meeting and getting to know you and your dogs!</p>
+                            </div>
+
+                            <div class="about_section__signature">
+                                Rebekah
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clan Canine Benefits Section -->
+        <section class="benefits_section">
+            <div class="benefits_section__overlay"></div>
+            <div class="container benefits_section__container">
+                <!-- Section Header -->
+                <div class="benefits_section__hdng text-center">
+                    <h2 class="benefits_section__title">Clan Canine</h2>
+                    <span class="benefits_section__subtitle">B E N E F I T S</span>
+                </div>
+
+                <!-- Benefits Items List -->
+                <div class="benefits_section__list">
+                    <div class="benefits_section__item">
+                        <div class="benefits_section__icon_box">
+                            <img src="assets/Icons/Members Only Pricing Icon.svg" alt="Members only pricing" class="benefits_section__icon_img" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="benefits_section__item_title">Members<br>only pricing</h3>
+                    </div>
+                    <div class="benefits_section__item">
+                        <div class="benefits_section__icon_box">
+                            <img src="assets/Icons/Priority Booking Icon.svg" alt="Priority booking" class="benefits_section__icon_img" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="benefits_section__item_title">Priority<br>booking</h3>
+                    </div>
+                    <div class="benefits_section__item">
+                        <div class="benefits_section__icon_box">
+                            <img src="assets/Icons/Welcome Bag Icon.svg" alt="Welcome gift bag" class="benefits_section__icon_img" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="benefits_section__item_title">Welcome<br>gift bag</h3>
+                    </div>
+                    <div class="benefits_section__item">
+                        <div class="benefits_section__icon_box">
+                            <img src="assets/Icons/Birthday Icon.svg" alt="Birthday treat" class="benefits_section__icon_img" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="benefits_section__item_title">Birthday<br>treat</h3>
+                    </div>
+                    <div class="benefits_section__item">
+                        <div class="benefits_section__icon_box">
+                            <img src="assets/Icons/Cameron Icon.svg" alt="Free portraits" class="benefits_section__icon_img" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="benefits_section__item_title">Free<br>portraits</h3>
+                    </div>
+                    <div class="benefits_section__item">
+                        <div class="benefits_section__icon_box">
+                            <img src="assets/Icons/Sleep Icon.svg" alt="Stay & Snooze perks" class="benefits_section__icon_img" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="benefits_section__item_title">Stay &amp; Snooze<br>perks</h3>
+                    </div>
+                    <div class="benefits_section__item">
+                        <div class="benefits_section__icon_box">
+                            <img src="assets/Icons/Friends Icon.svg" alt="Refer a friend rewards" class="benefits_section__icon_img" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="benefits_section__item_title">Refer a<br>friend rewards</h3>
+                    </div>
+                    <div class="benefits_section__item">
+                        <div class="benefits_section__icon_box">
+                            <img src="assets/Icons/Upgrade Icon.svg" alt="Treatment upgrade" class="benefits_section__icon_img" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="benefits_section__item_title">Treatment<br>upgrade</h3>
+                    </div>
+                    <div class="benefits_section__item">
+                        <div class="benefits_section__icon_box">
+                            <img src="assets/Icons/Gift Icon.svg" alt="Christmas gift" class="benefits_section__icon_img" loading="lazy" decoding="async">
+                        </div>
+                        <h3 class="benefits_section__item_title">Christmas<br>gift</h3>
+                    </div>
+                </div>
+
+                <!-- Action Button -->
+                <div class="benefits_section__action text-center">
+                    <a href="#vip" class="benefits_section__btn">Become a VIP</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatment Menu Section -->
+        <section class="treatment_section" id="grooming">
+            <div class="treatment_section__overlay"></div>
+            <div class="container treatment_section__container">
+                <!-- Section Header -->
+                <div class="treatment_section__hdng text-center">
+                    <h2 class="treatment_section__title">Treatment Menu</h2>
+                </div>
+
+                <!-- Treatment Cards Grid -->
+                <div class="row g-4 mb-5">
+                    <!-- Card 1 -->
+                    <div class="col-12 col-lg-6">
+                        <div class="treatment_section__card">
+                            <h3 class="treatment_section__card_title">Full Tartan Spa</h3>
+                            <p class="treatment_section__card_incl">incl. wash (twice), nagayu treatment, conditioning treatment, blow dry, brush, haircut, ear clean, eye clean, nail trim &amp; file, sanitary trim, paw pad clean, paw balm.<br><span class="treatment_section__card_nb">NB: de-shed treatment available for double coats.</span></p>
+                            <p class="treatment_section__card_ideal">Ideal for: those looking for the full grooming experience with everything included.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-12 col-lg-6">
+                        <div class="treatment_section__card">
+                            <h3 class="treatment_section__card_title">Little Highlander</h3>
+                            <p class="treatment_section__card_incl">incl. wash (twice), nagayu treatment, conditioning treatment, blow dry, brush, haircut (optional) ear clean, eye trim &amp; clean, nail trim &amp; file, sanitary trim, paw pad clean, paw balm.</p>
+                            <p class="treatment_section__card_ideal">Ideal for: those looking to positively introduce their puppies under 6 months of age to grooming.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-12 col-lg-6">
+                        <div class="treatment_section__card">
+                            <h3 class="treatment_section__card_title">Elder Glen</h3>
+                            <p class="treatment_section__card_incl">incl. wash (twice), nagayu treatment, conditioning treatment, blow dry, brush, haircut (optional) ear clean, eye trim &amp; clean, nail trim &amp; file, sanitary trim, paw pad clean, paw balm.</p>
+                            <p class="treatment_section__card_ideal">Ideal for: those looking to keep their senior dogs (10 years +) maintained and comfortable.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="col-12 col-lg-6">
+                        <div class="treatment_section__card">
+                            <h3 class="treatment_section__card_title">Highland Enhancements</h3>
+                            <p class="treatment_section__card_incl">Choose from our selection of add-on services to customise and elevate your dog's experience.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Button -->
+                <div class="treatment_section__action text-center">
+                    <a href="#book" class="treatment_section__btn">Book Your Appointment</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transformations Section -->
+        <section class="transformations_section" id="gallery">
+            <div class="transformations_section__overlay"></div>
+            <div class="container transformations_section__container">
+                <!-- Section Header -->
+                <div class="transformations_section__hdng text-center">
+                    <h2 class="transformations_section__title">Our Transformations</h2>
+                </div>
+
+                <!-- 3 Before/After Sliders Row -->
+                <div class="row justify-content-center g-4 mb-5">
+                    <!-- Slider 1: Connie -->
+                    <div class="col-12 col-md-4">
+                        <div class="transformations_section__slider" data-slider>
+                            <div class="transformations_section__img_wrapper transformations_section__img_wrapper--before">
+                                <img src="assets/images/Connie Before.webp" alt="Connie Before Grooming" class="transformations_section__img" loading="lazy" decoding="async">
+                            </div>
+                            <div class="transformations_section__img_wrapper transformations_section__img_wrapper--after" data-after>
+                                <img src="assets/images/Connie after.webp" alt="Connie After Grooming" class="transformations_section__img" loading="lazy" decoding="async">
+                            </div>
+                            <div class="transformations_section__divider" data-divider>
+                                <div class="transformations_section__handle">
+                                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 1L1 5L5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                            </div>
+                            <input type="range" min="0" max="100" value="50" class="transformations_section__range" aria-label="Connie Before After Slider" data-range>
+                        </div>
+                    </div>
+
+                    <!-- Slider 2: Moxie -->
+                    <div class="col-12 col-md-4">
+                        <div class="transformations_section__slider" data-slider>
+                            <div class="transformations_section__img_wrapper transformations_section__img_wrapper--before">
+                                <img src="assets/images/Moxie Before.webp" alt="Moxie Before Grooming" class="transformations_section__img" loading="lazy" decoding="async">
+                            </div>
+                            <div class="transformations_section__img_wrapper transformations_section__img_wrapper--after" data-after>
+                                <img src="assets/images/Moxie After.webp" alt="Moxie After Grooming" class="transformations_section__img" loading="lazy" decoding="async">
+                            </div>
+                            <div class="transformations_section__divider" data-divider>
+                                <div class="transformations_section__handle">
+                                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 1L1 5L5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                            </div>
+                            <input type="range" min="0" max="100" value="50" class="transformations_section__range" aria-label="Moxie Before After Slider" data-range>
+                        </div>
+                    </div>
+
+                    <!-- Slider 3: Bear -->
+                    <div class="col-12 col-md-4">
+                        <div class="transformations_section__slider" data-slider>
+                            <div class="transformations_section__img_wrapper transformations_section__img_wrapper--before">
+                                <img src="assets/images/Bear Before.webp" alt="Bear Before Grooming" class="transformations_section__img" loading="lazy" decoding="async">
+                            </div>
+                            <div class="transformations_section__img_wrapper transformations_section__img_wrapper--after" data-after>
+                                <img src="assets/images/Bear After.webp" alt="Bear After Grooming" class="transformations_section__img" loading="lazy" decoding="async">
+                            </div>
+                            <div class="transformations_section__divider" data-divider>
+                                <div class="transformations_section__handle">
+                                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 1L1 5L5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L1 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                            </div>
+                            <input type="range" min="0" max="100" value="50" class="transformations_section__range" aria-label="Bear Before After Slider" data-range>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="transformations_section__actions text-center">
+                    <a href="#gallery" class="transformations_section__btn">View our Gallery</a>
+                    <a href="#book" class="transformations_section__btn">Book your Appointment</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop Our Collections Section -->
+        <section class="shop_section" id="shop">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="shop_section__hdng text-center">
+                    <h2 class="shop_section__title">Shop our Collections</h2>
+                </div>
+
+                <!-- 3 Collection Cards Row -->
+                <div class="row justify-content-center g-4 g-lg-5 mb-5 pt-4 pt-lg-5">
+                    <!-- Card 1: Grooming -->
+                    <div class="col-12 col-md-4">
+                        <a href="#grooming-shop" class="shop_section__card">
+                            <div class="shop_section__card_img_wrap">
+                                <img src="assets/images/Smith and Burton.webp" alt="Grooming Products" class="shop_section__card_img" loading="lazy" decoding="async">
+                            </div>
+                            <h3 class="shop_section__card_title">Grooming</h3>
+                        </a>
+                    </div>
+
+                    <!-- Card 2: Dog Food -->
+                    <div class="col-12 col-md-4">
+                        <a href="#food-shop" class="shop_section__card">
+                            <div class="shop_section__card_img_wrap">
+                                <img src="assets/images/Black Hawke.jpg" alt="Dog Food Collection" class="shop_section__card_img" loading="lazy" decoding="async">
+                            </div>
+                            <h3 class="shop_section__card_title">Dog Food</h3>
+                        </a>
+                    </div>
+
+                    <!-- Card 3: Accessories -->
+                    <div class="col-12 col-md-4">
+                        <a href="#accessories-shop" class="shop_section__card">
+                            <div class="shop_section__card_img_wrap">
+                                <img src="assets/images/Scottie Harness Mock.webp" alt="Dog Accessories and Harnesses" class="shop_section__card_img" loading="lazy" decoding="async">
+                            </div>
+                            <h3 class="shop_section__card_title">Accessories</h3>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Action Button -->
+                <div class="shop_section__action text-center">
+                    <a href="#shop" class="shop_section__btn">View All</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Makes Us Different Section -->
+        <section class="difference_section">
+            <div class="difference_section__overlay"></div>
+            <div class="container difference_section__container">
+                <!-- Section Header -->
+                <div class="difference_section__hdng text-center">
+                    <h2 class="difference_section__title">What makes us different?</h2>
+                </div>
+
+                <!-- Difference Items Grid -->
+                <div class="row justify-content-center g-4 g-lg-5">
+                    <!-- Column 1: 4 items -->
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="difference_section__list">
+                            <div class="difference_section__item">
+                                <div class="difference_section__icon_box">
+                                    <img src="assets/Icons/Dog Icon.svg" alt="Tailored for every dog" class="difference_section__icon_img" loading="lazy" decoding="async">
+                                </div>
+                                <h3 class="difference_section__item_title">Tailored for every dog</h3>
+                            </div>
+                            <div class="difference_section__item">
+                                <div class="difference_section__icon_box">
+                                    <img src="assets/Icons/Star Icon.svg" alt="Quality over quantity" class="difference_section__icon_img" loading="lazy" decoding="async">
+                                </div>
+                                <h3 class="difference_section__item_title">Quality over quantity</h3>
+                            </div>
+                            <div class="difference_section__item">
+                                <div class="difference_section__icon_box">
+                                    <img src="assets/Icons/Heart Icon.svg" alt="Fear-free certified" class="difference_section__icon_img" loading="lazy" decoding="async">
+                                </div>
+                                <h3 class="difference_section__item_title">Fear-free certified</h3>
+                            </div>
+                            <div class="difference_section__item">
+                                <div class="difference_section__icon_box">
+                                    <img src="assets/Icons/Fur Icon.svg" alt="Skin & Coat Focused" class="difference_section__icon_img" loading="lazy" decoding="async">
+                                </div>
+                                <h3 class="difference_section__item_title">Skin &amp; Coat Focused</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: 3 items -->
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="difference_section__list">
+                            <div class="difference_section__item">
+                                <div class="difference_section__icon_box">
+                                    <img src="assets/Icons/Search Icon.svg" alt="Attention to detail" class="difference_section__icon_img" loading="lazy" decoding="async">
+                                </div>
+                                <h3 class="difference_section__item_title">Attention to detail</h3>
+                            </div>
+                            <div class="difference_section__item">
+                                <div class="difference_section__icon_box">
+                                    <img src="assets/Icons/Calm Icon.svg" alt="Calm, considered environment" class="difference_section__icon_img" loading="lazy" decoding="async">
+                                </div>
+                                <h3 class="difference_section__item_title">Calm, considered environment</h3>
+                            </div>
+                            <div class="difference_section__item">
+                                <div class="difference_section__icon_box">
+                                    <img src="assets/Icons/Premium Icon.svg" alt="Premium treatments included" class="difference_section__icon_img" loading="lazy" decoding="async">
+                                </div>
+                                <h3 class="difference_section__item_title">Premium treatments included</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site_footer">
+        <div class="container">
+            <div class="site_footer__wrapper">
+                <div class="row align-items-center g-4">
+                    <!-- Left: Brand Logo -->
+                    <div class="col-12 col-md-3 text-center text-md-start">
+                        <a href="index.html" class="site_footer__logo" aria-label="Tartan & Thistle Spa & Boutique Logo">
+                            <img src="assets/images/footer-logo.webp" alt="Tartan & Thistle Spa & Boutique Logo" class="site_footer__logo_img" loading="lazy" decoding="async">
+                        </a>
+                    </div>
+
+                    <!-- Center: Decorative Knot Divider & Contact Details -->
+                    <div class="col-12 col-md-6 text-center">
+                        <div class="site_footer__divider">
+                            <span class="site_footer__divider_line"></span>
+                            <div class="site_footer__divider_icon">
+                                <img src="assets/images/top-footer-bar.png" alt="Decorative Knot Divider" class="site_footer__divider_img" loading="lazy" decoding="async">
+                            </div>
+                            <span class="site_footer__divider_line"></span>
+                        </div>
+                        <div class="site_footer__contact">
+                            <a href="tel:0278055626" class="site_footer__contact_link">027 805 5626</a>
+                            <a href="mailto:bek@tartanandthistle.co.nz" class="site_footer__contact_link">bek@tartanandthistle.co.nz</a>
+                            <p class="site_footer__contact_address">3 Bank Street, Whangārei</p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Social Links -->
+                    <div class="col-12 col-md-3">
+                        <div class="site_footer__socials justify-content-center justify-content-md-end">
+                            <a href="#" class="site_footer__social_link" aria-label="Facebook">
+                                <svg width="14" height="24" viewBox="0 0 14 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.5 0H10C6.96 0 5 1.96 5 5v3.5H1.5C1.22 8.5 1 8.72 1 9v4c0 .28.22.5.5.5H5V23c0 .28.22.5.5.5h4c.28 0 .5-.22.5-.5V13.5h3.55c.26 0 .48-.2.5-.46l.35-4c.01-.14-.04-.28-.13-.38s-.23-.16-.37-.16H10V5.5c0-.83.67-1.5 1.5-1.5h2c.28 0 .5-.22.5-.5V.5c0-.28-.22-.5-.5-.5z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="site_footer__social_link" aria-label="Instagram">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery JS -->
+    <script src="assets/js/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Functions JS -->
+    <script src="assets/js/function.js"></script>
+</body>
+</html>

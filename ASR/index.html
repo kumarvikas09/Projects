@@ -1,0 +1,1164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/css/owl/owl.carousel.min.css">
+    <link rel="stylesheet" href="./assets/css/main-style.css" />
+  </head>
+  <body>
+    
+    <main>
+      <!-- Site Header -->
+      <header class="site_header">
+        <div class="container">
+          <div class="site_header__inner">
+            <!-- Logo -->
+            <a href="index.html" class="site_header__logo" aria-label="ASR Logistics Home">
+              <img src="./assets/images/site-logo.png" alt="ASR Logistics" class="site_header__logo_img" />
+            </a>
+
+            <!-- Navigation -->
+            <nav class="site_header__nav" id="siteHeaderNav">
+              <ul class="site_header__nav_list">
+                <li class="site_header__nav_item">
+                  <a href="#home" class="site_header__nav_link site_header__nav_link--active">Home</a>
+                </li>
+                <li class="site_header__nav_item">
+                  <a href="services.html" class="site_header__nav_link">Services</a>
+                </li>
+                <li class="site_header__nav_item">
+                  <a href="#why-asr" class="site_header__nav_link">Why ASR</a>
+                </li>
+                <li class="site_header__nav_item">
+                  <a href="about.html" class="site_header__nav_link">About</a>
+                </li>
+                <li class="site_header__nav_item">
+                  <a href="contact.html" class="site_header__nav_link">Contact</a>
+                </li>
+              </ul>
+            </nav>
+
+            <!-- Inquiries Phone (Header: Inquiries only, tap-to-call) -->
+            <a href="tel:+16394713662" class="site_header__phone" aria-label="Call Inquiries at (639) 471-3662">
+              <svg class="site_header__phone_icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span class="site_header__phone_text">(639) 471-3662</span>
+            </a>
+
+            <!-- Nav Toggle (Mobile) -->
+            <button class="site_header__toggle" id="siteHeaderToggle" aria-label="Toggle navigation" aria-expanded="false">
+              <span class="site_header__toggle_bar"></span>
+              <span class="site_header__toggle_bar"></span>
+              <span class="site_header__toggle_bar"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Banner Section (Hero) -->
+      <section class="banner_section" id="home">
+        <div class="container">
+          <div class="banner_section__wrapper">
+            <div class="row align-items-center g-4 g-xl-5 banner_section__main_row">
+              <!-- Left Column: Content -->
+              <div class="col-lg-6 banner_section__content_col">
+                <div class="banner_section__content">
+                  <!-- Badge -->
+                  <div class="banner_section__badge">
+                    <span class="banner_section__badge_dot"></span>
+                    SASKATOON MEDICAL COURIER
+                  </div>
+
+                  <!-- Main Heading -->
+                  <h1 class="banner_section__title">
+                    Medical Courier for Saskatoon Pharmacies, <span>Clinics & Labs</span>
+                  </h1>
+
+                  <!-- Description -->
+                  <p class="banner_section__desc">
+                    Scheduled or on-demand delivery, handled the way each item requires. Contact us and we’ll set up a service that fits your needs.
+                  </p>
+
+                  <!-- Action Buttons -->
+                  <div class="banner_section__actions">
+                    <a href="#contact" class="btn btn-primary rounded-pill banner_section__btn_primary">
+                      Contact Us
+                    </a>
+                    <a href="#services" class="banner_section__btn_secondary">
+                      View Services
+                      <svg class="banner_section__btn_secondary_arrow" viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 12L12 4M6 4h6v6"></path>
+                      </svg>
+                    </a>
+                  </div>
+
+                  <!-- Small badge under the buttons -->
+                  <div class="banner_section__trust_badge">
+                    <span class="banner_section__trust_badge_dot"></span>
+                    One of Saskatoon’s Fastest-Growing Medical Couriers
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column: Media + Overlay -->
+              <div class="col-lg-6 banner_section__media_col">
+                <div class="banner_section__media_wrapper">
+                  <!-- Base Banner Image (visible throughout) -->
+                  <img
+                    src="./assets/images/banner-hero.png"
+                    alt="ASR Logistics Medical Courier"
+                    class="banner_section__img"
+                  />
+
+                  <!-- Design 2 Frosted Glass Overlay with Range Controls -->
+                  <div class="banner_section__overlay" aria-hidden="true">
+                    <div class="banner_section__overlay_inner">
+
+                      <!-- Range Item 1: Prescription Delivery -->
+                      <div class="banner_section__range_item" data-progress="100">
+                        <div class="banner_section__range_header">
+                          <div class="banner_section__range_icon_box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0160d3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M10.5 20.5 20.5 10.5a4.95 4.95 0 1 0-7-7L3.5 13.5a4.95 4.95 0 1 0 7 7Z"></path>
+                              <path d="m8.5 8.5 7 7"></path>
+                              <circle cx="18" cy="18" r="4.2" fill="#ffffff" stroke="#0160d3" stroke-width="1.6"></circle>
+                              <path d="M18 15.8v4.4M15.8 18h4.4" stroke="#0160d3" stroke-width="1.6"></path>
+                            </svg>
+                          </div>
+                          <div class="banner_section__range_info">
+                            <h4 class="banner_section__range_title">Prescription Delivery</h4>
+                            <p class="banner_section__range_subtitle">Pharmacy to patient</p>
+                          </div>
+                        </div>
+                        <div class="banner_section__range_bar_wrap">
+                          <div class="banner_section__range_track">
+                            <div class="banner_section__range_fill" style="width: 0%;"></div>
+                          </div>
+                          <div class="banner_section__range_status">
+                            <span class="banner_section__range_dot banner_section__range_dot--white"></span> SCHEDULED &middot; DELIVERED
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Range Item 2: Lab Specimen Run -->
+                      <div class="banner_section__range_item" data-progress="70">
+                        <div class="banner_section__range_header">
+                          <div class="banner_section__range_icon_box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0160d3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M9 2h6"></path>
+                              <path d="M10 2v14.5a2.5 2.5 0 0 0 5 0V2"></path>
+                              <path d="M10 10.5h5"></path>
+                              <circle cx="12.5" cy="13.5" r="0.9" fill="#0160d3"></circle>
+                              <circle cx="18.5" cy="8" r="1.2" fill="#0160d3"></circle>
+                              <circle cx="18.5" cy="13.5" r="0.9" fill="#0160d3"></circle>
+                            </svg>
+                          </div>
+                          <div class="banner_section__range_info">
+                            <h4 class="banner_section__range_title">Lab Specimen Run</h4>
+                            <p class="banner_section__range_subtitle">Clinic to lab</p>
+                          </div>
+                        </div>
+                        <div class="banner_section__range_bar_wrap">
+                          <div class="banner_section__range_track">
+                            <div class="banner_section__range_fill" style="width: 0%;"></div>
+                          </div>
+                          <div class="banner_section__range_status">
+                            <span class="banner_section__range_dot banner_section__range_dot--white"></span> ON-DEMAND &middot; IN TRANSIT
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Range Item 3: Equipment & Supplies -->
+                      <div class="banner_section__range_item" data-progress="52">
+                        <div class="banner_section__range_header">
+                          <div class="banner_section__range_icon_box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0160d3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                          </div>
+                          <div class="banner_section__range_info">
+                            <h4 class="banner_section__range_title">Equipment & Supplies</h4>
+                            <p class="banner_section__range_subtitle">Clinic delivery</p>
+                          </div>
+                        </div>
+                        <div class="banner_section__range_bar_wrap">
+                          <div class="banner_section__range_track">
+                            <div class="banner_section__range_fill" style="width: 0%;"></div>
+                          </div>
+                          <div class="banner_section__range_status">
+                            <span class="banner_section__range_dot banner_section__range_dot--white"></span> SCHEDULED &middot; EN ROUTE
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Range Item 4: Vaccine Delivery -->
+                      <div class="banner_section__range_item" data-progress="100">
+                        <div class="banner_section__range_header">
+                          <div class="banner_section__range_icon_box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0160d3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="m18 2 4 4"></path>
+                              <path d="m17 7 3-3"></path>
+                              <path d="M19 9 8.7 19.3c-.4.4-1 .6-1.6.6H3v-4.1c0-.6.2-1.2.6-1.6L14 3.9"></path>
+                              <path d="m9 11 4 4"></path>
+                              <path d="m5 19-3 3"></path>
+                              <circle cx="18" cy="17" r="2.2" fill="none" stroke="#0160d3" stroke-width="1.6"></circle>
+                              <path d="M18 14v1M18 19v1M15 17h1M20 17h1" stroke="#0160d3" stroke-width="1.6"></path>
+                            </svg>
+                          </div>
+                          <div class="banner_section__range_info">
+                            <h4 class="banner_section__range_title">Vaccine Delivery</h4>
+                            <p class="banner_section__range_subtitle">Cold-chain handled</p>
+                          </div>
+                        </div>
+                        <div class="banner_section__range_bar_wrap">
+                          <div class="banner_section__range_track">
+                            <div class="banner_section__range_fill" style="width: 0%;"></div>
+                          </div>
+                          <div class="banner_section__range_status">
+                            <span class="banner_section__range_dot banner_section__range_dot--white"></span> DELIVERED
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Bottom-Right Touch: Status Indicators -->
+                      <div class="banner_section__overlay_footer">
+                        <span class="banner_section__mockup_dots">
+                          <span class="banner_section__mockup_dot banner_section__mockup_dot--blue"></span>
+                          <span class="banner_section__mockup_dot banner_section__mockup_dot--white"></span>
+                          <span class="banner_section__mockup_dot banner_section__mockup_dot--blue"></span>
+                          <span class="banner_section__mockup_dot banner_section__mockup_dot--white"></span>
+                        </span>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Trust Features Bar -->
+            <div class="banner_section__features">
+              <div class="banner_section__feature_item">
+                <img src="./assets/images/stacked-checkmark.svg" alt="Checkmark" class="banner_section__feature_icon" />
+                <span class="banner_section__feature_text">Professional Handling</span>
+              </div>
+              <div class="banner_section__feature_item">
+                <img src="./assets/images/stacked-checkmark.svg" alt="Checkmark" class="banner_section__feature_icon" />
+                <span class="banner_section__feature_text">Scheduled & On-Demand</span>
+              </div>
+              <div class="banner_section__feature_item">
+                <img src="./assets/images/stacked-checkmark.svg" alt="Checkmark" class="banner_section__feature_icon" />
+                <span class="banner_section__feature_text">Clear Communication</span>
+              </div>
+              <div class="banner_section__feature_item">
+                <img src="./assets/images/stacked-checkmark.svg" alt="Checkmark" class="banner_section__feature_icon" />
+                <span class="banner_section__feature_text">Healthcare-Focused</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="services_pin_section pt_50 pb_100" id="services">
+        <div class="container">
+          <!-- Header Area -->
+          <div class="services_pin_section__header">
+            <div class="row align-items-end justify-content-between g-4">
+              <div class="col-lg-7">
+                <div class="services_pin_section__badge">
+                  <span class="services_pin_section__badge_dot"></span>
+                  WHAT WE DELIVER
+                </div>
+                <h2 class="services_pin_section__heading" id="services-heading">
+                  Medical Courier Services in Saskatoon
+                </h2>
+              </div>
+              <div class="col-lg-5 col-xl-4 text-lg-start">
+                <p class="services_pin_section__desc">
+                  Scheduled or on-demand, with handling matched to what we’re carrying.
+                </p>
+                <div class="services_pin_section__action">
+                  <a href="#services" class="services_pin_section__link" id="view-services-link">
+                    View Our Services
+                    <svg class="services_pin_section__link_arrow" viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M4 12L12 4M6 4h6v6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pinned Animation Stage -->
+          <div class="services_pin_section__stage_wrap">
+            <div class="services_pin_section__stage">
+
+              <!-- Left Column (2 Cards) -->
+              <div class="services_pin_section__col services_pin_section__col--left">
+                <!-- Card 1: Prescription Delivery -->
+                <div class="services_pin_section__card services_pin_section__card--dark">
+                  <div class="services_pin_section__card_top">
+                    <div class="services_pin_section__card_icon" aria-hidden="true">
+                      <img src="./assets/images/prescription-delivery.svg" alt="Prescription Delivery" />
+                    </div>
+                    <span class="services_pin_section__popular_tag ms-auto">
+                      <span class="services_pin_section__popular_dot"></span>Scheduled &amp; On-Demand
+                    </span>
+                  </div>
+                  <div class="services_pin_section__card_content">
+                    <h3 class="services_pin_section__card_title services_pin_section__card_title--white">Prescription Delivery</h3>
+                    <p class="services_pin_section__card_desc services_pin_section__card_desc--muted">
+                      Delivery from your pharmacy to your patients, including controlled substances and specialty medications.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Card 2: Clinic Deliveries -->
+                <div class="services_pin_section__card services_pin_section__card--light">
+                  <div class="services_pin_section__card_top">
+                    <div class="services_pin_section__card_icon" aria-hidden="true">
+                      <img src="./assets/images/clinic-delivery.svg" alt="Clinic Deliveries" />
+                    </div>
+                  </div>
+                  <div class="services_pin_section__card_content">
+                    <h3 class="services_pin_section__card_title">Clinic Deliveries</h3>
+                    <p class="services_pin_section__card_desc">
+                      Inter-office and clinic-to-clinic deliveries, on a regular schedule or when you need them.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Center Column (Animated Scaling Image) -->
+              <div class="services_pin_section__col services_pin_section__col--center">
+                <div class="services_pin_section__center_card">
+                  <img src="./assets/images/courier-service.jpg" alt="Medical courier professional with temperature-controlled delivery in Saskatoon" class="services_pin_section__center_img" />
+                </div>
+              </div>
+
+              <!-- Right Column (2 Cards) -->
+              <div class="services_pin_section__col services_pin_section__col--right">
+                <!-- Card 3: Lab & Specimen Runs -->
+                <div class="services_pin_section__card services_pin_section__card--light">
+                  <div class="services_pin_section__card_top">
+                    <div class="services_pin_section__card_icon" aria-hidden="true">
+                      <img src="./assets/images/lab.svg" alt="Lab &amp; Specimen Runs" />
+                    </div>
+                  </div>
+                  <div class="services_pin_section__card_content">
+                    <h3 class="services_pin_section__card_title">Lab &amp; Specimen Runs</h3>
+                    <p class="services_pin_section__card_desc">
+                      Specimens moved between clinics and labs with documented chain of custody and temperature-appropriate handling.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Card 4: Vaccine & Temperature-Sensitive Delivery -->
+                <div class="services_pin_section__card services_pin_section__card--light">
+                  <div class="services_pin_section__card_top">
+                    <div class="services_pin_section__card_icon" aria-hidden="true">
+                      <img src="./assets/images/vaccine.svg" alt="Vaccine &amp; Temperature-Sensitive Delivery" />
+                    </div>
+                  </div>
+                  <div class="services_pin_section__card_content">
+                    <h3 class="services_pin_section__card_title">Vaccine &amp; Temperature-Sensitive Delivery</h3>
+                    <p class="services_pin_section__card_desc">
+                      Vaccines and time-sensitive items transported with the cold-chain care each product requires.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Two New Cards Below services_pin_section__stage -->
+          <div class="row g-4 services_pin_section__extra_row">
+            <div class="col-12 col-md-6">
+              <div class="services_pin_section__card services_pin_section__card--light services_pin_section__card--extra services_pin_section__card--extra_left">
+                <div class="services_pin_section__card_top">
+                  <div class="services_pin_section__card_icon" aria-hidden="true">
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="44" height="44" rx="22" fill="#0160D3"/>
+                      <path d="M22 13L31 17.5V26.5L22 31L13 26.5V17.5L22 13Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M22 31V22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M31 17.5L22 22L13 17.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M17.5 15.2L26.5 19.8" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="services_pin_section__card_content">
+                  <h3 class="services_pin_section__card_title">Equipment &amp; Supply Deliveries</h3>
+                  <p class="services_pin_section__card_desc">
+                    Medical equipment and supplies delivered to clinics, pharmacies, and care facilities, scheduled or on demand.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="services_pin_section__card services_pin_section__card--light services_pin_section__card--extra services_pin_section__card--extra_right">
+                <div class="services_pin_section__card_top">
+                  <div class="services_pin_section__card_icon" aria-hidden="true">
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="44" height="44" rx="22" fill="#0160D3"/>
+                      <path d="M16 13H24L29 18V30C29 30.5523 28.5523 31 28 31H16C15.4477 31 15 30.5523 15 30V14C15 13.4477 15.4477 13 16 13Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M24 13V18H29" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M19 22H25" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                      <path d="M19 26H25" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="services_pin_section__card_content">
+                  <h3 class="services_pin_section__card_title">Document Transport</h3>
+                  <p class="services_pin_section__card_desc">
+                    Medical records and paperwork delivered securely.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Process Section -->
+      <section class="how_it_works_section pt_50 pb_100" id="how-it-works">
+        <div class="container">
+          <!-- Header Area -->
+          <div class="how_it_works_section__header">
+            <div class="row align-items-end justify-content-between g-4">
+              <div class="col-lg-7">
+                <div class="how_it_works_section__badge">
+                  <span class="how_it_works_section__badge_dot"></span>
+                  HOW IT WORKS
+                </div>
+                <h2 class="how_it_works_section__title">
+                  How It <span class="how_it_works_section__title_accent">Works</span>
+                </h2>
+              </div>
+              <div class="col-lg-5 col-xl-4 text-lg-end">
+                <p class="how_it_works_section__desc ms-lg-auto">
+                  Getting started is a conversation, not a form to fill out.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Staggered Zig-Zag Flow (3 Steps) -->
+          <div class="how_it_works_section__flow">
+            <!-- SVG Connecting Lines -->
+            <svg class="how_it_works_section__svg_lines" aria-hidden="true"></svg>
+
+            <!-- Step 1 (Top-Left) -->
+            <div class="how_it_works_section__card how_it_works_section__card--step_1">
+              <div class="how_it_works_section__badge_step">
+                <span>Step 1</span>
+              </div>
+              <div class="how_it_works_section__card_content">
+                <div class="how_it_works_section__card_head">
+                  <span class="how_it_works_section__card_icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </span>
+                  <h3 class="how_it_works_section__card_title">Contact Us</h3>
+                </div>
+                <p class="how_it_works_section__card_text">
+                  Tell us what you send and how often.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 2 (Middle-Right) -->
+            <div class="how_it_works_section__card how_it_works_section__card--step_2">
+              <div class="how_it_works_section__badge_step">
+                <span>Step 2</span>
+              </div>
+              <div class="how_it_works_section__card_content">
+                <div class="how_it_works_section__card_head">
+                  <span class="how_it_works_section__card_icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="4" y1="21" x2="4" y2="14"></line>
+                      <line x1="4" y1="10" x2="4" y2="3"></line>
+                      <line x1="12" y1="21" x2="12" y2="12"></line>
+                      <line x1="12" y1="8" x2="12" y2="3"></line>
+                      <line x1="20" y1="21" x2="20" y2="16"></line>
+                      <line x1="20" y1="12" x2="20" y2="3"></line>
+                      <line x1="1" y1="14" x2="7" y2="14"></line>
+                      <line x1="9" y1="8" x2="15" y2="8"></line>
+                      <line x1="17" y1="16" x2="23" y2="16"></line>
+                    </svg>
+                  </span>
+                  <h3 class="how_it_works_section__card_title">We Set Up Your Service</h3>
+                </div>
+                <p class="how_it_works_section__card_text">
+                  We agree on a schedule or on-demand arrangement, and the handling procedure for your type of delivery.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 3 (Lower-Left) -->
+            <div class="how_it_works_section__card how_it_works_section__card--step_3">
+              <div class="how_it_works_section__badge_step">
+                <span>Step 3</span>
+              </div>
+              <div class="how_it_works_section__card_content">
+                <div class="how_it_works_section__card_head">
+                  <span class="how_it_works_section__card_icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m7.5 4.27 9 5.15"></path>
+                      <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+                      <path d="m3.3 7 8.7 5 8.7-5"></path>
+                      <path d="M12 22V12"></path>
+                    </svg>
+                  </span>
+                  <h3 class="how_it_works_section__card_title">We Deliver</h3>
+                </div>
+                <p class="how_it_works_section__card_text">
+                  Your items are moved with proper handling and procedure, and handoffs are documented.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+ 
+      <!-- Why ASR Section -->
+      <section class="why_asr_section pt_50 pb_50" id="why-asr">
+        <div class="container">
+          <!-- Header Area -->
+          <div class="why_asr_section__header">
+            <div class="why_asr_section__badge">
+              <span class="why_asr_section__badge_dot"></span>
+              WHY CHOOSE US
+            </div>
+            <h2 class="why_asr_section__title">
+              Why Healthcare Providers Choose <span class="why_asr_section__title_accent">ASR</span>
+            </h2>
+          </div>
+
+          <!-- Four Cards Grid (Single Row Desktop, 2-Col Tablet, 1-Col Mobile) -->
+          <div class="row g-4 why_asr_section__grid">
+            <!-- Card 1: Healthcare Only -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="why_asr_section__card h-100">
+                <div class="why_asr_section__card_top">
+                  <div class="why_asr_section__card_icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M12 6v12M6 12h12"></path>
+                      <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="why_asr_section__card_content">
+                  <h3 class="why_asr_section__card_title">Healthcare Only</h3>
+                  <p class="why_asr_section__card_desc">
+                    We work with pharmacies, clinics, and labs. We know what’s expected on every run.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Handled Right -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="why_asr_section__card h-100">
+                <div class="why_asr_section__card_top">
+                  <div class="why_asr_section__card_icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                      <path d="m9 12 2 2 4-4"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="why_asr_section__card_content">
+                  <h3 class="why_asr_section__card_title">Handled Right</h3>
+                  <p class="why_asr_section__card_desc">
+                    A prescription, a specimen, and a vaccine are not treated the same.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Documented -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="why_asr_section__card h-100">
+                <div class="why_asr_section__card_top">
+                  <div class="why_asr_section__card_icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <line x1="10" y1="9" x2="8" y2="9"></line>
+                    </svg>
+                  </div>
+                </div>
+                <div class="why_asr_section__card_content">
+                  <h3 class="why_asr_section__card_title">Documented</h3>
+                  <p class="why_asr_section__card_desc">
+                    Clear handoffs you can point to when you need them.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Flexible -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="why_asr_section__card h-100">
+                <div class="why_asr_section__card_top">
+                  <div class="why_asr_section__card_icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                  </div>
+                </div>
+                <div class="why_asr_section__card_content">
+                  <h3 class="why_asr_section__card_title">Flexible</h3>
+                  <p class="why_asr_section__card_desc">
+                    Scheduled or on-demand, whichever fits your day.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Closing Banner Area -->
+          <div class="why_asr_section__footer">
+            <p class="why_asr_section__closing_text">
+              More Saskatoon healthcare providers are choosing us every month.
+            </p>
+            <a href="#contact" class="btn btn-primary rounded-pill why_asr_section__btn">
+              Contact Us
+              <svg class="why_asr_section__btn_arrow" viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 12L12 4M6 4h6v6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Healthcare Pinned Animated Section -->
+      <section class="healthcare_section pb_100" id="about">
+        <div class="container">
+          <div class="healthcare_section__card">
+            <div class="healthcare_section__inner">
+              <!-- Step 1: Full-width image that smoothly shrinks to left half -->
+              <div class="healthcare_section__media_col">
+                <div class="healthcare_section__media_wrapper">
+                  <img
+                    src="./assets/images/healthcare_industry.png"
+                    alt="Healthcare medical courier walking through hospital hallway"
+                    class="healthcare_section__img"
+                  />
+
+                  <!-- Step 3: Overlay revealed on top of the image in Design 2 -->
+                  <div class="healthcare_section__overlay">
+                    <div class="healthcare_section__overlay_content">
+                      <div class="healthcare_section__overlay_group">
+                        <h3 class="healthcare_section__overlay_title">
+                          Trusted by Saskatoon Healthcare Providers
+                        </h3>
+                      </div>
+
+                      <div class="healthcare_section__overlay_group">
+                        <div class="healthcare_section__overlay_stat">
+                          <span class="healthcare_section__overlay_num">98%</span>
+                          <span class="healthcare_section__overlay_label">On-Time Rate</span>
+                        </div>
+                      </div>
+
+                      <div class="healthcare_section__overlay_group">
+                        <div class="healthcare_section__overlay_stat">
+                          <span class="healthcare_section__overlay_num">Saskatoon</span>
+                          <span class="healthcare_section__overlay_label">Local Service</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 2: Content panel that slides in from right in Design 2 -->
+              <div class="healthcare_section__content_col">
+                <div class="healthcare_section__content_inner">
+                  <div class="healthcare_section__badge">
+                    <span class="healthcare_section__badge_dot"></span>
+                    ABOUT ASR LOGISTICS
+                  </div>
+
+                  <h2 class="healthcare_section__heading">
+                    Built for Healthcare
+                  </h2>
+
+                  <div class="healthcare_section__desc">
+                    <p>
+                      We work only with healthcare providers, so we know what’s expected when we pick up a prescription, a specimen, or a patient file. Every item is treated as someone’s health, and handled that way.
+                    </p>
+                  </div>
+
+                  <div class="healthcare_section__features">
+                    <div class="healthcare_section__feature_item">
+                      <div class="healthcare_section__feature_icon">
+                        <img src="./assets/images/lock.svg" alt="Confidential Handling" />
+                      </div>
+                      <div class="healthcare_section__feature_info">
+                        <h4 class="healthcare_section__feature_title">Confidential Handling</h4>
+                        <p class="healthcare_section__feature_text">
+                          Patient information is handled under confidentiality agreements with our healthcare clients.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="healthcare_section__feature_item">
+                      <div class="healthcare_section__feature_icon">
+                        <img src="./assets/images/urgency-first.svg" alt="Reliable Timing" />
+                      </div>
+                      <div class="healthcare_section__feature_info">
+                        <h4 class="healthcare_section__feature_title">Reliable Timing</h4>
+                        <p class="healthcare_section__feature_text">
+                          Deliveries arrive when we say they will.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="healthcare_section__feature_item">
+                      <div class="healthcare_section__feature_icon">
+                        <img src="./assets/images/partner.svg" alt="Easy to Work With" />
+                      </div>
+                      <div class="healthcare_section__feature_info">
+                        <h4 class="healthcare_section__feature_title">Easy to Work With</h4>
+                        <p class="healthcare_section__feature_text">
+                          One call gets you set up. We fit around your schedule.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact_section pb_100" id="contact">
+        <div class="container">
+          <!-- Section Heading and Description -->
+          <div class="contact_section__header">
+            <div class="contact_section__badge">
+              <span class="contact_section__badge_dot"></span>
+              CONTACT US
+            </div>
+            <h2 class="contact_section__title">
+              Tell Us What You Need Moved
+            </h2>
+            <p class="contact_section__desc">
+              Tell us what you send and how often. We’ll get back to you promptly and set up the right service.
+            </p>
+          </div>
+
+          <!-- Contact Grid: Form & Info Panel -->
+          <div class="row g-4 g-xl-5 contact_section__grid">
+            <!-- Left: Contact Form -->
+            <div class="col-12 col-lg-7">
+              <div class="contact_section__form_card">
+                <form class="contact_section__form" onsubmit="return false;" novalidate>
+                  <div class="row g-3">
+                    <!-- 1. Name — required -->
+                    <div class="col-12 col-md-6">
+                      <div class="contact_section__field">
+                        <label for="contact_name" class="contact_section__label">
+                          Name <span class="contact_section__required" aria-hidden="true">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          id="contact_name"
+                          name="name"
+                          class="form-control contact_section__input"
+                          placeholder="e.g. Dr. Jane Smith"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <!-- 2. Organization — required -->
+                    <div class="col-12 col-md-6">
+                      <div class="contact_section__field">
+                        <label for="contact_org" class="contact_section__label">
+                          Organization <span class="contact_section__required" aria-hidden="true">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          id="contact_org"
+                          name="organization"
+                          class="form-control contact_section__input"
+                          placeholder="e.g. Community Pharmacy"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <!-- 3. Phone — required -->
+                    <div class="col-12 col-md-6">
+                      <div class="contact_section__field">
+                        <label for="contact_phone" class="contact_section__label">
+                          Phone <span class="contact_section__required" aria-hidden="true">*</span>
+                        </label>
+                        <input
+                          type="tel"
+                          id="contact_phone"
+                          name="phone"
+                          class="form-control contact_section__input"
+                          placeholder="(639) 471-3662"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <!-- 4. Email — required -->
+                    <div class="col-12 col-md-6">
+                      <div class="contact_section__field">
+                        <label for="contact_email" class="contact_section__label">
+                          Email <span class="contact_section__required" aria-hidden="true">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          id="contact_email"
+                          name="email"
+                          class="form-control contact_section__input"
+                          placeholder="name@organization.com"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <!-- 5. Service Type — dropdown -->
+                    <div class="col-12 col-md-6">
+                      <div class="contact_section__field">
+                        <label for="contact_service" class="contact_section__label">
+                          Service Type
+                        </label>
+                        <select id="contact_service" name="service_type" class="form-select contact_section__select">
+                          <option value="" selected disabled>Select a service type</option>
+                          <option value="prescription">Prescription Delivery</option>
+                          <option value="clinic">Clinic Deliveries</option>
+                          <option value="equipment">Equipment & Supply Deliveries</option>
+                          <option value="lab">Lab & Specimen Runs</option>
+                          <option value="vaccine">Vaccine & Temperature-Sensitive</option>
+                          <option value="document">Document Transport</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- 6. Scheduled or On-Demand — dropdown -->
+                    <div class="col-12 col-md-6">
+                      <div class="contact_section__field">
+                        <label for="contact_schedule" class="contact_section__label">
+                          Scheduled or On-Demand
+                        </label>
+                        <select id="contact_schedule" name="schedule_type" class="form-select contact_section__select">
+                          <option value="" selected disabled>Select scheduling preference</option>
+                          <option value="scheduled">Scheduled</option>
+                          <option value="on-demand">On-Demand</option>
+                          <option value="both">Both / Not sure</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- 7. Message — optional textarea -->
+                    <div class="col-12">
+                      <div class="contact_section__field">
+                        <label for="contact_message" class="contact_section__label">
+                          Message <span class="contact_section__optional">(Optional)</span>
+                        </label>
+                        <textarea
+                          id="contact_message"
+                          name="message"
+                          class="form-control contact_section__textarea"
+                          rows="4"
+                          placeholder="Tell us what you send, frequency, or any special handling procedures..."
+                        ></textarea>
+                      </div>
+                    </div>
+
+                    <!-- Submit Button & Note -->
+                    <div class="col-12">
+                      <div class="contact_section__submit_wrap">
+                        <button type="button" class="btn btn-primary rounded-pill contact_section__btn">
+                          Send Message
+                          <svg class="contact_section__btn_arrow" viewBox="0 0 16 16" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 12L12 4M6 4h6v6"></path>
+                          </svg>
+                        </button>
+                        <p class="contact_section__note">
+                          Please do not include patient information in this form.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Right: Contact Information Panel -->
+            <div class="col-12 col-lg-5">
+              <div class="contact_section__info_card h-100">
+                <div class="contact_section__info_header">
+                  <div class="contact_section__info_badge">
+                    <span class="contact_section__info_badge_dot"></span>
+                    DIRECT ASSISTANCE
+                  </div>
+                  <h3 class="contact_section__info_heading">
+                    We're Ready to Help
+                  </h3>
+                  <p class="contact_section__info_sub">
+                    Reach our local Saskatoon team directly by phone or email.
+                  </p>
+                </div>
+
+                <div class="contact_section__info_list">
+                  <!-- New Inquiries -->
+                  <div class="contact_section__info_item">
+                    <div class="contact_section__info_icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                    </div>
+                    <div class="contact_section__info_content">
+                      <span class="contact_section__info_label">New Inquiries</span>
+                      <a href="tel:+16394713662" class="contact_section__info_val contact_section__info_link">
+                        (639) 471-3662
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Existing Client Support -->
+                  <div class="contact_section__info_item">
+                    <div class="contact_section__info_icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                        <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                      </svg>
+                    </div>
+                    <div class="contact_section__info_content">
+                      <span class="contact_section__info_label">Existing Client Support</span>
+                      <a href="tel:+16395390109" class="contact_section__info_val contact_section__info_link">
+                        (639) 539-0109
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Email -->
+                  <div class="contact_section__info_item">
+                    <div class="contact_section__info_icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </div>
+                    <div class="contact_section__info_content">
+                      <span class="contact_section__info_label">Email</span>
+                      <a href="mailto:asrlogistics.sk@outlook.com" class="contact_section__info_val contact_section__info_link">
+                        asrlogistics.sk@outlook.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Service Area -->
+                  <div class="contact_section__info_item">
+                    <div class="contact_section__info_icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                      </svg>
+                    </div>
+                    <div class="contact_section__info_content">
+                      <span class="contact_section__info_label">Service Area</span>
+                      <span class="contact_section__info_val">
+                        Serving Saskatoon and area
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Process Section -->
+      <section class="cta_section pb_100">
+        <div class="container">
+          <div class="cta_section__card">
+            <!-- Ambient Radial Background Gradients -->
+            <div class="cta_section__glow cta_section__glow--one" aria-hidden="true"></div>
+            <div class="cta_section__glow cta_section__glow--two" aria-hidden="true"></div>
+
+            <div class="cta_section__content">
+              <!-- Badge Header -->
+              <span class="badge rounded-pill bg-white text-primary px-3 py-2 cta_section__badge">
+                <span class="cta_section__badge_dot"></span>READY TO PARTNER?
+              </span>
+
+              <!-- Main Heading -->
+              <h2 class="cta_section__heading">
+                Let's Talk About Your<br class="d-none d-sm-inline" /> Delivery Needs
+              </h2>
+
+              <!-- Subtitle -->
+              <p class="cta_section__subtitle">
+                Whether you're a single pharmacy or a multi-location clinic group, we'll build a delivery solution that fits your needs in Saskatoon.
+              </p>
+
+              <!-- Action Buttons -->
+              <div class="cta_section__actions">
+                <a href="mailto:asrlogistics.sk@outlook.com" class="btn btn-primary rounded-pill px-4 py-2 cta_section__btn_primary">
+                  Contact Us
+                </a>
+              </div>
+
+              <!-- Contact Direct Details (Both numbers with exact labels) -->
+              <div class="cta_section__contacts">
+                <div class="row g-3 justify-content-center align-items-center">
+                  <div class="col-12 col-md-auto">
+                    <a href="tel:+16394713662" class="cta_section__contact_link">
+                      <svg class="me-2" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                      <span>Inquiries: (639) 471-3662</span>
+                    </a>
+                  </div>
+                  <div class="col-12 col-md-auto">
+                    <a href="tel:+16395390109" class="cta_section__contact_link">
+                      <svg class="me-2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                        <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                      </svg>
+                      <span>Client Support: (639) 539-0109</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Site Footer -->
+    <footer class="site_footer">
+      <div class="container">
+        <!-- Footer Top -->
+        <div class="site_footer__top">
+          <div class="row g-4 g-xl-5">
+
+            <!-- Brand Column -->
+            <div class="col-lg-4 col-xl-4">
+              <div class="site_footer__brand">
+                <a href="index.html" class="site_footer__logo" aria-label="ASR Logistics Home">
+                  <img src="./assets/images/site-logo.png" alt="ASR Logistics" class="site_footer__logo_img" />
+                </a>
+                <p class="site_footer__tagline">
+                  Medical courier services built for pharmacies, clinics, and labs in Saskatoon. Fast, reliable, and professional.
+                </p>
+              </div>
+            </div>
+
+            <!-- Company Links -->
+            <div class="col-6 col-sm-6 col-lg-2">
+              <div class="site_footer__col">
+                <h4 class="site_footer__col_title">Company</h4>
+                <ul class="site_footer__col_list">
+                  <li><a href="about.html" class="site_footer__col_link">About Us</a></li>
+                  <li><a href="services.html" class="site_footer__col_link">Services</a></li>
+                  <li><a href="#why-asr" class="site_footer__col_link">Why ASR</a></li>
+                  <li><a href="contact.html" class="site_footer__col_link">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Services Links -->
+            <div class="col-6 col-sm-6 col-lg-3">
+              <div class="site_footer__col">
+                <h4 class="site_footer__col_title">Services</h4>
+                <ul class="site_footer__col_list">
+                  <li><a href="services.html" class="site_footer__col_link">Prescription Delivery</a></li>
+                  <li><a href="services.html" class="site_footer__col_link">Clinic Deliveries</a></li>
+                  <li><a href="services.html" class="site_footer__col_link">Equipment &amp; Supply Deliveries</a></li>
+                  <li><a href="services.html" class="site_footer__col_link">Lab &amp; Specimen Runs</a></li>
+                  <li><a href="services.html" class="site_footer__col_link">Vaccine &amp; Temperature-Sensitive Delivery</a></li>
+                  <li><a href="services.html" class="site_footer__col_link">Document Transport</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Contact Information Column (Moved to Top Footer) -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="site_footer__col site_footer__col--contact">
+                <h4 class="site_footer__col_title">Contact</h4>
+                <ul class="site_footer__col_list">
+                  <li>
+                    <a href="tel:+16394713662" class="site_footer__col_link site_footer__contact_link">
+                      <svg class="me-2 site_footer__contact_icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                      <span>New inquiries: (639) 471-3662</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="tel:+16395390109" class="site_footer__col_link site_footer__contact_link">
+                      <svg class="me-2 site_footer__contact_icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                        <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                      </svg>
+                      <span>Existing client support: (639) 539-0109</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mailto:asrlogistics.sk@outlook.com" class="site_footer__col_link site_footer__contact_link">
+                      <svg class="me-2 site_footer__contact_icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                      <span>asrlogistics.sk@outlook.com</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="site_footer__bottom">
+          <div class="site_footer__bottom_row">
+            <p class="site_footer__copy">
+              &copy; 2026 ASR Logistics. All rights reserved.
+            </p>
+            <a href="privacy.html" class="site_footer__bottom_link">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/jquery/jquery.min.js"></script>
+    <script src="./assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/owl/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/function.js"></script>
+    <script src="./assets/js/animation.js"></script>
+  </body>
+</html>

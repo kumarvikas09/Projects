@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHERIA // Splash Transition Showcase Dashboard</title>
+    <!-- Google Fonts: Outfit and Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #07070c;
+            --primary: #8b5cf6;
+            --primary-bright: #a78bfa;
+            --secondary: #06b6d4;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --panel-bg: rgba(13, 13, 27, 0.45);
+            --panel-border: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--bg-dark);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ambient-glow {
+            position: absolute;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .glow-1 { top: -10vw; right: -10vw; }
+        .glow-2 { bottom: -15vw; left: -15vw; }
+
+        .dashboard-container {
+            position: relative;
+            z-index: 10;
+            width: 90%;
+            max-width: 900px;
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 3.5rem 3rem;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .title-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.2rem;
+            color: var(--primary-bright);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 40%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            max-width: 500px;
+            margin: 0 auto 3rem auto;
+            line-height: 1.6;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .demo-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--panel-border);
+            border-radius: 8px;
+            padding: 1.8rem 1.2rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .demo-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-bright);
+            background: rgba(139, 92, 246, 0.05);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.15);
+        }
+
+        .demo-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .demo-card p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: var(--primary-bright);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+        }
+
+        .demo-card:hover .card-icon {
+            background: var(--primary-bright);
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+            .dashboard-container {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <div class="dashboard-container">
+        <span class="title-tag">SPLASH PORTAL COLLECTION</span>
+        <h1>Entrance Animations</h1>
+        <p class="subtitle">Select a transition demo below to view how the entry splash screen collapses and reveals the mock shop platform.</p>
+
+        <div class="demo-grid">
+            <a href="transition_diagonal.html" class="demo-card">
+                <div class="card-icon">1</div>
+                <h3>Diagonal Slit</h3>
+                <p>Double-sliced diagonal clip-path split curtain reveal.</p>
+            </a>
+
+            <a href="transition_ripple.html" class="demo-card">
+                <div class="card-icon">2</div>
+                <h3>Ripple Portal</h3>
+                <p>Expanding concentric radial circle mask reveal.</p>
+            </a>
+
+            <a href="transition_shards.html" class="demo-card">
+                <div class="card-icon">3</div>
+                <h3>Digital Shards</h3>
+                <p>12x12 grid block matrix matrix-style staggered dissolve.</p>
+            </a>
+
+            <a href="transition_glitch.html" class="demo-card">
+                <div class="card-icon">4</div>
+                <h3>Glitch Curtain</h3>
+                <p>Vertical curtain slide with high-contrast chromatic aberrations.</p>
+            </a>
+
+            <a href="transition_zoom.html" class="demo-card">
+                <div class="card-icon">5</div>
+                <h3>Tunnel Zoom</h3>
+                <p>3D camera flight-through scale zoom and blur reveal.</p>
+            </a>
+
+            <a href="transition_vortex.html" class="demo-card">
+                <div class="card-icon">6</div>
+                <h3>Spiral Vortex</h3>
+                <p>Rotational circular swirl mask and vortex scale-down.</p>
+            </a>
+
+            <a href="transition_shutter.html" class="demo-card">
+                <div class="card-icon">7</div>
+                <h3>Aperture Shutter</h3>
+                <p>Mechanical overlapping blade shutter lens-style reveal.</p>
+            </a>
+
+            <a href="transition_distortion.html" class="demo-card">
+                <div class="card-icon">8</div>
+                <h3>Liquid Melt</h3>
+                <p>Wavy organic liquid SVG filter displacement warp.</p>
+            </a>
+
+            <a href="transition_shatter.html" class="demo-card">
+                <div class="card-icon">9</div>
+                <h3>Glass Shatter</h3>
+                <p>Dynamic 3D-style glass/mirror fracturing and explosion.</p>
+            </a>
+
+            <a href="transition_slide.html" class="demo-card">
+                <div class="card-icon">10</div>
+                <h3>Staggered Slide</h3>
+                <p>Alternating vertical strip panel slide-out reveal.</p>
+            </a>
+
+            <a href="transition_curtain.html" class="demo-card">
+                <div class="card-icon">11</div>
+                <h3>Horizontal Blinds</h3>
+                <p>Alternating horizontal strip panel slide-out reveal.</p>
+            </a>
+
+            <a href="transition_shrink.html" class="demo-card">
+                <div class="card-icon">12</div>
+                <h3>3D Shrink</h3>
+                <p>Perspective scale backward shift and vertical exit reveal.</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

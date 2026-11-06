@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Managemnet</title>
+    <link rel="stylesheet" href="assets/style/bootstrap.min.css"> 
+    <link rel="stylesheet" href="assets/style/dashboard.css">
+</head>
+<body>
+    <div class="modal fade" id="addMember" tabindex="-1" aria-labelledby="addMemberLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content addMember_modal">
+            <button type="button" class="closeBtn" data-bs-dismiss="modal" aria-label="Close"><img src="assets/images/modal-close-icon.svg" alt=""></button>
+            <div class="modal-body ">
+                <h4 class="member-title-modal">Add Member</h3>
+                <div class="message-box">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">First Name</label>
+                                <input type="text" class="form-control" placeholder="|">
+                            </div>
+                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Last Name</label>
+                                <input type="text" class="form-control" placeholder="|">
+                            </div>
+                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Age</label>
+                                <input type="number" class="form-control" placeholder="|">
+                            </div>
+                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Relationship</label>
+                                <input type="text" class="form-control" placeholder="|">
+                            </div>
+                         </div>
+                         <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Upload Photo</label>
+                                <div class="file-upload-box img_upload">
+                                    <input type="file" class="form-control" id="company-logo" name="company-logo">
+                                    <label for="company-logo"><img src="assets/images/dashboard/upload.svg"><span id="logo-name">Please Select</span>
+                                    </label>
+                                </div>
+                            </div>
+                         </div>
+                         <div class="col-md-12">
+                            <div class="text-center">
+                                <button class="btnPrimary">Upload</button>
+                            </div>
+                         </div>
+                       
+                      </div>
+                </div>
+            
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    <div class="parent_layout_wrap">
+       <aside class="sidebar">
+         <div class="sidebar_header">
+           <a href="#"><img src="assets/images/LOGO.png" alt=""></a> 
+         </div>
+         <div class="sidebar_body">
+            <div class="top_content">
+                <h3 class="title">Unit -2</h3>
+                <p>N2396 County Road, 54944</p>                
+            </div>
+            <div class="sidebar_navigation">
+                <ul>
+                    <li><a href="#" class="active"><i class="icon"><img src="assets/images/dashboard/icon_dashboard.svg" alt=""></i>Dashboard</a></li>
+                    <li><a href="#"><i class="icon"><img src="assets/images/dashboard/icon_payment.svg" alt=""></i>Payments</a></li>
+                    <li><a href="#"><i class="icon"><img src="assets/images/dashboard/icon_document.svg" alt=""></i>Documents</a></li>
+                    <li><a href="#"><i class="icon"><img src="assets/images/dashboard/icon_contact.svg" alt=""></i>Contact</a></li>
+                    <li><a href="#"><i class="icon"><img src="assets/images/dashboard/icon_logout.svg" alt=""></i>Logout</a></li>
+                </ul>
+            </div>
+         </div>
+       </aside>
+       <section class="main_content_wrap">
+          <header class="channel_header">
+              <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="page_title-wrap">
+                            <div class="toggle"><a href="#" class="toggleMenu"><img src="assets/images/dashboard/toggle_menu.svg" alt=""></a></div>
+                            <div class="page_title">
+                                <h3 class="title">Dashboard</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="header_align-end">
+                            <div class="notfication_col">
+                               <img src="assets/images/dashboard/bell_icon.svg" alt="">
+                               <label class="count">5</label>
+                            </div>
+                            <nav class="navbar">                   
+                                <ul class="navbar-nav">                                  
+                                  <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                     <img src="assets/images/dashboard/avatar.svg" alt="">
+                                     John Doe
+                                    </a>
+                                    <ul class="dropdown-menu" >
+                                      <li><a class="dropdown-item" href="#">Action</a></li>
+                                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                  </li>
+                                </ul>                   
+                          </nav>
+                        </div>
+                       
+                    </div>
+                </div>
+              </div>
+          </header>
+          <section class="chanel_body-wrap">
+            <div class="container-fluid">
+                 <div class="row">
+                      <div class="col-xl-8 col-xxl-9">
+                        <div class="balance_banner">
+                            <div class="row align-items-center">
+                                  <div class="col-lg-4">
+                                    <div class="content_details">
+                                        <h4 class="balane_tag">Balance Due</h4>
+                                        <h2 class="balance_value">$200.00</h2>
+                                        <a href="#" class="nav_link">View Details</a>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-8">
+                                    <label class="balance_message">Please clear your due balance as soon as possible</label>
+                                  </div>
+                            </div>
+                        </div>
+                          <div class="dashboard_three-col">
+                            <div class="row">
+                                <div class="col-md-4 d-flex">
+                                   <div class="colmn_thumb border-shaddow">
+                                    <a href="#">
+                                        <figure class="icon"><img src="assets/images/dashboard/document_icon.svg" alt=""></figure>
+                                        <h3 class="title">Documents</h3>
+                                    </a>                              
+                                   </div>
+                                </div>
+                                <div class="col-md-4 d-flex">
+                                   <div class="colmn_thumb border-shaddow">
+                                    <a href="#">
+                                        <figure class="icon"><img src="assets/images/dashboard/emergency_ contacts_icon.svg" alt=""></figure>
+                                        <h3 class="title">Emergency Contacts</h3>
+                                    </a>                              
+                                   </div>
+                                </div>
+                                <div class="col-md-4 d-flex">
+                                   <div class="colmn_thumb border-shaddow">
+                                    <a href="#">
+                                        <figure class="icon"><img src="assets/images/dashboard/maintenance_icon.svg" alt=""></figure>
+                                        <h3 class="title">Maintenance</h3>
+                                    </a>                              
+                                   </div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="data_table-wrap">
+                            <h3 class="title">Applications</h3>
+                            <div class="Data-table border-shaddow">
+                               <div class="Table_head">
+                                   <div class="cell"><input type="checkbox"></div>
+                                   <div class="cell">Subject</div>
+                                   <div class="cell">Priority</div>
+                                   <div class="cell">Date</div>
+                                   <div class="cell">Date</div>
+                               </div>
+
+                               <div class="Table_row">
+                                    <div class="cell"><input type="checkbox"></div>
+                                    <div class="cell">Plumbing Issue</div>
+                                    <div class="cell"><label class="high">High</label></div>
+                                    <div class="cell">5 May 2024</div>
+                                    <div class="cell"><label class="solve">Solved</label></div>
+                               </div>
+                               <div class="Table_row">
+                                    <div class="cell"><input type="checkbox"></div>
+                                    <div class="cell">Plumbing Issue</div>
+                                    <div class="cell"><label class="high">High</label></div>
+                                    <div class="cell">5 May 2024</div>
+                                    <div class="cell"><label class="solve">Solved</label></div>
+                               </div>
+                               <div class="Table_row">
+                                    <div class="cell"><input type="checkbox"></div>
+                                    <div class="cell">Plumbing Issue</div>
+                                    <div class="cell"><label class="high">High</label></div>
+                                    <div class="cell">5 May 2024</div>
+                                    <div class="cell"><label class="solve">Solved</label></div>
+                               </div>
+                               <div class="Table_row">
+                                    <div class="cell"><input type="checkbox"></div>
+                                    <div class="cell">Plumbing Issue</div>
+                                    <div class="cell"><label class="high">High</label></div>
+                                    <div class="cell">5 May 2024</div>
+                                    <div class="cell"><label class="solve">Solved</label></div>
+                               </div>
+
+
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col-xl-4 col-xxl-3">
+                        <div class="content_card border-shaddow">
+                            <h3 class="title">Alerts</h3>
+                            <div class="card_body">
+                                <h5>Sing Lease</h5>
+                                <p>Your Lease Documents Is Ready To Sign .</p>
+                            </div>
+                            <a href="#" class="btnPrimary">View Document</a>
+                        </div>
+
+                        <div class="member_list border-shaddow">
+                             <div class="list_header">
+                                <h3 class="block_title">Member List</h3>
+                             </div>
+
+                             <div class="member_body">
+                                <div class="member_row">
+                                    <div class="member_thumb">
+                                        <img src="assets/images/dashboard/user-1.jpg" alt="">
+                                    </div>
+                                    <div class="member_details">
+                                        <h5 class="title">John Doe</h5>
+                                        <p>Lease holder</p>
+                                    </div>
+                                    <a href="#" class="deleteMmember_icon">-</a>
+                                </div>
+                                <div class="member_row">
+                                    <div class="member_thumb">
+                                        <img src="assets/images/dashboard/user-2.jpg" alt="">
+                                    </div>
+                                    <div class="member_details">
+                                        <h5 class="title">John Doe</h5>
+                                        <p>Lease holder</p>
+                                    </div>
+                                    <a href="#" class="deleteMmember_icon">-</a>
+                                </div>
+                                <div class="member_row">
+                                    <div class="member_thumb">
+                                        <img src="assets/images/dashboard/user_3.jpg" alt="">
+                                    </div>
+                                    <div class="member_details">
+                                        <h5 class="title">John Doe</h5>
+                                        <p>Lease holder</p>
+                                    </div>
+                                    <a href="#" class="deleteMmember_icon">-</a>
+                                </div>
+                                <div class="member_footer">
+                                    <a href="#" class="btnPrimary" data-bs-toggle="modal" data-bs-target="#addMember">Add Member</a>
+                                </div>
+                              
+
+
+                             </div>
+
+                        </div>
+
+                       
+
+                      </div>
+                 </div>
+            </div>
+          </section>
+       </section>
+    </div>
+    
+
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>    
+    <script src="assets/js/dashboard.js"></script> 
+    
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHERIA // Immersive Digital Experience</title>
+    <meta name="description" content="Welcome to Aetheria. Experience the future of immersive digital interfaces.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts: Outfit and Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Custom Glowing Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+
+    <!-- Intro Splash Screen -->
+    <div class="splash-container" id="splash-screen">
+        <div class="particles" id="particles-canvas"></div>
+        <div class="splash-background-glow"></div>
+        
+        <div class="splash-content">
+            <!-- Animated SVG Logo -->
+            <div class="logo-wrapper">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Outer rotating ring -->
+                    <circle class="logo-ring outer" cx="50" cy="50" r="45" />
+                    <!-- Inner dashed ring -->
+                    <circle class="logo-ring inner" cx="50" cy="50" r="35" />
+                    <!-- Inner geometric core -->
+                    <polygon class="logo-core" points="50,22 75,65 25,65" />
+                    <polygon class="logo-core-inner" points="50,38 62,60 38,60" />
+                </svg>
+                <div class="logo-glow"></div>
+            </div>
+            
+            <h1 class="splash-title">A E T H E R I A</h1>
+            <p class="splash-subtitle">IMMERSIVE DIGITAL EXPERIENCE</p>
+            
+            <!-- Enter Button -->
+            <button class="enter-btn" id="enter-btn">
+                <span class="btn-glow"></span>
+                <span class="btn-text">ENTER EXPERIENCE</span>
+                <span class="btn-border"></span>
+            </button>
+        </div>
+        
+        <div class="splash-footer">
+            <span>EST. 2026 // CREATIVE DEVIATION</span>
+        </div>
+    </div>
+
+    <!-- Main Content Container (Initially Hidden/Shifted) -->
+    <div class="main-container hidden" id="main-content">
+        <!-- Background Ambient Lights -->
+        <div class="ambient-glow light-1"></div>
+        <div class="ambient-glow light-2"></div>
+        
+        <!-- Header -->
+        <header class="site-header">
+            <div class="header-logo">
+                <svg class="header-logo-svg" viewBox="0 0 100 100">
+                    <polygon class="logo-core" points="50,25 70,60 30,60" />
+                </svg>
+                <span>AETHERIA</span>
+            </div>
+            <nav class="main-nav">
+                <a href="#home" class="active">HOME</a>
+                <a href="#services">SERVICES</a>
+                <a href="#work">WORK</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+            <div class="header-actions">
+                <button class="action-btn">LAUNCH APP</button>
+            </div>
+        </header>
+
+        <!-- Main Body -->
+        <main class="content-wrapper">
+            <!-- Hero Section -->
+            <section id="home" class="hero-section">
+                <div class="hero-text-content">
+                    <div class="hero-tag">
+                        <i data-lucide="sparkles"></i>
+                        <span>THE NEXT GEN WEB</span>
+                    </div>
+                    <h2 class="hero-heading">Architecting Digital <span class="gradient-text">Masterpieces</span></h2>
+                    <p class="hero-description">We design and build bespoke high-fidelity digital solutions that captivate attention, stimulate interaction, and redefine what is possible online.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#work" class="primary-btn">EXPLORE WORK</a>
+                        <a href="#contact" class="secondary-btn">LET'S TALK</a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="visual-card glass-panel">
+                        <div class="card-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="card-title">PROJECT_METRIC.LOG</span>
+                        </div>
+                        <div class="card-body">
+                            <pre><code>$ npm run build:future
+<span class="code-success">> Aetheria Engine Loaded Successfully.</span>
+> Latency: 4ms
+> Animation rate: 120 FPS
+> Quality level: Immersive
+> Ready to launch.</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="services-section">
+                <h3 class="section-title">OUR SERVICES</h3>
+                <div class="services-grid">
+                    <div class="service-card glass-panel">
+                        <div class="icon-box"><i data-lucide="component"></i></div>
+                        <h4>Immersive UI/UX</h4>
+                        <p>Visually rich design language with dynamic, highly interactive responsive components.</p>
+                    </div>
+                    <div class="service-card glass-panel">
+                        <div class="icon-box"><i data-lucide="zap"></i></div>
+                        <h4>High Performance</h4>
+                        <p>Lightning-fast animations, GPU acceleration, and optimized assets for 120fps motion.</p>
+                    </div>
+                    <div class="service-card glass-panel">
+                        <div class="icon-box"><i data-lucide="codepen"></i></div>
+                        <h4>WebGL & Motion</h4>
+                        <p>Cinematic canvas interactive elements, custom shaders, and physics-driven page transitions.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

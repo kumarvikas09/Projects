@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/main-style.css" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="main_wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xl-2 col-lg-3 col-4">
+              <div class="left_wrapper">
+                <div class="main_logo text-center">
+                  <img src="./assets/images/main-logo.png" alt="main-logo" />
+                </div>
+                <div class="menu_navs">
+                  <ul>
+                    <li class="active">
+                      <a href="./dashboardScreen.html">
+                        <img
+                          src="./assets/images/dasboard.svg"
+                          alt="dasboard"
+                        /><span>Dashboard</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="./departmentScreen.html">
+                        <img
+                          src="./assets/images/department.svg"
+                          alt="department"
+                        /><span>Departments</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="./budgetEntry.html">
+                        <img
+                          src="./assets/images/budget_entry.svg"
+                          alt="budget_entry"
+                        /><span>Budget Entry</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="./budgetReview.html">
+                        <img
+                          src="./assets/images/budget_review.svg"
+                          alt="budget_review"
+                        /><span>Budget Review</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img
+                          src="./assets/images/reports.svg"
+                          alt="reports"
+                        /><span>Reports</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img
+                          src="./assets/images/settings.svg"
+                          alt="settings"
+                        /><span>Settings</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="bottom_wrap">
+                  <div class="logout_wrap">
+                    <form>
+                      <button type="submit">
+                        <img
+                          src="./assets/images/Logout.svg"
+                          alt="Logout"
+                        /><span>Logout</span>
+                      </button>
+                    </form>
+                  </div>
+                  <div class="profile_wrap">
+                    <div class="profile">
+                      <img
+                        src="./assets/images/client_headshot.svg"
+                        alt="client_headshot"
+                      />
+                      <div class="name_wrap">
+                        <p class="name">John Doe</p>
+                        <button type="button">View profile</button>
+                      </div>
+                    </div>
+                    <button type="button">
+                      <img
+                        src="./assets/images/burger-bar.svg"
+                        alt="burger-bar"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-10 col-lg-9 col-8">
+              <div class="right_wrapper">
+                <div class="topbar">
+                  <div class="left_wrap">
+                    <h4 class="username">Hello John</h4>
+                    <div class="select_wrap">
+                      <img src="./assets/images/calender.svg" alt="calender" />
+                      <select name="date">
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="right_wrap">
+                    <img
+                      src="./assets/images/notification-bell.svg"
+                      alt="notification-bell"
+                    />
+                  </div>
+                </div>
+                <div class="main_screen">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="inner_wrap">
+                        <div class="top_txt">
+                          <div class="cont">
+                            <h4 class="title">Total Approved Budget</h4>
+                            <h5 class="price">$12,450,000</h5>
+                          </div>
+                          <img
+                            src="./assets/images/approved.svg"
+                            alt="approved"
+                          />
+                        </div>
+                        <div class="btm_txt">
+                          <p>
+                            Total budget allocated for the selected fiscal year
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="inner_wrap">
+                        <div class="top_txt">
+                          <div class="cont">
+                            <h4 class="title">Total Allocated</h4>
+                            <h5 class="price">$9,820,000</h5>
+                          </div>
+                          <img
+                            src="./assets/images/allocated.svg"
+                            alt="allocated"
+                          />
+                        </div>
+                        <div class="btm_txt">
+                          <p>Funds currently distributed to departments</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="inner_wrap">
+                        <div class="top_txt">
+                          <div class="cont">
+                            <h4 class="title">Remaining Balance</h4>
+                            <h5 class="price">$2,630,000</h5>
+                          </div>
+                          <img
+                            src="./assets/images/remain-bal.svg"
+                            alt="remain-bal"
+                          />
+                        </div>
+                        <div class="btm_txt">
+                          <p>Budget available for future allocation</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid_wrap">
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <div class="inner_wrapper">
+                          <h4 class="title">Recent Activity</h4>
+                          <div class="recent_activity_wrap">
+                            <div class="activity">
+                              <div class="left">
+                                <img
+                                  src="./assets/images/book.svg"
+                                  alt="book"
+                                />
+                                <p>
+                                  Budget updated for <br /><b
+                                    >Science Department</b
+                                  >
+                                </p>
+                              </div>
+                              <div class="right">
+                                <p>2 hours ago</p>
+                              </div>
+                            </div>
+                            <div class="activity">
+                              <div class="left">
+                                <img
+                                  src="./assets/images/book.svg"
+                                  alt="book"
+                                />
+                                <p>
+                                  Budget updated for <br /><b
+                                    >Science Department</b
+                                  >
+                                </p>
+                              </div>
+                              <div class="right">
+                                <p>2 hours ago</p>
+                              </div>
+                            </div>
+                            <div class="activity">
+                              <div class="left">
+                                <img
+                                  src="./assets/images/book.svg"
+                                  alt="book"
+                                />
+                                <p>
+                                  Budget updated for <br /><b
+                                    >Science Department</b
+                                  >
+                                </p>
+                              </div>
+                              <div class="right">
+                                <p>2 hours ago</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-8">
+                        <div class="row gy-4">
+                          <div class="col-12">
+                            <div class="inner_wrapper">
+                              <h4 class="title">Budget vs Actual Spend</h4>
+                              <canvas id="budgetChart" height="80"></canvas>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="inner_wrapper">
+                              <div class="head d-flex justify-content-between">
+                                <h4 class="title mb-0">
+                                  Department Budget Status
+                                </h4>
+                                <a href="./budgetEntry.html">View All</a>
+                              </div>
+                              <div class="table_wrap">
+                                <table>
+                                  <thead>
+                                    <tr>
+                                      <th>Department Name</th>
+                                      <th>Approved Budget</th>
+                                      <th>Actual Spend</th>
+                                      <th>Remaining Balance</th>
+                                      <th>Status</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>Lorem ipsum dolor</td>
+                                      <td>$150,000</td>
+                                      <td>$750,000</td>
+                                      <td>$600,000</td>
+                                      <td>
+                                        <button class="complete">
+                                          Complete
+                                        </button>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Lorem ipsum dolor</td>
+                                      <td>$150,000</td>
+                                      <td>$750,000</td>
+                                      <td>$600,000</td>
+                                      <td>
+                                        <button class="complete">
+                                          Complete
+                                        </button>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Lorem ipsum dolor</td>
+                                      <td>$150,000</td>
+                                      <td>$750,000</td>
+                                      <td>$600,000</td>
+                                      <td>
+                                        <button class="pending">Pending</button>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+
+    <script src="./assets/js/jquery/jquery.min.js"></script>
+    <script src="./assets/js/chart/chart.js"></script>
+    <script src="./assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/function.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Spotify Masterplan — Elixir Music Experience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════
+       RESET & BASE
+    ═══════════════════════════════════════ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --accent: #EA34FA;
+      --accent-glow: rgba(234, 52, 250, 0.35);
+      --accent-dim: rgba(234, 52, 250, 0.12);
+      --dark: #070616;
+      --dark-card: #0e0c24;
+      --dark-border: #1a1740;
+      --white: #FFFFFF;
+      --white-90: rgba(255, 255, 255, 0.9);
+      --white-70: rgba(255, 255, 255, 0.7);
+      --white-50: rgba(255, 255, 255, 0.5);
+      --white-20: rgba(255, 255, 255, 0.2);
+      --white-10: rgba(255, 255, 255, 0.1);
+      --white-05: rgba(255, 255, 255, 0.04);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ═══════════════════════════════════════
+       UTILITIES
+    ═══════════════════════════════════════ */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .accent { color: var(--accent); }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══════════════════════════════════════
+       BACKGROUND FX
+    ═══════════════════════════════════════ */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(234, 52, 250, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(234, 52, 250, 0.04) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    section, header, footer { position: relative; z-index: 1; }
+
+    /* ═══════════════════════════════════════
+       TYPOGRAPHY
+    ═══════════════════════════════════════ */
+    h1 {
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    p {
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      font-weight: 300;
+      color: var(--white-70);
+    }
+
+    /* ═══════════════════════════════════════
+       CTA BUTTON
+    ═══════════════════════════════════════ */
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      padding: 18px 44px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      box-shadow: 0 0 30px var(--accent-glow), 0 4px 20px rgba(0,0,0,0.4);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 0 50px var(--accent-glow), 0 8px 30px rgba(0,0,0,0.5);
+    }
+
+    .cta-btn::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .cta-btn:hover::after { left: 100%; }
+
+    /* ═══════════════════════════════════════
+       DIVIDER
+    ═══════════════════════════════════════ */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--dark-border), transparent);
+    }
+
+    /* ═══════════════════════════════════════
+       1. HERO
+    ═══════════════════════════════════════ */
+    .hero {
+      padding: 60px 0 70px;
+      text-align: center;
+    }
+
+    .hero h1 .accent-line {
+      color: var(--accent);
+      display: block;
+      font-size: 0.55em;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      margin-top: 8px;
+    }
+
+    .hero__sub {
+      max-width: 640px;
+      margin: 28px auto 0;
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      color: var(--white-70);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════
+       2. VSL VIDEO + FORM BELOW
+    ═══════════════════════════════════════ */
+    .vsl-section {
+      padding: 20px 0 80px;
+    }
+
+    .vsl-hook {
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      font-weight: 500;
+      color: var(--white-90);
+      letter-spacing: 0.01em;
+    }
+
+    .vsl-hook span {
+      color: var(--white-50);
+      font-weight: 300;
+    }
+
+    .video-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      border-radius: 12px 12px 0 0;
+      overflow: hidden;
+      border: 1px solid var(--dark-border);
+      border-bottom: none;
+      box-shadow: 0 0 60px rgba(234, 52, 250, 0.1), 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .video-placeholder {
+      aspect-ratio: 16/9;
+      background: var(--dark-card);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .video-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(234,52,250,0.08) 0%, transparent 70%);
+    }
+
+    .play-btn {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 0 40px var(--accent-glow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-placeholder:hover .play-btn {
+      transform: scale(1.1);
+      box-shadow: 0 0 60px var(--accent-glow);
+    }
+
+    .play-btn svg {
+      width: 32px; height: 32px;
+      fill: var(--white);
+      margin-left: 4px;
+    }
+
+    .play-btn-pulse {
+      position: absolute;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      animation: pulse-ring 2s ease-out infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.8); opacity: 0; }
+    }
+
+    .video-label {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--white-50);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Video embed (hidden until form submitted) */
+    .video-embed {
+      display: none;
+      width: 100%;
+      aspect-ratio: 16/9;
+      position: relative;
+    }
+
+    .video-embed.playing { display: block; }
+    .video-placeholder.hidden { display: none; }
+
+    /* ── Form below video ── */
+    .video-form {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-top: none;
+      border-radius: 0 0 12px 12px;
+      padding: 32px 36px 28px;
+    }
+
+    .video-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .video-form-row--three {
+      grid-template-columns: 1fr 1fr auto;
+    }
+
+    .video-form .form-group { margin: 0; }
+
+    .video-form input {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid var(--dark-border);
+      border-radius: 6px;
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 400;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-form input::placeholder {
+      color: var(--white-50);
+      font-weight: 300;
+    }
+
+    .video-form input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(234, 52, 250, 0.15);
+    }
+
+    /* Phone with prefix */
+    .phone-wrapper {
+      display: flex;
+      gap: 8px;
+    }
+
+    .phone-prefix {
+      width: 90px;
+      min-width: 90px;
+      padding: 14px 10px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid var(--dark-border);
+      border-radius: 6px;
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 400;
+      outline: none;
+      text-align: center;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .phone-prefix:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(234, 52, 250, 0.15);
+    }
+
+    .phone-wrapper input[type="tel"] {
+      flex: 1;
+    }
+
+    /* Instagram field icon */
+    .ig-wrapper {
+      position: relative;
+    }
+
+    .ig-wrapper::before {
+      content: '@';
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--white-50);
+      font-size: 0.92rem;
+      font-weight: 500;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .ig-wrapper input {
+      padding-left: 32px;
+    }
+
+    .video-form .cta-btn {
+      width: 100%;
+      padding: 16px;
+      font-size: 1rem;
+      margin-top: 4px;
+    }
+
+    /* Privacy checkbox */
+    .privacy-check {
+      margin-top: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .privacy-check input[type="checkbox"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px; height: 20px; min-width: 20px;
+      border: 1px solid var(--dark-border);
+      border-radius: 4px;
+      background: rgba(255,255,255,0.05);
+      cursor: pointer;
+      margin-top: 2px;
+      position: relative;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .privacy-check input[type="checkbox"]:checked {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .privacy-check input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      top: 3px; left: 6px;
+      width: 5px; height: 10px;
+      border: solid var(--white);
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .privacy-check label {
+      font-size: 0.78rem;
+      color: var(--white-50);
+      font-weight: 300;
+      line-height: 1.55;
+      cursor: pointer;
+    }
+
+    .privacy-check label a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .privacy-check label a:hover { opacity: 0.8; }
+
+    /* ═══════════════════════════════════════
+       3. SUPPORT LINE + CTA 1
+    ═══════════════════════════════════════ */
+    .support-section {
+      padding: 50px 0 100px;
+      text-align: center;
+    }
+
+    .support-section p {
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      font-weight: 400;
+      color: var(--white-70);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    .support-section p em {
+      font-style: normal;
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    /* ═══════════════════════════════════════
+       4. TESTIMONIAL VIDEO
+    ═══════════════════════════════════════ */
+    .testimonial-video-section {
+      padding: 100px 0;
+    }
+
+    .testimonial-video-section__label {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 40px;
+    }
+
+    .testimonial-video-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--dark-border);
+      box-shadow: 0 0 40px rgba(234, 52, 250, 0.08), 0 12px 40px rgba(0,0,0,0.4);
+    }
+
+    .testimonial-video-placeholder {
+      aspect-ratio: 16/9;
+      background: var(--dark-card);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .testimonial-video-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(234,52,250,0.06) 0%, transparent 70%);
+    }
+
+    .testimonial-play {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: rgba(234, 52, 250, 0.2);
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .testimonial-play svg {
+      width: 24px; height: 24px;
+      fill: var(--accent);
+      margin-left: 3px;
+    }
+
+    .testimonial-video-label {
+      margin-top: 14px;
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--white-50);
+      letter-spacing: 0.06em;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ═══════════════════════════════════════
+       5. VALUE STACK (What You'll Learn)
+    ═══════════════════════════════════════ */
+    .learn-section {
+      padding: 100px 0;
+    }
+
+    .learn-section h2 {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .learn-section .learn-sub {
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto 48px;
+      color: var(--white-50);
+      font-size: 0.95rem;
+    }
+
+    .value-stack {
+      list-style: none;
+      max-width: 700px;
+      margin: 0 auto;
+      counter-reset: stack;
+    }
+
+    .value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--white-10);
+    }
+
+    .value-item:last-child { border-bottom: none; }
+
+    .value-time {
+      flex-shrink: 0;
+      width: 56px;
+      height: 36px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(234, 52, 250, 0.25);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+      margin-top: 2px;
+    }
+
+    .value-content {
+      flex: 1;
+    }
+
+    .value-title {
+      font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.5;
+      margin-bottom: 2px;
+    }
+
+    .value-desc {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--white-50);
+      line-height: 1.5;
+    }
+
+    /* ═══════════════════════════════════════
+       CTA SECTIONS
+    ═══════════════════════════════════════ */
+    .cta-section {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    /* ═══════════════════════════════════════
+       6. AUTHORITY PHOTOS
+    ═══════════════════════════════════════ */
+    .authority-section {
+      padding: 100px 0;
+    }
+
+    .authority-section h2 {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .authority-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .authority-item {
+      background: var(--white-05);
+      border: 1px dashed var(--dark-border);
+      border-radius: 10px;
+      aspect-ratio: 1/1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      text-align: center;
+      transition: border-color 0.3s ease;
+    }
+
+    .authority-item:hover {
+      border-color: rgba(234, 52, 250, 0.3);
+    }
+
+    .authority-item__icon {
+      width: 40px; height: 40px;
+      margin-bottom: 12px;
+      opacity: 0.3;
+    }
+
+    .authority-item__icon svg {
+      width: 100%; height: 100%;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .authority-item__label {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--white-50);
+      line-height: 1.4;
+    }
+
+    /* ═══════════════════════════════════════
+       7. FAQ
+    ═══════════════════════════════════════ */
+    .faq-section {
+      padding: 100px 0;
+    }
+
+    .faq-section h2 {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--white-10);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 22px 0;
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+      font-weight: 500;
+      color: var(--white);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .faq-question:hover { color: var(--accent); }
+
+    .faq-question__icon {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--white-20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.35s ease, border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .faq-question__icon svg {
+      width: 14px; height: 14px;
+      stroke: var(--white-70);
+      fill: none;
+      stroke-width: 2;
+      transition: stroke 0.3s ease;
+    }
+
+    .faq-item.active .faq-question__icon {
+      transform: rotate(45deg);
+      border-color: var(--accent);
+      background: rgba(234, 52, 250, 0.1);
+    }
+
+    .faq-item.active .faq-question__icon svg { stroke: var(--accent); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .faq-answer__inner {
+      padding: 0 0 22px;
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--white-70);
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════
+       8. CLOSE + CTA FINAL
+    ═══════════════════════════════════════ */
+    .close-section {
+      padding: 100px 0 120px;
+      text-align: center;
+      position: relative;
+    }
+
+    .close-section::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(234,52,250,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .close-section .close-text {
+      max-width: 560px;
+      margin: 0 auto 36px;
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: var(--white-70);
+      line-height: 1.7;
+    }
+
+    .close-section .close-text em {
+      font-style: normal;
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid var(--white-10);
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--white-50);
+      font-weight: 300;
+    }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width: 768px) {
+      .video-form-row,
+      .video-form-row--three {
+        grid-template-columns: 1fr;
+      }
+
+      .video-form {
+        padding: 24px 20px 20px;
+      }
+
+      .authority-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .cta-btn {
+        padding: 16px 32px;
+        font-size: 0.95rem;
+      }
+
+      h1 { font-size: 2rem; }
+      .hero { padding: 40px 0 50px; }
+
+      .testimonial-video-section,
+      .learn-section,
+      .authority-section,
+      .faq-section,
+      .close-section {
+        padding: 70px 0;
+      }
+
+      .phone-prefix { width: 80px; min-width: 80px; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.7rem; }
+      .authority-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       1. HERO
+  ═══════════════════════════════════════ -->
+  <header class="hero">
+    <div class="container">
+      <h1 class="fade-in">
+        STOP HOPING FOR ATTENTION
+        <span class="accent-line">OWN SOMETHING THE INDUSTRY NEEDS</span>
+      </h1>
+      <p class="hero__sub fade-in">
+        Build a real audience. Attract promoters, labels, and fans who actually care about your music.
+      </p>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       2. VSL VIDEO + FORM
+  ═══════════════════════════════════════ -->
+  <section class="vsl-section">
+    <div class="container">
+      <p class="vsl-hook fade-in">Learn how this system works. <span>Watch the full breakdown.</span></p>
+      <div class="video-wrapper fade-in" id="videoWrapper">
+        <div class="video-placeholder" id="videoThumbnail">
+          <div class="play-btn-pulse"></div>
+          <div class="play-btn">
+            <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
+          </div>
+          <span class="video-label">Watch the strategy</span>
+        </div>
+
+        <div class="video-embed" id="videoEmbed">
+          <!-- Replace src with actual VSL embed URL -->
+          <iframe
+            width="100%" height="100%" src=""
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Form below video -->
+      <div class="video-form fade-in" id="videoForm">
+        <div class="video-form-row">
+          <div class="form-group">
+            <input type="email" id="formEmail" placeholder="Your best email" autocomplete="email">
+          </div>
+          <div class="form-group ig-wrapper">
+            <input type="text" id="formInstagram" placeholder="your.instagram" autocomplete="off">
+          </div>
+        </div>
+        <div class="video-form-row">
+          <div class="form-group">
+            <div class="phone-wrapper">
+              <input type="text" class="phone-prefix" id="phonePrefix" value="+34" placeholder="+34">
+              <input type="tel" id="formPhone" placeholder="Phone number" autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-group" style="display:flex;align-items:stretch;">
+            <button class="cta-btn" type="button" id="formSubmit" style="width:100%;margin:0;">I'm ready — show me the system</button>
+          </div>
+        </div>
+        <div class="privacy-check">
+          <input type="checkbox" id="privacyCheck">
+          <label for="privacyCheck">Click here and boom – you're in. You agree to our <a href="https://www.elixirmusicexperience.com/privacy" target="_blank" rel="noopener">privacy policy</a> and you'll start receiving what might just be the best electronic music newsletter on the planet.</label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       3. SUPPORT LINE + CTA 1
+  ═══════════════════════════════════════ -->
+  <section class="support-section">
+    <div class="container fade-in">
+      <p>
+        No more fake playlist placements. No more begging curators.<br>
+        <em>This is the true system to make fans. And have a real chance as an artist.</em>
+      </p>
+      <a href="#videoForm" class="cta-btn scroll-to-form">I'm ready — show me the system</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       4. TESTIMONIAL VIDEO
+  ═══════════════════════════════════════ -->
+  <section class="testimonial-video-section">
+    <div class="container">
+      <div class="testimonial-video-section__label fade-in">What people are saying</div>
+      <div class="testimonial-video-wrap fade-in">
+        <div class="testimonial-video-placeholder">
+          <div class="testimonial-play">
+            <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
+          </div>
+          <span class="testimonial-video-label">[ Placeholder — Customer testimonial compilation video ]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       5. VALUE STACK — WHAT YOU'LL LEARN
+  ═══════════════════════════════════════ -->
+  <section class="learn-section">
+    <div class="container">
+      <h2 class="fade-in">What you'll learn inside</h2>
+      <p class="learn-sub fade-in">Here's what's waiting for you — minute by minute.</p>
+      <ul class="value-stack">
+
+        <li class="value-item fade-in">
+          <div class="value-time">0:45</div>
+          <div class="value-content">
+            <div class="value-title">Why your music career feels stuck — and why it's not your fault</div>
+            <div class="value-desc">The real reason talented artists stay invisible while others grow.</div>
+          </div>
+        </li>
+
+        <li class="value-item fade-in">
+          <div class="value-time">1:40</div>
+          <div class="value-content">
+            <div class="value-title">You build your own Spotify asset that makes you relevant</div>
+            <div class="value-desc">The "something else" that makes promoters, labels and artists want to connect with you.</div>
+          </div>
+        </li>
+
+        <li class="value-item fade-in">
+          <div class="value-time">2:35</div>
+          <div class="value-content">
+            <div class="value-title">Why everything you've tried isn't working</div>
+            <div class="value-desc">Playlists, Submithub, Fiverr — why they're quietly destroying your algorithm.</div>
+          </div>
+        </li>
+
+        <li class="value-item fade-in">
+          <div class="value-time">4:32</div>
+          <div class="value-content">
+            <div class="value-title">How to become interesting to promoters, labels and industry players</div>
+            <div class="value-desc">What they're actually looking for — and how to be the artist they reach out to.</div>
+          </div>
+        </li>
+
+        <li class="value-item fade-in">
+          <div class="value-time">5:15</div>
+          <div class="value-content">
+            <div class="value-title">The 3-step system behind 200+ artist transformations</div>
+            <div class="value-desc">Subscribe, build, grow. Simple, repeatable, and it runs forever.</div>
+          </div>
+        </li>
+
+        <li class="value-item fade-in">
+          <div class="value-time">6:18</div>
+          <div class="value-content">
+            <div class="value-title">From bedroom unknown to playing the best clubs in his city</div>
+            <div class="value-desc">Mainterm's real story — and why this system changed everything.</div>
+          </div>
+        </li>
+
+        <li class="value-item fade-in">
+          <div class="value-time">8:30</div>
+          <div class="value-content">
+            <div class="value-title">9 extras included that remove every excuse not to join</div>
+            <div class="value-desc">Elixir Credits, promo pools, management sessions, label access, and more.</div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CTA 2
+  ═══════════════════════════════════════ -->
+  <section class="cta-section">
+    <div class="container fade-in">
+      <a href="#videoForm" class="cta-btn scroll-to-form">Yes — show me the full strategy</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       6. AUTHORITY PHOTOS
+  ═══════════════════════════════════════ -->
+  <section class="authority-section">
+    <div class="container">
+      <h2 class="fade-in">The team behind the system</h2>
+      <div class="authority-grid">
+        <div class="authority-item fade-in">
+          <div class="authority-item__icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><circle cx="12" cy="10" r="3"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
+          </div>
+          <span class="authority-item__label">Miguel backstage</span>
+        </div>
+        <div class="authority-item fade-in">
+          <div class="authority-item__icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><circle cx="12" cy="10" r="3"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
+          </div>
+          <span class="authority-item__label">Miguel — authority / stage photo</span>
+        </div>
+        <div class="authority-item fade-in">
+          <div class="authority-item__icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <span class="authority-item__label">Spotify for Artists — growth results</span>
+        </div>
+        <div class="authority-item fade-in">
+          <div class="authority-item__icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <span class="authority-item__label">Elixir team / artists at event</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       7. FAQ
+  ═══════════════════════════════════════ -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="fade-in">Frequently asked questions</h2>
+      <div class="faq-list">
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            <span>What will I learn from the video?</span>
+            <span class="faq-question__icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">We will explain the system you could use to get your music into real ears — and keeps it there.</div>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            <span>How much is the Elixir Masterplan system?</span>
+            <span class="faq-question__icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">Right now, 450 €/month. Tomorrow? Probably more.</div>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is the price negotiable?</span>
+            <span class="faq-question__icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">No.</div>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            <span>I think it's too expensive</span>
+            <span class="faq-question__icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">We don't — and neither do the artists who've already joined. It works. And it's not negotiable.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       8. CLOSE + CTA FINAL
+  ═══════════════════════════════════════ -->
+  <section class="close-section" id="close-final">
+    <div class="container">
+      <h2 class="fade-in">This is your move.</h2>
+      <p class="close-text fade-in">
+        If you're serious about your music, stop scrolling and enter your info. <em>Let's get this started.</em>
+      </p>
+      <div class="fade-in">
+        <a href="#videoForm" class="cta-btn scroll-to-form" id="finalCta">I'm serious about my music career</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Elixir Music Experience. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════ -->
+  <script>
+    // ── Video Form Mechanic ──
+    const videoThumbnail = document.getElementById('videoThumbnail');
+    const videoEmbed = document.getElementById('videoEmbed');
+    const videoForm = document.getElementById('videoForm');
+    const videoWrapper = document.getElementById('videoWrapper');
+    const formSubmit = document.getElementById('formSubmit');
+    const formEmail = document.getElementById('formEmail');
+    const formPhone = document.getElementById('formPhone');
+    const formInstagram = document.getElementById('formInstagram');
+    const privacyCheck = document.getElementById('privacyCheck');
+
+    // Validation helper — red border
+    function flagField(el) {
+      el.style.borderColor = '#ff4466';
+      el.addEventListener('input', () => { el.style.borderColor = ''; }, { once: true });
+    }
+
+    // Submit → hide thumbnail + form, show video
+    formSubmit.addEventListener('click', () => {
+      const email = formEmail.value.trim();
+      const phone = formPhone.value.trim();
+
+      if (!email) { flagField(formEmail); formEmail.focus(); return; }
+      if (!phone) { flagField(formPhone); formPhone.focus(); return; }
+
+      if (!privacyCheck.checked) {
+        privacyCheck.parentElement.style.outline = '1px solid #ff4466';
+        privacyCheck.parentElement.style.outlineOffset = '4px';
+        privacyCheck.parentElement.style.borderRadius = '4px';
+        privacyCheck.addEventListener('change', () => {
+          privacyCheck.parentElement.style.outline = '';
+          privacyCheck.parentElement.style.outlineOffset = '';
+        }, { once: true });
+        return;
+      }
+
+      // Form passed — launch video
+      videoThumbnail.classList.add('hidden');
+      videoForm.style.display = 'none';
+      videoEmbed.classList.add('playing');
+      videoWrapper.style.borderRadius = '12px';
+      videoWrapper.style.border = '1px solid var(--dark-border)';
+
+      // Set the actual video embed src here to autoplay
+      // Example: videoEmbed.querySelector('iframe').src = 'https://www.youtube.com/embed/VIDEO_ID?autoplay=1';
+    });
+
+    // ── All CTAs scroll to form ──
+    document.querySelectorAll('.scroll-to-form').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const form = document.getElementById('videoForm');
+        if (form.style.display === 'none') {
+          videoWrapper.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(() => formEmail.focus(), 600);
+        }
+      });
+    });
+
+    // ── FAQ Accordion ──
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const answer = item.querySelector('.faq-answer');
+        const isActive = item.classList.contains('active');
+
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.faq-answer').style.maxHeight = null;
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isActive) {
+          item.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // ── Scroll fade-in ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

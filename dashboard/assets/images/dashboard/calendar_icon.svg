@@ -1,0 +1,7 @@
+<svg id="MDI_calendar-month-outline" data-name="MDI / calendar-month-outline" xmlns="http://www.w3.org/2000/svg" width="30.09" height="30.09" viewBox="0 0 30.09 30.09">
+  <g id="Boundary" fill="#61aa96" stroke="rgba(0,0,0,0)" stroke-width="1" opacity="0">
+    <rect width="30.09" height="30.09" stroke="none"/>
+    <rect x="0.5" y="0.5" width="29.09" height="29.09" fill="none"/>
+  </g>
+  <path id="Path_calendar-month-outline" data-name="Path / calendar-month-outline" d="M8.015,14.537h2.507v2.507H8.015V14.537M25.567,7.015V24.567a2.507,2.507,0,0,1-2.507,2.507H5.507A2.507,2.507,0,0,1,3,24.567V7.015A2.507,2.507,0,0,1,5.507,4.507H6.761V2H9.269V4.507H19.3V2h2.507V4.507H23.06a2.507,2.507,0,0,1,2.507,2.507M5.507,9.522H23.06V7.015H5.507V9.522M23.06,24.567V12.03H5.507V24.567H23.06m-5.015-7.522V14.537h2.507v2.507H18.045m-5.015,0V14.537h2.507v2.507H13.03M8.015,19.552h2.507V22.06H8.015V19.552m10.03,2.507V19.552h2.507V22.06H18.045m-5.015,0V19.552h2.507V22.06Z" transform="translate(0.761 0.507)" fill="#61aa96"/>
+</svg>

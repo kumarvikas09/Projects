@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Entry</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/main-style.css" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="main_wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xl-2 col-lg-3 col-4">
+              <div class="left_wrapper">
+                <div class="main_logo text-center">
+                  <img src="./assets/images/main-logo.png" alt="main-logo" />
+                </div>
+                <div class="menu_navs">
+                  <ul>
+                    <li class="">
+                      <a href="./dashboardScreen.html">
+                        <img
+                          src="./assets/images/dasboard.svg"
+                          alt="dasboard"
+                        /><span>Dashboard</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="./departmentScreen.html">
+                        <img
+                          src="./assets/images/department.svg"
+                          alt="department"
+                        /><span>Departments</span>
+                      </a>
+                    </li>
+                    <li class="active">
+                      <a href="./budgetEntry.html">
+                        <img
+                          src="./assets/images/budget_entry.svg"
+                          alt="budget_entry"
+                        /><span>Budget Entry</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="./budgetReview.html">
+                        <img
+                          src="./assets/images/budget_review.svg"
+                          alt="budget_review"
+                        /><span>Budget Review</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img
+                          src="./assets/images/reports.svg"
+                          alt="reports"
+                        /><span>Reports</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img
+                          src="./assets/images/settings.svg"
+                          alt="settings"
+                        /><span>Settings</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="bottom_wrap">
+                  <div class="logout_wrap">
+                    <form>
+                      <button type="submit">
+                        <img
+                          src="./assets/images/Logout.svg"
+                          alt="Logout"
+                        /><span>Logout</span>
+                      </button>
+                    </form>
+                  </div>
+                  <div class="profile_wrap">
+                    <div class="profile">
+                      <img
+                        src="./assets/images/client_headshot.svg"
+                        alt="client_headshot"
+                      />
+                      <div class="name_wrap">
+                        <p class="name">John Doe</p>
+                        <button type="button">View profile</button>
+                      </div>
+                    </div>
+                    <button type="button">
+                      <img
+                        src="./assets/images/burger-bar.svg"
+                        alt="burger-bar"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-10 col-lg-9 col-8">
+              <div class="right_wrapper">
+                <div class="topbar">
+                  <div class="left_wrap">
+                    <h4 class="username">Hello John</h4>
+                    <div class="select_wrap">
+                      <img src="./assets/images/calender.svg" alt="calender" />
+                      <select name="date">
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="right_wrap">
+                    <img
+                      src="./assets/images/notification-bell.svg"
+                      alt="notification-bell"
+                    />
+                  </div>
+                </div>
+                <div class="main_screen">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="head">
+                        <div class="cont">
+                          <h4 class="sec_hdng mb-0">Budget Entry</h4>
+                        </div>
+                      </div>
+                      <div class="steps_wrap">
+                        <div class="step active">
+                          <p>Department & Details</p>
+                        </div>
+                        <div class="step">
+                          <p>Budget Line Items</p>
+                        </div>
+                        <div class="step">
+                          <p>Review & Submit</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid_wrap">
+                    <div class="row gy-4">
+                      <div class="col-12">
+                        <div class="inner_wrapper">
+                          <h3 class="title">1. Department & Details</h3>
+                          <hr />
+                          <div class="form_wrapper">
+                            <form>
+                              <div class="row">
+                                <div class="col-md-3">
+                                  <div class="field_wrap">
+                                    <p>Department</p>
+                                    <div class="input_wrap select">
+                                      <select name="dept">
+                                        <option value="all-dept">
+                                          All Departments
+                                        </option>
+                                        <option value="all-dept">
+                                          All Departments
+                                        </option>
+                                        <option value="all-dept">
+                                          All Departments
+                                        </option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="field_wrap">
+                                    <p>Fiscal Year</p>
+                                    <div class="input_wrap select">
+                                      <select name="dept">
+                                        <option value="2025">2025</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="field_wrap">
+                                    <p>Budget Type</p>
+                                    <div class="input_wrap radio">
+                                      <label>
+                                        <input
+                                          type="radio"
+                                          name="bdgt_type"
+                                          checked
+                                        />
+                                        <span>Operating</span>
+                                      </label>
+                                      <label>
+                                        <input type="radio" name="bdgt_type" />
+                                        <span>Capital</span>
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="inner_wrapper">
+                          <div class="head">
+                            <h4 class="title mb-0">2. Budget Line Items</h4>
+                            <div class="btn_wrap">
+                              <button
+                                class="cmn_btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"
+                              >
+                                <img
+                                  src="./assets/images/plus-icon.svg"
+                                  alt="plus-icon"
+                                />Add Budget Item
+                              </button>
+                              <!-- popup html start -->
+                              <div
+                                class="modal fade"
+                                id="exampleModal"
+                                tabindex="-1"
+                                aria-labelledby="exampleModalLabel"
+                                aria-hidden="true"
+                              >
+                                <div class="modal-dialog modal-dialog-centered modal-lg custom_popup">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5
+                                        class="modal-title sec_hdng"
+                                        id="exampleModalLabel"
+                                      >
+                                        Add Budget Item
+                                      </h5>
+                                      <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                      ></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <div class="form_wrapper verticle">
+                                        <form>
+                                          <div class="row gy-3">
+                                            <div class="col-12">
+                                              <div class="field_wrap">
+                                                <p>Department</p>
+                                                <div class="input_wrap select">
+                                                  <select name="dept">
+                                                    <option value="all-dept">
+                                                      All Departments
+                                                    </option>
+                                                    <option value="all-dept">
+                                                      All Departments
+                                                    </option>
+                                                    <option value="all-dept">
+                                                      All Departments
+                                                    </option>
+                                                  </select>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="col-12">
+                                              <div class="field_wrap">
+                                                <p>Fiscal Year</p>
+                                                <div class="input_wrap select">
+                                                  <select name="dept">
+                                                    <option value="2025">
+                                                      2025
+                                                    </option>
+                                                    <option value="2024">
+                                                      2024
+                                                    </option>
+                                                    <option value="2023">
+                                                      2023
+                                                    </option>
+                                                  </select>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="col-12">
+                                              <div class="field_wrap monthly_amounts ">
+                                                <p>
+                                                  Monthly Amounts (optional)
+                                                </p>
+
+                                                <div class="months_row">
+                                                  <span>Jan</span
+                                                  ><span>Feb</span
+                                                  ><span>Mar</span
+                                                  ><span>Apr</span>
+                                                  <span>May</span
+                                                  ><span>Jun</span
+                                                  ><span>Jul</span
+                                                  ><span>Aug</span>
+                                                  <span>Sep</span
+                                                  ><span>Oct</span
+                                                  ><span>Nov</span
+                                                  ><span>Dec</span>
+                                                </div>
+
+                                                <div class="inputs_row">
+                                                  <input type="text" />
+                                                  <input type="text" />
+                                                  <input type="text" />
+                                                  <input type="text" />
+                                                  <input type="text" />
+                                                  <input type="text" />
+                                                  <input type="text" />
+                                                  <input type="text" />
+                                                  <input type="text" />
+                                                  <input type="text" />
+                                                  <input type="text" />
+                                                  <input type="text" />
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="col-12">
+                                              <div class="d-flex justify-content-between">
+                                                <p>Total</p>
+                                                <p>$0</p>
+                                              </div>
+                                            </div>
+                                            <div class="col-12">
+                                              <div class="btn_grp d-flex gap-3 justify-content-end">
+                                                <button type="button" class="cmn_btn transparent_btn">Cancel</button>
+                                                <button type="submit" class="cmn_btn">Add Item</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- popup html end -->
+                            </div>
+                          </div>
+                          <div class="table_wrap">
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Category</th>
+                                  <th>Description</th>
+                                  <th>Jan</th>
+                                  <th>Feb</th>
+                                  <th>Mar</th>
+                                  <th>Apr</th>
+                                  <th>May</th>
+                                  <th>Jun</th>
+                                  <th>Jul</th>
+                                  <th>Aug</th>
+                                  <th>Sep</th>
+                                  <th>Oct</th>
+                                  <th>Nov</th>
+                                  <th>Dec</th>
+                                  <th>Amount</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <select name="category">
+                                      <option value="sales">
+                                        Salaries & Wages
+                                      </option>
+                                      <option value="sales">
+                                        Salaries & Wages
+                                      </option>
+                                      <option value="sales">
+                                        Salaries & Wages
+                                      </option>
+                                    </select>
+                                  </td>
+                                  <td>Lorem ipsum dolor</td>
+                                  <td>$2,500</td>
+                                  <td>-</td>
+                                  <td>-</td>
+                                  <td>$2,500</td>
+                                  <td>$2,500</td>
+                                  <td>$2,500</td>
+                                  <td>$2,500</td>
+                                  <td>$2,500</td>
+                                  <td>-</td>
+                                  <td>-</td>
+                                  <td>-</td>
+                                  <td>-</td>
+                                  <td>$75,000</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <select name="category">
+                                      <option value="sales">
+                                        Salaries & Wages
+                                      </option>
+                                      <option value="sales">
+                                        Salaries & Wages
+                                      </option>
+                                      <option value="sales">
+                                        Salaries & Wages
+                                      </option>
+                                    </select>
+                                  </td>
+                                  <td>Lorem ipsum dolor</td>
+                                  <td>$2,500</td>
+                                  <td>-</td>
+                                  <td>-</td>
+                                  <td>$2,500</td>
+                                  <td>$2,500</td>
+                                  <td>$2,500</td>
+                                  <td>$2,500</td>
+                                  <td>$2,500</td>
+                                  <td>-</td>
+                                  <td>-</td>
+                                  <td>-</td>
+                                  <td>-</td>
+                                  <td>$75,000</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <select name="category">
+                                      <option value="sales">
+                                        Salaries & Wages
+                                      </option>
+                                      <option value="sales">
+                                        Salaries & Wages
+                                      </option>
+                                      <option value="sales">
+                                        Salaries & Wages
+                                      </option>
+                                    </select>
+                                  </td>
+                                  <td>Lorem ipsum dolor</td>
+                                  <td>$2,500</td>
+                                  <td>-</td>
+                                  <td>-</td>
+                                  <td>$2,500</td>
+                                  <td>$2,500</td>
+                                  <td>$2,500</td>
+                                  <td>$2,500</td>
+                                  <td>$2,500</td>
+                                  <td>-</td>
+                                  <td>-</td>
+                                  <td>-</td>
+                                  <td>-</td>
+                                  <td>$75,000</td>
+                                </tr>
+                              </tbody>
+                              <tfoot>
+                                <tr>
+                                  <td colspan="15">
+                                    <div class="table_footer">
+                                      <div class="left">
+                                        <a href="#">+ Add another item</a>
+                                      </div>
+                                      <div
+                                        class="middle d-flex align-items-center"
+                                      >
+                                        <p>
+                                          Total Requested:
+                                          <span class="blue_text">$39,500</span>
+                                        </p>
+                                        <p>$61,500 available</p>
+                                      </div>
+                                      <div class="right">
+                                        <p><b>$23,500</b></p>
+                                      </div>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tfoot>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="inner_wrapper">
+                          <div class="head">
+                            <h4 class="title mb-0">3. Review & Submit</h4>
+                            <div class="details d-flex">
+                              <p>
+                                Total Requested:
+                                <span class="blue_text">$39,500</span>
+                              </p>
+                              <p>$61,500 available</p>
+                            </div>
+                          </div>
+                          <div
+                            class="btns_grp d-flex gap-3 justify-content-end mt-4"
+                          >
+                            <button class="cmn_btn transparent_btn">
+                              Cancel
+                            </button>
+                            <button class="cmn_btn secondary_btn">
+                              Save as Draft
+                            </button>
+                            <button class="cmn_btn">Submit for Review</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+
+    <script src="./assets/js/jquery/jquery.min.js"></script>
+    <script src="./assets/js/chart/chart.js"></script>
+    <script src="./assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/function.js"></script>
+  </body>
+</html>

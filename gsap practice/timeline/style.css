@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+main{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+}
+.card{
+    width: 700px;
+    padding: 20px;
+    background-color: #181818;
+    backdrop-filter: blur(1);
+    color: #fff;
+    /* border: 0.5px solid #e1e1e1; */
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+h2{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+h3{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #d200f6, #20bfee);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* For better compatibility */
+    background-clip: text;
+    color: transparent;
+}
+p{
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    margin-top: 30px;
+}
+span:nth-child(1){
+    color: #20bfee;
+}
+span:nth-child(2){
+    color: #d200f6;
+}
+a{
+    display: inline-block;
+    background: linear-gradient(-90deg, #d200f6, #20bfee);
+    padding: 15px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    scale: 0.5;
+    opacity: 0;
+}
+a:hover{
+    background: linear-gradient(90deg, #d200f6, #20bfee);
+}

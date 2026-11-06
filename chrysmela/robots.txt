@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://diamondearringlocksbychrysmela.com/sitemap.xml

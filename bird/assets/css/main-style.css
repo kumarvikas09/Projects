@@ -1,0 +1,316 @@
+/* fonts */
+@font-face {
+    font-family: 'Bree CYR';
+    src: url('https://cdn.shopify.com/s/files/1/0589/4642/0906/files/BreeCYR-Bold.woff2?v=1783059807') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Bree CYR';
+    src: url('https://cdn.shopify.com/s/files/1/0589/4642/0906/files/BreeCYR-Light.woff2?v=1783059808') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Bree CYR';
+    src: url('https://cdn.shopify.com/s/files/1/0589/4642/0906/files/BreeCYR-Semibold.woff2?v=1783059808') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Bree CYR';
+    src: url('https://cdn.shopify.com/s/files/1/0589/4642/0906/files/BreeCYR-Extrabold.woff2?v=1783059808') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Bree CYR';
+    src: url('https://cdn.shopify.com/s/files/1/0589/4642/0906/files/BreeCYR-Regular.woff2?v=1783059808') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+:root {
+
+  /* Colors */
+  --clr-544627: #544627;
+  --clr-000: #000;
+  --clr-fff: #fff;
+  --clr-primary: #f5b81b;
+  --clr-text: #333;
+  --clr-border: #ddd;
+  --font-head : "Bree CYR", sans-serif;
+
+  /* Font Size - Desktop */
+  --fs-14: 14px;
+  --fs-16: 16px;
+  --fs-18: 18px;
+  --fs-20: 20px;
+  --fs-22: 22px;
+  --fs-25: 25px;
+  --fs-30: 30px;
+  --fs-35: 35px;
+  --fs-40: 40px;
+  --fs-45: 45px;
+  --fs-50: 50px;
+  --fs-60: 60px;
+  --fs-70: 70px;
+  --fs-76: 76px;
+
+  /* Common Spacing */
+  --spc-20: 20px;
+  --spc-30: 30px;
+  --spc-40: 40px;
+  --spc-50: 50px;
+  --spc-100: 80px;
+
+}
+
+
+/* ==========================
+   Tablet
+========================== */
+
+@media (max-width:991px){
+
+  :root{
+
+    --fs-76: 60px;
+    --fs-70: 56px;
+    --fs-60: 48px;
+    --fs-50: 42px;
+    --fs-40: 36px;
+    --fs-35: 32px;
+    --fs-45: 38px;
+    --fs-30: 28px;
+    --fs-25: 22px;
+    --fs-22: 20px;
+
+    --spc-100: 60px;
+    --spc-50: 40px;
+    --spc-40: 30px;
+    --spc-30: 25px;
+
+  }
+
+}
+
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width:767px){
+
+  :root{
+
+    --fs-76: 40px;
+    --fs-70: 38px;
+    --fs-60: 34px;
+    --fs-50: 30px;
+    --fs-40: 25px;
+    --fs-35: 26px;
+    --fs-45: 26px;
+    --fs-30: 24px;
+    --fs-25: 20px;
+    --fs-22: 18px;
+    --fs-20: 18px;
+
+    --spc-100: 40px;
+    --spc-50: 25px;
+    --spc-40: 25px;
+    --spc-30: 20px;
+    --spc-20: 15px;
+
+  }
+
+}
+:is(h1,h2,h3,h4,h5,h6,a){
+  font-family: var(--font-head) !important;
+}
+.section_header{
+    margin-bottom: var(--spc-50);
+}
+.section_description p:not(:last-child){
+    margin-bottom: var(--spc-20);
+}
+.section_sub_heading{
+    display: inline-block;
+    font-size: var(--fs-20);
+    color: var(--clr-primary);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    font-family: var(--font-head);
+}
+
+.section_heading{
+    font-size: var(--fs-45);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #54462d;
+    text-transform: uppercase;
+    margin-bottom: var(--spc-30);
+    letter-spacing: 1px;
+}
+
+.section_heading em{
+    font-style: italic;
+    font-weight: 400;
+    font-family: var(--font-head);
+    line-height: 1.1;
+    letter-spacing: 2px;
+}
+p{
+    font-size: var(--fs-20);
+    color: var(--clr-544627);
+    line-height: 1.5;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+section .page-width{
+  width: 100%;
+}
+
+/* ==========================================
+Birds Category Section CSS Start
+========================================== */
+
+.birds_category {
+  padding: var(--spc-100) 0;
+  background-color: var(--clr-fff);
+}
+
+.birds_category__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.birds_category__header {
+  text-align: center;
+  margin-bottom: var(--spc-50);
+}
+
+.birds_category__heading {
+  font-family: var(--font-head);
+  font-size: var(--fs-30);
+  font-weight: 700;
+  color: var(--clr-544627);
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.birds_category__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 45px 70px;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.birds_category__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  width: 200px;
+  flex: 0 0 200px;
+}
+
+.birds_category__image_box {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #f2f4f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.birds_category__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.birds_category__item:hover .birds_category__image {
+  transform: scale(1.06);
+}
+
+.birds_category__title {
+  font-family: var(--font-head);
+  font-size: var(--fs-18);
+  font-weight: 700;
+  color: var(--clr-544627);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 18px;
+  text-align: center;
+  display: block;
+  transition: color 0.25s ease;
+}
+
+.birds_category__item:hover .birds_category__title {
+  color: var(--clr-primary);
+}
+
+/* Tablet Media Query */
+@media (max-width: 991px) {
+  .birds_category__list {
+    gap: 35px 50px;
+    max-width: 700px;
+  }
+
+  .birds_category__item {
+    width: 170px;
+    flex: 0 0 170px;
+  }
+
+  .birds_category__image_box {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+/* Mobile Media Query */
+@media (max-width: 767px) {
+  .birds_category__list {
+    gap: 30px 25px;
+    max-width: 360px;
+  }
+
+  .birds_category__item {
+    width: 140px;
+    flex: 0 0 140px;
+  }
+
+  .birds_category__image_box {
+    width: 140px;
+    height: 140px;
+  }
+
+  .birds_category__title {
+    font-size: var(--fs-16);
+    margin-top: 14px;
+    letter-spacing: 1px;
+  }
+}
+
+/* ==========================================
+Birds Category Section CSS End
+========================================== */

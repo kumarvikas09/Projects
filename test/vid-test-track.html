@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="vsl-facade"
+     data-embed-url="https://www.loom.com/embed/db7b8f2014294ca8a3a16a4edbd697ba?autoplay=1&hideEmbedTopBar=true&hide_owner=true&hide_share=true&hide_title=true"
+     data-thumbnail="THUMBNAIL_URL_FROM_WEBFLOW.png"
+     style="position: relative; padding-bottom: 56.25%; height: 0; cursor: pointer; background-size: cover; background-position: center; border-radius: 8px; overflow: hidden;">
+  <div class="vsl-play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(0,0,0,0.7); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+    <div style="width: 0; height: 0; border-left: 24px solid white; border-top: 14px solid transparent; border-bottom: 14px solid transparent; margin-left: 6px;"></div>
+  </div>
+</div>
+ 
+<script>
+document.querySelectorAll('.vsl-facade').forEach(facade => {
+  facade.style.backgroundImage = "url('" + facade.dataset.thumbnail + "')";
+  facade.addEventListener('click', () => {
+    const iframe = document.createElement('iframe');
+    iframe.src = facade.dataset.embedUrl;
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('allow', 'autoplay; fullscreen');
+    iframe.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%;';
+    facade.innerHTML = '';
+    facade.appendChild(iframe);
+  });
+});
+</script>
+</body>
+</html>
+
+
+https://cdn.prod.website-files.com/67b44e9b170bb000d5d240d6/69fad49b09625eb22d3fa579_Thumbnail%20spotify%20masterplan%20compressed.png
+
+
+
+https://cdn.prod.website-files.com/67b44e9b170bb000d5d240d6/69fad49c9dbcf4451c12d6da_Thumbnail%20trackboost%20compressed.png
+
+https://cdn.prod.website-files.com/67b44e9b170bb000d5d240d6/69fc36b0dc552955eb51e0d9_trackboost-social-thumbnail-preview.png
+
+https://cdn.prod.website-files.com/67b44e9b170bb000d5d240d6/69fc32c5bd6614f18557d7ec_social-thumbnail-preview.png

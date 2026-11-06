@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Department</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/main-style.css" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="main_wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xl-2 col-lg-3 col-4">
+              <div class="left_wrapper">
+                <div class="main_logo text-center">
+                  <img src="./assets/images/main-logo.png" alt="main-logo" />
+                </div>
+                <div class="menu_navs">
+                  <ul>
+                    <li class="">
+                      <a href="./dashboardScreen.html">
+                        <img
+                          src="./assets/images/dasboard.svg"
+                          alt="dasboard"
+                        /><span>Dashboard</span>
+                      </a>
+                    </li>
+                    <li class="active">
+                      <a href="./departmentScreen.html">
+                        <img
+                          src="./assets/images/department.svg"
+                          alt="department"
+                        /><span>Departments</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="./budgetEntry.html">
+                        <img
+                          src="./assets/images/budget_entry.svg"
+                          alt="budget_entry"
+                        /><span>Budget Entry</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="./budgetReview.html">
+                        <img
+                          src="./assets/images/budget_review.svg"
+                          alt="budget_review"
+                        /><span>Budget Review</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img
+                          src="./assets/images/reports.svg"
+                          alt="reports"
+                        /><span>Reports</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img
+                          src="./assets/images/settings.svg"
+                          alt="settings"
+                        /><span>Settings</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="bottom_wrap">
+                  <div class="logout_wrap">
+                    <form>
+                      <button type="submit">
+                        <img src="./assets/images/Logout.svg" alt="Logout" /><span
+                          >Logout</span
+                        >
+                      </button>
+                    </form>
+                  </div>
+                  <div class="profile_wrap">
+                    <div class="profile">
+                      <img
+                        src="./assets/images/client_headshot.svg"
+                        alt="client_headshot"
+                      />
+                      <div class="name_wrap">
+                        <p class="name">John Doe</p>
+                        <button type="button">View profile</button>
+                      </div>
+                    </div>
+                    <button type="button">
+                      <img
+                        src="./assets/images/burger-bar.svg"
+                        alt="burger-bar"
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-10 col-lg-9 col-8">
+              <div class="right_wrapper">
+                <div class="topbar">
+                  <div class="left_wrap">
+                    <h4 class="username">Hello John</h4>
+                    <div class="select_wrap">
+                      <img src="./assets/images/calender.svg" alt="calender" />
+                      <select name="date">
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="right_wrap">
+                    <img
+                      src="./assets/images/notification-bell.svg"
+                      alt="notification-bell"
+                    />
+                  </div>
+                </div>
+                <div class="main_screen">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="head">
+                        <div class="cont">
+                          <h4 class="sec_hdng">Department Management</h4>
+                          <p class="clr_848484">Manage department budgets for the selected fiscal year</p>
+                        </div>
+                        <div class="btn_wrap">
+                          <button class="cmn_btn"><img src="./assets/images/plus-icon.svg" alt="plus-icon">Add New</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid_wrap">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="inner_wrapper">
+                          <div class="head">
+                            <h4 class="title mb-0">
+                              Department Budget Status
+                            </h4>
+                            <form>
+                              <div class="field">
+                                <input type="text" placeholder="Search here">
+                                <button type="submit"><img src="./assets/images/search-icon.svg" alt="search-icon"></button>
+                              </div>
+
+                            </form>
+                          </div>
+                          <div class="table_wrap">
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Department Name</th>
+                                  <th>Department Code / Number</th>
+                                  <th>Description</th>
+                                  <th>Status</th>
+                                  <th>Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Information Technology</td>
+                                  <td>5f1245a021</td>
+                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                                  <td>
+                                    <button class="complete">
+                                      <select name="status">
+                                        <option value="active">Active</option>
+                                        <option value="inactive">Inactive</option>
+                                      </select>
+                                    </button>
+                                  </td>
+                                  <td>
+                                    <button><img src="./assets/images/view-icon.svg" alt="view-icon"></button>
+                                    <button><img src="./assets/images/edit-icon.svg" alt="edit-icon"></button>
+                                    <button><img src="./assets/images/dlt-icon.svg" alt="dlt-icon"></button>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Information Technology</td>
+                                  <td>5f1245a021</td>
+                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                                  <td>
+                                    <button class="complete">
+                                      <select name="status">
+                                        <option value="active">Active</option>
+                                        <option value="inactive">Inactive</option>
+                                      </select>
+                                    </button>
+                                  </td>
+                                  <td>
+                                    <button><img src="./assets/images/view-icon.svg" alt="view-icon"></button>
+                                    <button><img src="./assets/images/edit-icon.svg" alt="edit-icon"></button>
+                                    <button><img src="./assets/images/dlt-icon.svg" alt="dlt-icon"></button>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Information Technology</td>
+                                  <td>5f1245a021</td>
+                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                                  <td>
+                                    <button class="complete">
+                                      <select name="status">
+                                        <option value="active">Active</option>
+                                        <option value="inactive">Inactive</option>
+                                      </select>
+                                    </button>
+                                  </td>
+                                  <td>
+                                    <button><img src="./assets/images/view-icon.svg" alt="view-icon"></button>
+                                    <button><img src="./assets/images/edit-icon.svg" alt="edit-icon"></button>
+                                    <button><img src="./assets/images/dlt-icon.svg" alt="dlt-icon"></button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+
+    <script src="./assets/js/jquery/jquery.min.js"></script>
+    <script src="./assets/js/chart/chart.js"></script>
+    <script src="./assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/function.js"></script>
+  </body>
+</html>

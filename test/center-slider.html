@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .owl-carousel .item {
+        position: relative;
+        /* padding: 10px; */
+        transition: all 0.5s;
+      }
+      .owl-carousel .item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+        transition: all 0.5s;
+      }
+      .owl-carousel .item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 10px;
+        transition: all 0.5s;
+      }
+      .owl-carousel .owl-item.center .item {
+        aspect-ratio: 9/15;
+        transition: all 0.5s;
+      }
+      .owl-carousel .owl-item.active .item {
+        aspect-ratio: 9/14;
+        transition: all 0.5s;
+      }
+      .owl-carousel .owl-stage {
+        display: flex;
+        transition: all 0.5s;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="owl-carousel loop owl-theme">
+        <div class="item">
+          <img
+            src="https://picsum.photos/seed/mountains/800/1100"
+            alt="Image 1"
+          />
+        </div>
+        <div class="item">
+          <img src="https://picsum.photos/seed/forest/800/1100" alt="Image 2" />
+        </div>
+        <div class="item">
+          <img src="https://picsum.photos/seed/sea/800/1100" alt="Image 3" />
+        </div>
+        <div class="item">
+          <img src="https://picsum.photos/seed/desert/800/1100" alt="Image 4" />
+        </div>
+        <div class="item">
+          <img src="https://picsum.photos/seed/jungle/800/1100" alt="Image 5" />
+        </div>
+        <div class="item">
+          <img src="https://picsum.photos/seed/snow/800/1100" alt="Image 6" />
+        </div>
+        <div class="item">
+          <img src="https://picsum.photos/seed/beach/800/1100" alt="Image 7" />
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".loop").owlCarousel({
+          center: true,
+          items: 2,
+          loop: true,
+          margin: 0,
+          equalize: true,
+          responsive: {
+            600: {
+              items: 5,
+            },
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

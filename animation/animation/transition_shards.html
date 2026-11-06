@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Shards Dissolve Transition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #07070c;
+            --primary: #8b5cf6;
+            --primary-bright: #a78bfa;
+            --secondary: #06b6d4;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --transition-cinematic: cubic-bezier(0.76, 0, 0.24, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--bg-dark);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            overflow: hidden;
+        }
+
+        .navigation-bar {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 2000;
+        }
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            transition: background 0.3s;
+        }
+        .nav-link:hover { background: rgba(255, 255, 255, 0.15); }
+
+        .reset-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2000;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border: none;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .reset-btn:hover { transform: translateY(-1px); }
+
+        .mock-homepage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, #0e0d1c 0%, #030306 100%);
+            z-index: 10;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 1.2s var(--transition-cinematic), transform 1.2s var(--transition-cinematic);
+        }
+        .mock-homepage.reveal { opacity: 1; transform: scale(1); }
+        .mock-homepage h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 30%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .splash-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            background: radial-gradient(circle at center, #0f0c1b 0%, #050409 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Shards styling */
+        .shards-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(12, 1fr);
+            z-index: 105;
+            pointer-events: none;
+        }
+        .shard-block {
+            background-color: #050409;
+            opacity: 0;
+            transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.6s ease;
+        }
+
+        .splash-container.transition-active {
+            background: transparent;
+        }
+        .splash-container.transition-active .splash-content,
+        .splash-container.transition-active .particles {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .splash-container.transition-active .shard-block {
+            opacity: 1;
+            transform: scale(0);
+        }
+
+        .particles { position: absolute; width: 100%; height: 100%; opacity: 0.4; }
+        .splash-content { text-align: center; z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        .logo-svg { width: 100px; height: 100px; animation: spin 10s linear infinite; }
+        .logo-ring { fill: none; stroke: var(--primary); stroke-width: 1.5; }
+        .splash-title { font-family: 'Outfit', sans-serif; font-size: 3rem; font-weight: 800; letter-spacing: 0.5rem; }
+        .enter-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 30px;
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.15rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        .enter-btn:hover { border-color: var(--primary-bright); color: var(--primary-bright); }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+
+    <div class="navigation-bar">
+        <a href="transition_demo.html" class="nav-link">← DASHBOARD</a>
+    </div>
+
+    <button class="reset-btn" id="reset-btn">RESET</button>
+
+    <div class="mock-homepage" id="mock-homepage">
+        <h2>DIGITAL SHARDS</h2>
+        <p>MATRIX BLOCK DISSOLVE EFFECT</p>
+    </div>
+
+    <div class="splash-container" id="splash-container">
+        <div class="shards-grid" id="shards-grid"></div>
+        <canvas class="particles" id="particles-canvas"></canvas>
+        <div class="splash-content">
+            <svg class="logo-svg" viewBox="0 0 100 100">
+                <circle class="logo-ring" cx="50" cy="50" r="45" />
+                <polygon points="50,25 70,60 30,60" fill="none" stroke="#fff" stroke-width="2" />
+            </svg>
+            <h1 class="splash-title">A E T H E R I A</h1>
+            <button class="enter-btn" id="enter-btn">ENTER EXPERIENCE</button>
+        </div>
+    </div>
+
+    <script>
+        const enterBtn = document.getElementById('enter-btn');
+        const resetBtn = document.getElementById('reset-btn');
+        const splashContainer = document.getElementById('splash-container');
+        const mockHomepage = document.getElementById('mock-homepage');
+        const shardsGrid = document.getElementById('shards-grid');
+
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        const particles = [];
+        for (let i = 0; i < 50; i++) {
+            particles.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                size: Math.random() * 2 + 0.5,
+                speedX: Math.random() * 0.4 - 0.2,
+                speedY: Math.random() * 0.4 - 0.2
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            ctx.fillStyle = "rgba(167, 139, 250, 0.4)";
+            particles.forEach(p => {
+                p.x += p.speedX;
+                p.y += p.speedY;
+                if (p.x < 0 || p.x > width) p.speedX *= -1;
+                if (p.y < 0 || p.y > height) p.speedY *= -1;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        function generateShards() {
+            shardsGrid.innerHTML = '';
+            const totalBlocks = 144;
+            for (let i = 0; i < totalBlocks; i++) {
+                const block = document.createElement('div');
+                block.classList.add('shard-block');
+                const col = i % 12;
+                const row = Math.floor(i / 12);
+                const delay = (col + row) * 0.04 + Math.random() * 0.15;
+                block.style.transitionDelay = `${delay}s`;
+                shardsGrid.appendChild(block);
+            }
+        }
+        generateShards();
+
+        enterBtn.addEventListener('click', () => {
+            splashContainer.classList.add('transition-active');
+            mockHomepage.classList.add('reveal');
+        });
+
+        resetBtn.addEventListener('click', () => {
+            splashContainer.classList.remove('transition-active');
+            mockHomepage.classList.remove('reveal');
+            generateShards();
+        });
+    </script>
+</body>
+</html>

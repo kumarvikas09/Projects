@@ -1,0 +1,537 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   BAJARX THEME REDESIGN (Version 1 - Emerald & Teal Modern Clinical Theme)
+   ========================================================================== */
+
+:root {
+  --primary: #059669;
+  --primary-hover: #047857;
+  --primary-light: #ecfdf5;
+  --secondary: #0d9488;
+  --accent: #10b981;
+  --bg-main: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 14px rgba(16, 185, 129, 0.08);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+}
+
+/* Global Reset & Typography */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #f1f5f9;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(13, 148, 136, 0.08) 0px, transparent 50%);
+  background-attachment: fixed;
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  color: #334155;
+  line-height: 1.6;
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+/* Main Layout Container */
+.main_table {
+  width: 100% !important;
+  max-width: 1240px !important;
+  margin: 24px auto !important;
+  background: #ffffff !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.07) !important;
+  padding: 30px !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* Header Section */
+.header_part {
+  position: relative;
+  padding-bottom: 24px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.logo {
+  width: 340px;
+  padding: 10px 0;
+}
+
+.logo img {
+  max-height: 60px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.02);
+}
+
+.topimg {
+  display: none;
+}
+
+.login {
+  position: relative !important;
+  top: 0 !important;
+  right: 0 !important;
+  background: #ecfdf5 !important;
+  border: 1px solid #a7f3d0 !important;
+  border-radius: 40px !important;
+  padding: 6px 16px !important;
+  width: auto !important;
+  height: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1) !important;
+}
+
+.login a {
+  color: #047857 !important;
+  background: transparent !important;
+  display: inline-block !important;
+  padding: 6px 16px !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  border-radius: 20px !important;
+  transition: all 0.2s ease !important;
+  text-decoration: none !important;
+}
+
+.login a:hover {
+  color: #ffffff !important;
+  background: var(--primary) !important;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25) !important;
+}
+
+.language {
+  font-size: 13px;
+  color: #64748b;
+  text-align: right;
+  padding: 12px 0 6px 0;
+}
+
+.currnaces {
+  font-size: 13px;
+  color: #64748b;
+  text-align: right;
+  padding: 4px 0;
+}
+
+.currnaces select {
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+  color: #1e293b !important;
+  background: #ffffff !important;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.currnaces select:focus {
+  border-color: var(--primary) !important;
+}
+
+/* Duty Notice / Banners inside Header */
+.header_part span[style*="font-size:24px"] {
+  font-size: 20px !important;
+  color: #dc2626 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 800 !important;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  padding: 14px 20px !important;
+  margin: 20px 0 0 0 !important;
+}
+
+.header_part span[style*="background-color:#659619"] {
+  background: linear-gradient(135deg, #059669, #10b981) !important;
+  border-radius: 0 0 var(--radius-md) var(--radius-md) !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  padding: 12px 20px !important;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2) !important;
+  margin-bottom: 16px !important;
+}
+
+.header_part td[colspan="3"] {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+}
+
+.header_part span[style*="font-family:calibri"] {
+  display: block;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-top: 12px;
+  line-height: 1.7;
+}
+
+/* Sidebar (Left Part) */
+.left_part {
+  width: 240px !important;
+  padding-right: 24px;
+}
+
+.mainmenu_link {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: var(--radius-md) !important;
+  padding: 8px !important;
+  margin-bottom: 20px !important;
+}
+
+.mainmenu_link a {
+  display: block !important;
+  color: #334155 !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  padding: 10px 16px !important;
+  margin: 4px 0 !important;
+  background: transparent !important;
+  border-radius: var(--radius-sm) !important;
+  transition: all 0.2s ease !important;
+}
+
+.mainmenu_link a:hover,
+.mainmenu_link a#active {
+  background: var(--primary) !important;
+  color: #ffffff !important;
+  padding-left: 20px !important;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2) !important;
+}
+
+/* Box Widgets (Categories, Manufacturers, etc.) */
+#BoxHeading {
+  background: linear-gradient(135deg, #0f766e, #0d9488) !important;
+  color: #ffffff !important;
+  padding: 12px 18px !important;
+  border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  margin-top: 16px !important;
+}
+
+#BoxHeading a {
+  color: #ffffff !important;
+}
+
+#BoxCenter {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-top: none !important;
+  border-radius: 0 0 var(--radius-md) var(--radius-md) !important;
+  padding: 12px !important;
+  margin-bottom: 20px !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.cat_link_0 {
+  color: #475569 !important;
+  padding: 8px 12px !important;
+  display: block !important;
+  font-size: 13px !important;
+  border-radius: var(--radius-sm) !important;
+  background: transparent !important;
+  transition: all 0.2s ease !important;
+  border-left: 3px solid transparent !important;
+}
+
+.cat_link_0:hover {
+  color: var(--primary) !important;
+  background: #ecfdf5 !important;
+  border-left-color: var(--primary) !important;
+  padding-left: 16px !important;
+}
+
+.BoxLink {
+  color: #475569 !important;
+  padding: 8px 12px !important;
+  display: block !important;
+  font-size: 13px !important;
+  border-radius: var(--radius-sm) !important;
+  transition: all 0.2s ease !important;
+}
+
+.BoxLink:hover {
+  color: var(--primary) !important;
+  background: #ecfdf5 !important;
+}
+
+#BoxCenter select {
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  padding: 8px !important;
+  font-size: 12px !important;
+  color: #1e293b !important;
+  background: #ffffff !important;
+  width: 100% !important;
+  outline: none;
+}
+
+#BoxFooter {
+  display: none !important;
+}
+
+/* Center Content & Slider */
+.center_part {
+  padding: 0 10px !important;
+}
+
+.banner_padding {
+  margin-bottom: 24px !important;
+}
+
+#slider, .slider-wrapper {
+  border-radius: var(--radius-md) !important;
+  overflow: hidden !important;
+  box-shadow: var(--shadow-md) !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+h1, h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  color: #0f172a !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  margin: 24px 0 16px 0 !important;
+  padding-left: 14px !important;
+  border-left: 4px solid var(--primary) !important;
+}
+
+.contentContainer {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 20px 0;
+}
+
+.contentText {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Product Cards Grid (.NewProductBox) */
+#index2 .NewProductBox,
+.NewProductBox {
+  width: 220px !important;
+  margin: 10px !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: var(--radius-md) !important;
+  padding: 16px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+  box-sizing: border-box !important;
+  float: left !important;
+}
+
+#index2 .NewProductBox:hover,
+.NewProductBox:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 14px 28px rgba(16, 185, 129, 0.15) !important;
+  border-color: #a7f3d0 !important;
+}
+
+.product_title {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  height: 42px !important;
+  overflow: hidden !important;
+  margin-bottom: 10px !important;
+  padding-top: 0 !important;
+}
+
+.product_title a {
+  color: #1e293b !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.product_title a:hover {
+  color: var(--primary) !important;
+}
+
+.img_disp,
+.product_title + tr img {
+  border-radius: 8px !important;
+  transition: transform 0.3s ease !important;
+}
+
+.NewProductBox:hover img {
+  transform: scale(1.05) !important;
+}
+
+.product_price {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  color: var(--primary) !important;
+  padding: 8px 0 !important;
+  float: none !important;
+}
+
+.product_price u {
+  text-decoration: none !important;
+  color: var(--primary) !important;
+  font-weight: 800 !important;
+  font-size: 18px !important;
+}
+
+.product_details {
+  padding-left: 0 !important;
+  margin-top: 10px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.product_details .details {
+  display: inline-block !important;
+  padding: 6px 12px !important;
+  background: #f1f5f9 !important;
+  color: #475569 !important;
+  border-radius: var(--radius-sm) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.product_details .details:hover {
+  background: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+.product_details .cart {
+  display: inline-block !important;
+  padding: 6px 14px !important;
+  background: linear-gradient(135deg, #059669, #10b981) !important;
+  color: #ffffff !important;
+  border-radius: var(--radius-sm) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3) !important;
+  transition: all 0.2s ease !important;
+}
+
+.product_details .cart:hover {
+  background: linear-gradient(135deg, #047857, #059669) !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Right Sidebar */
+.right_part {
+  width: 210px !important;
+}
+
+.shopping {
+  background: #ecfdf5 !important;
+  border: 1px solid #a7f3d0 !important;
+  border-radius: var(--radius-md) !important;
+  padding: 14px !important;
+  height: auto !important;
+  font-size: 13px !important;
+  color: #047857 !important;
+  margin-bottom: 20px !important;
+}
+
+.shopping a {
+  color: #047857 !important;
+  font-weight: 700 !important;
+}
+
+.searchbar {
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  font-size: 13px !important;
+  width: 100% !important;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.searchbar:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important;
+}
+
+/* Footer Section */
+.bottom_part {
+  background: #0f172a !important;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg) !important;
+  padding: 30px 24px !important;
+  margin-top: 40px !important;
+  color: #94a3b8 !important;
+  height: auto !important;
+  text-align: center;
+}
+
+.bottom_link {
+  font-size: 13px !important;
+  color: #cbd5e1 !important;
+  font-weight: 500 !important;
+  padding: 0 0 12px 0 !important;
+}
+
+.bottom_link a {
+  color: #cbd5e1 !important;
+  text-decoration: none !important;
+  padding: 4px 12px !important;
+  transition: color 0.2s ease !important;
+}
+
+.bottom_link a:hover {
+  color: #34d399 !important;
+}
+
+.copyright {
+  font-size: 12px !important;
+  color: #64748b !important;
+  font-weight: 400 !important;
+}
+
+.copyright a {
+  color: #94a3b8 !important;
+}

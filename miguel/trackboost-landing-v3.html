@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrackBoost — Elixir Music Experience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════
+       RESET & BASE
+    ═══════════════════════════════════════ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --accent: #EA34FA;
+      --accent-glow: rgba(234, 52, 250, 0.35);
+      --accent-dim: rgba(234, 52, 250, 0.12);
+      --dark: #070616;
+      --dark-card: #0e0c24;
+      --dark-border: #1a1740;
+      --white: #FFFFFF;
+      --white-90: rgba(255, 255, 255, 0.9);
+      --white-70: rgba(255, 255, 255, 0.7);
+      --white-50: rgba(255, 255, 255, 0.5);
+      --white-20: rgba(255, 255, 255, 0.2);
+      --white-10: rgba(255, 255, 255, 0.1);
+      --white-05: rgba(255, 255, 255, 0.04);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ═══════════════════════════════════════
+       UTILITIES
+    ═══════════════════════════════════════ */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .accent { color: var(--accent); }
+    .text-center { text-align: center; }
+
+    /* Fade-in */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══════════════════════════════════════
+       BACKGROUND EFFECTS
+    ═══════════════════════════════════════ */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(234, 52, 250, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(234, 52, 250, 0.04) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+    }
+
+    section, header, footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ═══════════════════════════════════════
+       TYPOGRAPHY
+    ═══════════════════════════════════════ */
+    h1 {
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    p {
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      font-weight: 300;
+      color: var(--white-70);
+    }
+
+    /* ═══════════════════════════════════════
+       CTA BUTTON
+    ═══════════════════════════════════════ */
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      padding: 18px 44px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      box-shadow: 0 0 30px var(--accent-glow), 0 4px 20px rgba(0,0,0,0.4);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 0 50px var(--accent-glow), 0 8px 30px rgba(0,0,0,0.5);
+    }
+
+    .cta-btn::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .cta-btn:hover::after {
+      left: 100%;
+    }
+
+    /* ═══════════════════════════════════════
+       DIVIDER
+    ═══════════════════════════════════════ */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--dark-border), transparent);
+    }
+
+    /* ═══════════════════════════════════════
+       1. HERO
+    ═══════════════════════════════════════ */
+    .hero {
+      padding: 60px 0 70px;
+      text-align: center;
+    }
+
+    .hero__logo {
+      margin-bottom: 48px;
+    }
+
+    .hero__logo span {
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white);
+      opacity: 0.6;
+    }
+
+    .hero__logo .logo-accent {
+      color: var(--accent);
+      opacity: 1;
+    }
+
+    .hero__pre {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      padding: 6px 16px;
+      border: 1px solid rgba(234, 52, 250, 0.3);
+      border-radius: 30px;
+    }
+
+    .hero h1 .accent-line {
+      color: var(--accent);
+      display: block;
+      font-size: 0.55em;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      margin-top: 8px;
+    }
+
+    .hero__sub {
+      max-width: 640px;
+      margin: 28px auto 0;
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      color: var(--white-70);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════
+       2. VSL VIDEO + VIDEO GATE
+    ═══════════════════════════════════════ */
+    .vsl-section {
+      padding: 20px 0 80px;
+    }
+
+    .vsl-hook {
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      font-weight: 500;
+      color: var(--white-90);
+      letter-spacing: 0.01em;
+    }
+
+    .vsl-hook span {
+      color: var(--white-50);
+      font-weight: 300;
+    }
+
+    .video-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      border-radius: 12px 12px 0 0;
+      overflow: hidden;
+      border: 1px solid var(--dark-border);
+      border-bottom: none;
+      box-shadow: 0 0 60px rgba(234, 52, 250, 0.1), 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .video-placeholder {
+      aspect-ratio: 16/9;
+      background: var(--dark-card);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .video-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(234,52,250,0.08) 0%, transparent 70%);
+    }
+
+    .play-btn {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 0 40px var(--accent-glow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-placeholder:hover .play-btn {
+      transform: scale(1.1);
+      box-shadow: 0 0 60px var(--accent-glow);
+    }
+
+    .play-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--white);
+      margin-left: 4px;
+    }
+
+    .play-btn-pulse {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      animation: pulse-ring 2s ease-out infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.8); opacity: 0; }
+    }
+
+    .video-label {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--white-50);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── Form below video ── */
+    .video-form {
+      max-width: 800px;
+      margin: 28px auto 0;
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-top: none;
+      border-radius: 0 0 12px 12px;
+      padding: 32px 36px 28px;
+    }
+
+    .video-form-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .video-form .form-group {
+      margin: 0;
+    }
+
+    .video-form input {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid var(--dark-border);
+      border-radius: 6px;
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 400;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-form input::placeholder {
+      color: var(--white-50);
+      font-weight: 300;
+    }
+
+    .video-form input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(234, 52, 250, 0.15);
+    }
+
+    .video-form .cta-btn {
+      padding: 14px 28px;
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    /* Privacy checkbox */
+    .privacy-check {
+      margin-top: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .privacy-check input[type="checkbox"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border: 1px solid var(--dark-border);
+      border-radius: 4px;
+      background: rgba(255,255,255,0.05);
+      cursor: pointer;
+      margin-top: 2px;
+      position: relative;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .privacy-check input[type="checkbox"]:checked {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .privacy-check input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 6px;
+      width: 5px;
+      height: 10px;
+      border: solid var(--white);
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .privacy-check label {
+      font-size: 0.78rem;
+      color: var(--white-50);
+      font-weight: 300;
+      line-height: 1.55;
+      cursor: pointer;
+    }
+
+    .privacy-check label a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .privacy-check label a:hover {
+      opacity: 0.8;
+    }
+
+    /* ── Video embed state (after gate) ── */
+    .video-embed {
+      display: none;
+      width: 100%;
+      aspect-ratio: 16/9;
+    }
+
+    .video-embed.playing {
+      display: block;
+    }
+
+    .video-placeholder.hidden {
+      display: none;
+    }
+
+    /* ═══════════════════════════════════════
+       3. QUOTE BAJO EL VÍDEO
+    ═══════════════════════════════════════ */
+    .vsl-quote {
+      max-width: 680px;
+      margin: 40px auto 0;
+      text-align: center;
+      font-style: italic;
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      color: var(--white-70);
+      font-weight: 400;
+      line-height: 1.7;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .vsl-quote::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 4rem;
+      color: var(--accent);
+      opacity: 0.3;
+      font-style: normal;
+      line-height: 1;
+    }
+
+    /* ═══════════════════════════════════════
+       4. SUPPORT LINE + CTA 1
+    ═══════════════════════════════════════ */
+    .support-section {
+      padding: 50px 0 100px;
+      text-align: center;
+    }
+
+    .support-section p {
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      font-weight: 400;
+      color: var(--white-70);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    .support-section p em {
+      font-style: normal;
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    /* ═══════════════════════════════════════
+       6. TESTIMONIALS
+    ═══════════════════════════════════════ */
+    .testimonials {
+      padding: 100px 0;
+    }
+
+    .testimonials__label {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 44px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .testimonial-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: 0.5;
+    }
+
+    .testimonial-avatar {
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: var(--white-05);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      font-size: 0.75rem;
+      color: var(--white-50);
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      border: 1px dashed var(--dark-border);
+      text-align: center;
+      padding: 8px;
+    }
+
+    .testimonial-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+      color: var(--white);
+    }
+
+    .testimonial-stat {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .testimonial-quote {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--white-70);
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    /* Highlighted quote */
+    .testimonial-highlight {
+      max-width: 600px;
+      margin: 44px auto 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .testimonial-highlight blockquote {
+      font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+      font-weight: 600;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.5;
+      position: relative;
+    }
+
+    .testimonial-highlight blockquote::before {
+      content: '—';
+      margin-right: 10px;
+      color: var(--accent);
+      opacity: 0.6;
+      font-style: normal;
+    }
+
+    .testimonial-highlight blockquote::after {
+      content: '—';
+      margin-left: 10px;
+      color: var(--accent);
+      opacity: 0.6;
+      font-style: normal;
+    }
+
+    /* ═══════════════════════════════════════
+       7. WHAT YOU'LL LEARN
+    ═══════════════════════════════════════ */
+    .learn-section {
+      padding: 100px 0;
+    }
+
+    .learn-section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .learn-list {
+      list-style: none;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .learn-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--white-10);
+    }
+
+    .learn-item:last-child {
+      border-bottom: none;
+    }
+
+    .learn-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(234, 52, 250, 0.25);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .learn-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .learn-text {
+      font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+      font-weight: 400;
+      color: var(--white-70);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════
+       CTA SECTIONS (reusable)
+    ═══════════════════════════════════════ */
+    .cta-section {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    /* ═══════════════════════════════════════
+       9. AUTHORITY PHOTOS
+    ═══════════════════════════════════════ */
+    .authority-section {
+      padding: 100px 0;
+    }
+
+    .authority-section h2 {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .authority-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .authority-item {
+      background: var(--white-05);
+      border: 1px dashed var(--dark-border);
+      border-radius: 10px;
+      aspect-ratio: 1/1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      text-align: center;
+      transition: border-color 0.3s ease;
+    }
+
+    .authority-item:hover {
+      border-color: rgba(234, 52, 250, 0.3);
+    }
+
+    .authority-item__icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 12px;
+      opacity: 0.3;
+    }
+
+    .authority-item__icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .authority-item__label {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--white-50);
+      line-height: 1.4;
+    }
+
+    /* ═══════════════════════════════════════
+       10. PRICING
+    ═══════════════════════════════════════ */
+    .pricing-section {
+      padding: 100px 0;
+    }
+
+    .pricing-section h2 {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .pricing-section > .container > p {
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto 48px;
+      color: var(--white-50);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 14px;
+      padding: 36px 28px 32px;
+      position: relative;
+      text-align: center;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      border-color: rgba(234, 52, 250, 0.25);
+    }
+
+    .pricing-card--pro {
+      border-color: rgba(234, 52, 250, 0.35);
+      box-shadow: 0 0 40px rgba(234, 52, 250, 0.08);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 16px;
+      border-radius: 20px;
+    }
+
+    .pricing-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white-50);
+      margin-bottom: 8px;
+    }
+
+    .pricing-price {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .pricing-price span {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--white-50);
+    }
+
+    .pricing-detail {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .pricing-desc {
+      margin-top: 16px;
+      font-size: 0.88rem;
+      color: var(--white-50);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .pricing-card .cta-btn {
+      width: 100%;
+      margin-top: 24px;
+      padding: 14px;
+      font-size: 0.92rem;
+    }
+
+    .pricing-card:not(.pricing-card--pro) .cta-btn {
+      background: transparent;
+      border: 2px solid var(--accent);
+      box-shadow: none;
+    }
+
+    .pricing-card:not(.pricing-card--pro) .cta-btn:hover {
+      background: rgba(234, 52, 250, 0.1);
+      box-shadow: 0 0 20px rgba(234, 52, 250, 0.15);
+    }
+
+    /* ═══════════════════════════════════════
+       11. URGENCY
+    ═══════════════════════════════════════ */
+    .urgency-section {
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .urgency-box {
+      max-width: 660px;
+      margin: 0 auto;
+      background: rgba(234, 52, 250, 0.05);
+      border: 1px solid rgba(234, 52, 250, 0.2);
+      border-radius: 12px;
+      padding: 30px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .urgency-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--accent);
+      border-radius: 4px 0 0 4px;
+    }
+
+    .urgency-box p {
+      font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+      color: var(--white-90);
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    .urgency-box strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ═══════════════════════════════════════
+       12. FAQ
+    ═══════════════════════════════════════ */
+    .faq-section {
+      padding: 100px 0;
+    }
+
+    .faq-section h2 {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--white-10);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 22px 0;
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+      font-weight: 500;
+      color: var(--white);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .faq-question:hover { color: var(--accent); }
+
+    .faq-question__icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--white-20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.35s ease, border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .faq-question__icon svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--white-70);
+      fill: none;
+      stroke-width: 2;
+      transition: stroke 0.3s ease;
+    }
+
+    .faq-item.active .faq-question__icon {
+      transform: rotate(45deg);
+      border-color: var(--accent);
+      background: rgba(234, 52, 250, 0.1);
+    }
+
+    .faq-item.active .faq-question__icon svg {
+      stroke: var(--accent);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .faq-answer__inner {
+      padding: 0 0 22px;
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--white-70);
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════
+       13. GUARANTEE
+    ═══════════════════════════════════════ */
+    .guarantee-section {
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .guarantee-box {
+      max-width: 580px;
+      margin: 0 auto;
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 14px;
+      padding: 40px 36px;
+      position: relative;
+    }
+
+    .guarantee-box::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    .guarantee-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 18px;
+      background: var(--accent-dim);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .guarantee-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .guarantee-box h3 {
+      margin-bottom: 12px;
+    }
+
+    .guarantee-box p {
+      font-size: 0.95rem;
+      color: var(--white-70);
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════
+       14. CLOSE + CTA FINAL
+    ═══════════════════════════════════════ */
+    .close-section {
+      padding: 100px 0 120px;
+      text-align: center;
+      position: relative;
+    }
+
+    .close-section::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(234,52,250,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .close-section .close-bold {
+      max-width: 600px;
+      margin: 0 auto 16px;
+      font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    .close-section .close-text {
+      max-width: 580px;
+      margin: 0 auto 12px;
+      font-size: clamp(0.95rem, 1.4vw, 1.08rem);
+      color: var(--white-70);
+      line-height: 1.7;
+    }
+
+    .close-section .close-action {
+      max-width: 580px;
+      margin: 0 auto 40px;
+      font-size: clamp(1rem, 1.5vw, 1.1rem);
+      color: var(--white);
+      font-weight: 500;
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid var(--white-10);
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--white-50);
+      font-weight: 300;
+    }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width: 768px) {
+      .video-form-fields {
+        grid-template-columns: 1fr;
+      }
+
+      .video-form {
+        padding: 24px 20px 20px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .authority-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .cta-btn {
+        padding: 16px 32px;
+        font-size: 0.95rem;
+      }
+
+      h1 { font-size: 2rem; }
+
+      .hero { padding: 40px 0 50px; }
+
+      .testimonials,
+      .learn-section,
+      .authority-section,
+      .pricing-section,
+      .faq-section,
+      .close-section {
+        padding: 70px 0;
+      }
+
+      .urgency-box {
+        padding: 24px 20px;
+      }
+
+      .guarantee-box {
+        padding: 30px 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .authority-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      h1 { font-size: 1.7rem; }
+
+      .pricing-price { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       1. HERO
+  ═══════════════════════════════════════ -->
+  <header class="hero">
+    <div class="container">
+      <h1 class="fade-in">
+        INVISIBLE ON SPOTIFY?
+        <span class="accent-line">TRIGGER THE ALGORITHM — AND MAKE IT WORK FOR YOU</span>
+      </h1>
+      <p class="hero__sub fade-in">
+        Learn the secret of how professional artists release their music. And how to attract lots of listeners to your next release.
+      </p>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       2. VSL VIDEO + VIDEO GATE
+  ═══════════════════════════════════════ -->
+  <section class="vsl-section">
+    <div class="container">
+      <p class="vsl-hook fade-in">This is why your last release didn't work. <span>8 minutes.</span></p>
+      <div class="video-wrapper fade-in" id="videoWrapper">
+        <!-- Placeholder (visible by default) -->
+        <div class="video-placeholder" id="videoThumbnail">
+          <div class="play-btn-pulse"></div>
+          <div class="play-btn">
+            <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
+          </div>
+          <span class="video-label">Watch the strategy</span>
+        </div>
+
+        <!-- Embed (hidden until form is submitted) -->
+        <div class="video-embed" id="videoEmbed">
+          <!-- Replace src with your actual VSL embed URL -->
+          <iframe
+            width="100%"
+            height="100%"
+            src=""
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Form below video -->
+      <div class="video-form fade-in" id="videoForm">
+        <div class="video-form-fields">
+          <div class="form-group">
+            <input type="email" id="formEmail" placeholder="Your best email" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <input type="tel" id="formPhone" placeholder="Phone number" autocomplete="tel">
+          </div>
+          <button class="cta-btn" type="button" id="formSubmit">I'm ready — show me the strategy</button>
+        </div>
+        <div class="privacy-check">
+          <input type="checkbox" id="privacyCheck">
+          <label for="privacyCheck">Click here and boom – you're in. You agree to our <a href="https://www.elixirmusicexperience.com/privacy" target="_blank" rel="noopener">privacy policy</a> and you'll start receiving what might just be the best electronic music newsletter on the planet.</label>
+        </div>
+      </div>
+
+      <!-- 3. Quote bajo el vídeo -->
+      <p class="vsl-quote fade-in">
+        Once you understand how the popularity score works… you'll never release a track the same way again.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       4. SUPPORT LINE + 5. CTA 1
+  ═══════════════════════════════════════ -->
+  <section class="support-section">
+    <div class="container fade-in">
+      <p>
+        Whether you work with us or do it yourself —<br>
+        <em>This is the system that forces Spotify to push your music.</em>
+      </p>
+      <a href="#videoForm" class="cta-btn scroll-to-form">I'm ready — show me the strategy</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       6. TESTIMONIALS
+  ═══════════════════════════════════════ -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="testimonials__label fade-in">Real results from real artists</div>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-avatar">[ Placeholder — Chemtrailz photo ]</div>
+          <div class="testimonial-name">Chemtrailz</div>
+          <div class="testimonial-stat">113,669</div>
+          <p class="testimonial-quote">streams. 2.31 streams per listener. The algorithm pushed it for 4 weeks straight.</p>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-avatar">[ Placeholder — Pato Pescio photo ]</div>
+          <div class="testimonial-name">Pato Pescio</div>
+          <div class="testimonial-stat">75,603</div>
+          <p class="testimonial-quote">streams. Same quality music he always had. Different launch. Different outcome.</p>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-avatar">[ Placeholder — Guimero photo ]</div>
+          <div class="testimonial-name">Guimero</div>
+          <div class="testimonial-stat">34,639</div>
+          <p class="testimonial-quote">streams on his first campaign. "I finally got pushed. I didn't know that was possible for an artist my size."</p>
+        </div>
+
+      </div>
+
+      <div class="testimonial-highlight fade-in">
+        <blockquote>"You are one song away from touring the world"</blockquote>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       7. WHAT YOU'LL LEARN
+  ═══════════════════════════════════════ -->
+  <section class="learn-section">
+    <div class="container">
+      <h2 class="fade-in">What you'll learn</h2>
+      <ul class="learn-list">
+        <li class="learn-item fade-in">
+          <div class="learn-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span class="learn-text">Why the Spotify algorithm ignores your music (and pushes others)</span>
+        </li>
+        <li class="learn-item fade-in">
+          <div class="learn-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span class="learn-text">What is the popularity score — and how to raise it</span>
+        </li>
+        <li class="learn-item fade-in">
+          <div class="learn-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span class="learn-text">The best strategy used by managers to release music</span>
+        </li>
+        <li class="learn-item fade-in">
+          <div class="learn-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span class="learn-text">Real cases of artists using this same strategy to explode their releases</span>
+        </li>
+        <li class="learn-item fade-in">
+          <div class="learn-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span class="learn-text">Why TrackBoost will work for you even if you hate marketing</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       8. CTA 2
+  ═══════════════════════════════════════ -->
+  <section class="cta-section">
+    <div class="container fade-in">
+      <a href="#videoForm" class="cta-btn scroll-to-form">Yes — show me how to boost my next track</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       9. AUTHORITY PHOTOS
+  ═══════════════════════════════════════ -->
+  <section class="authority-section">
+    <div class="container">
+      <h2 class="fade-in">Behind the scenes</h2>
+      <div class="authority-grid">
+        <div class="authority-item fade-in">
+          <div class="authority-item__icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><circle cx="12" cy="10" r="3"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
+          </div>
+          <span class="authority-item__label">Chemtrailz in booth</span>
+        </div>
+        <div class="authority-item fade-in">
+          <div class="authority-item__icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><circle cx="12" cy="10" r="3"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
+          </div>
+          <span class="authority-item__label">Miguel backstage</span>
+        </div>
+        <div class="authority-item fade-in">
+          <div class="authority-item__icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <span class="authority-item__label">Spotify for Artists — stream results</span>
+        </div>
+        <div class="authority-item fade-in">
+          <div class="authority-item__icon">
+            <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <span class="authority-item__label">Stream jump screenshot</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       12. FAQ
+  ═══════════════════════════════════════ -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="fade-in">Frequently asked questions</h2>
+      <div class="faq-list">
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            <span>What will I learn from the video?</span>
+            <span class="faq-question__icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">You'll understand what really makes Spotify push certain tracks — and how to make that work in your favor.</div>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            <span>How much is TrackBoost?</span>
+            <span class="faq-question__icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">TrackBoost Lite: 550€ with 200€ in ad budget / TrackBoost Pro: 1.050€ with 500€ ad budget</div>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do I need to know how to run ads?</span>
+            <span class="faq-question__icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">Not at all. We handle that. You stay in the studio.</div>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is this real traffic or bots?</span>
+            <span class="faq-question__icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">All traffic is real and targeted. No bots. No fake streams. Just a smarter push.</div>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            <span>What are the minimum requirements?</span>
+            <span class="faq-question__icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">If your song is decently produced, mixed and mastered your track will be OK for us. We only work with tracks that are ready to compete. If the mix or master isn't there yet, we'll recommend someone or let you know before moving forward.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       13. GUARANTEE
+  ═══════════════════════════════════════ -->
+  <section class="guarantee-section">
+    <div class="container fade-in">
+      <div class="guarantee-box">
+        <div class="guarantee-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Real traffic. Real results.</h3>
+        <p>Every stream comes from real, targeted listeners. No bots. No fake plays. We only launch campaigns we believe in — and we'll tell you upfront if your track isn't ready.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══════════════════════════════════════
+       14. CLOSE + CTA FINAL
+  ═══════════════════════════════════════ -->
+  <section class="close-section" id="close-final">
+    <div class="container">
+      <p class="close-bold fade-in">Silence has a 100% success rate at one thing: killing careers.</p>
+      <p class="close-text fade-in">Nobody is coming to push your music. The algorithm doesn't care how long you spent on that track. It reads what other people do with it in the first 72 hours.</p>
+      <p class="close-action fade-in">Drop your info. Watch the strategy. And let's give your music what it deserves.</p>
+      <div class="fade-in">
+        <a href="#videoForm" class="cta-btn scroll-to-form" id="finalCta">I'm serious — I want to push my music</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Elixir Music Experience. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       JAVASCRIPT
+  ═══════════════════════════════════════ -->
+  <script>
+    // ── Video Form Mechanic ──
+    const videoThumbnail = document.getElementById('videoThumbnail');
+    const videoEmbed = document.getElementById('videoEmbed');
+    const videoForm = document.getElementById('videoForm');
+    const videoWrapper = document.getElementById('videoWrapper');
+    const formSubmit = document.getElementById('formSubmit');
+    const formEmail = document.getElementById('formEmail');
+    const formPhone = document.getElementById('formPhone');
+    const privacyCheck = document.getElementById('privacyCheck');
+
+    // Submit form → hide thumbnail + form, show video
+    formSubmit.addEventListener('click', () => {
+      const email = formEmail.value.trim();
+
+      // Validate email
+      if (!email) {
+        formEmail.style.borderColor = '#ff4466';
+        formEmail.focus();
+        return;
+      }
+
+      // Validate privacy checkbox
+      if (!privacyCheck.checked) {
+        privacyCheck.parentElement.style.outline = '1px solid #ff4466';
+        privacyCheck.parentElement.style.outlineOffset = '4px';
+        privacyCheck.parentElement.style.borderRadius = '4px';
+        return;
+      }
+
+      // Form passed — launch video
+      videoThumbnail.classList.add('hidden');
+      videoForm.style.display = 'none';
+      videoEmbed.classList.add('playing');
+      videoWrapper.style.borderRadius = '12px';
+      videoWrapper.style.border = '1px solid var(--dark-border)';
+
+      // Set the actual video embed src here to autoplay
+      // Example: videoEmbed.querySelector('iframe').src = 'https://www.youtube.com/embed/VIDEO_ID?autoplay=1';
+    });
+
+    // Reset validation styles on input
+    formEmail.addEventListener('input', () => {
+      formEmail.style.borderColor = '';
+    });
+
+    privacyCheck.addEventListener('change', () => {
+      privacyCheck.parentElement.style.outline = '';
+      privacyCheck.parentElement.style.outlineOffset = '';
+    });
+
+    // ── All CTAs scroll to form ──
+    document.querySelectorAll('.scroll-to-form').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const form = document.getElementById('videoForm');
+        if (form.style.display === 'none') {
+          videoWrapper.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(() => formEmail.focus(), 600);
+        }
+      });
+    });
+
+    // ── FAQ Accordion ──
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const answer = item.querySelector('.faq-answer');
+        const isActive = item.classList.contains('active');
+
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.faq-answer').style.maxHeight = null;
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isActive) {
+          item.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // ── Scroll fade-in ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
